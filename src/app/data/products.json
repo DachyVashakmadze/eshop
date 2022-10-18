@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Samsung Galaxy S12",
+        "image": "",
+        "price": 130
+    },
+    {
+        "id": 2,
+        "title": "Iphone 12",
+        "image": "",
+        "price": 390
+    }
+]
