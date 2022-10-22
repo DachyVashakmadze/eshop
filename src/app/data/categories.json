@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "ელექტრო ტექნიკა",
+        "image": "/assets/electonics.jpg"
+    },
+    {
+        "id": 2,
+        "title": "ხელსაწყოები",
+        "image": "/assets/tools.jpg"
+    },
+    {
+        "id": 3,
+        "title": "სათამაშოები",
+        "image": "/assets/toys.jpg"
+    },
+    {
+        "id": 4,
+        "title": "ავეჯი",
+        "image": "/assets/furniture.jpg"
+    },
+    {
+        "id": 5,
+        "title": "საოფისე ტექნიკა",
+        "image": "/assets/office_tech.jpg"
+    }
+]

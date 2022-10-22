@@ -7,7 +7,7 @@ import { ProductPersonalPageComponent } from './product-personal-page/product-pe
 import { BaseProductService } from './services/base-product.service';
 import { TestProductService } from './services/test-product.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+import { CategoriesModule } from './categories/categories.module';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatSliderModule
+    CategoriesModule
   ],
   providers: [
     {
