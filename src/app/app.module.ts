@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ProductPersonalPageComponent } from './product-personal-page/product-personal-page.component';
 import { BaseProductService } from './services/base-product.service';
 import { TestProductService } from './services/test-product.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { TestProductService } from './services/test-product.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatSliderModule
   ],
   providers: [
     {
