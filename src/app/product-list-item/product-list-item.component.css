@@ -38,6 +38,7 @@ mat-card-actions>button {
     display: table;
     table-layout: fixed;
     width: 100%;
+    line-height: 1.2;
 }
 
 .truncate {
