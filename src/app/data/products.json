@@ -2,13 +2,61 @@
     {
         "id": 1,
         "title": "Samsung Galaxy S12",
-        "image": "",
+        "image": "http://www.iipix.com/wallpaper/pics/katasunsethor800.jpg",
         "price": 130
     },
     {
         "id": 2,
         "title": "Iphone 12",
-        "image": "",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/800x600_Wallpaper_Blue_Sky.png",
         "price": 390
+    },
+    {
+        "id": 3,
+        "title": "Nokia",
+        "image": "https://img.zoommer.ge/zoommer-images/thumbs/0166462_samsung-tv-qe50q60aaux-eu_550.jpeg",
+        "price": 190.80
+    },
+    {
+        "id": 4,
+        "title": "Nokia P1",
+        "image": "http://www.iipix.com/wallpaper/pics/sandslodhalum1024.jpg",
+        "price": 180.5
+    },
+    {
+        "id": 5,
+        "title": "Lonovo",
+        "image": "http://www.iipix.com/wallpaper/pics/longtailboaperspective800.jpg",
+        "price": 50.4
+    },
+    {
+        "id": 6,
+        "title": "LG",
+        "image": "http://www.iipix.com/wallpaper/pics/praying1280x800.jpg",
+        "price": 99.99
+    },
+    {
+        "id": 7,
+        "title": "Asus ROG",
+        "image": "http://www.iipix.com/wallpaper/pics/flags1280.jpg",
+        "price": 1920
+    },
+    {
+        "id": 8,
+        "title": "Acer Predator this is very long name, Acer Predator, Acer Predator, Acer Predator this is very long name, Acer Predator, Acer Predator",
+        "image": "https://img.freepik.com/free-vector/pop-art-astronaut-space-suit-showing-ok-gesture_88138-963.jpg?w=1380&t=st=1666443980~exp=1666444580~hmac=665a94ca4c13adb58be951369f84524048f6ae2463b3a0665b755ecd2072c7e2",
+        "price": 1799
+    },
+    {
+        "id": 9,
+        "title": "Acer",
+        "image": "https://cdn.sanity.io/images/mqc7p4g4/production/756809e2f77f3ec440a30c126801bd422fb47284-1837x780.jpg?w=1920&q=75&fit=clip&auto=format",
+        "price": 89.90
+    },
+    {
+        "id": 10,
+        "title": "MSI Gaming X",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-storage-select-202207-6-1inch-pink?wid=2560&hei=1440&fmt=jpeg&qlt=95&.v=1655405994002",
+        "price": 400
     }
 ]

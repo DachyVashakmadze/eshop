@@ -1,0 +1,23 @@
+<mat-card>
+    <img mat-card-image [src]="product.image" [alt]="product.title" />
+    <mat-card-title>
+        <span class="truncate-wrapper">
+            <span class="truncate">
+                {{product.title}}
+            </span>
+        </span>
+    </mat-card-title>
+    <mat-card-content>
+            <h3>{{product.price | currency}}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">
+            <mat-icon inline="true">add_shopping_cart</mat-icon>
+            <span class="button-text">Cart</span>
+        </button>
+        <button mat-raised-button color="accent">
+            <mat-icon inline="true">star_border</mat-icon>
+            <span class="button-text">Watchlist</span>
+        </button>
+    </mat-card-actions>
+</mat-card>
