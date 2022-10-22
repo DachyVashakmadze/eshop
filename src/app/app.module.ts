@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule} from '@angular/material/divider';
+import { LayoutModule } from '@angular/cdk/layout'; 
 import { MatIconModule } from '@angular/material/icon'
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
@@ -33,7 +34,8 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
     MatButtonModule,
     MatGridListModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    LayoutModule
   ],
   providers: [
     {

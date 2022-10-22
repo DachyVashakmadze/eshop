@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-grid-list cols="4" rowHeight="380px">
+    <mat-grid-list [cols]="columnCount" rowHeight="380px">
         <ng-container *ngFor="let product of products">
             <mat-grid-tile>
                 <app-product-list-item [product]="product"></app-product-list-item>
