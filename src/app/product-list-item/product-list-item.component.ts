@@ -14,4 +14,15 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart(id: number) {
+    console.log(`Add to cart, product id: ${id}`);
+  }
+
+  addToWatchlist(id: number) {
+    console.log(`Add to watchlist, product id: ${id}`);
+  }
+
+  openProduct(id: number) {
+    console.log(`Open product personal page, product id: ${id}`);
+  }
 }
