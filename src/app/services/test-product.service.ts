@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../products.model'
+import { Product } from '../product/products.model'
 import { BaseProductService } from './base-product.service';
 
 // Load products.json file

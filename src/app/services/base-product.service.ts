@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { Product } from "../products.model";
+import { Product } from "../product/products.model";
 
 export abstract class BaseProductService {
     // Return all product list

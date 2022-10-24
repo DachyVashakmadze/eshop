@@ -1,7 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../products.model';
-import { BaseProductService } from '../services/base-product.service';
+import { BaseProductService } from '../../services/base-product.service';
 
 @Component({
   selector: 'app-product-list',
