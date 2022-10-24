@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../products.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list-item',
@@ -9,7 +10,7 @@ import { Product } from '../products.model';
 export class ProductListItemComponent implements OnInit {
   @Input() product!: Product;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,6 @@ export class ProductListItemComponent implements OnInit {
 
   openProduct(id: number) {
     console.log(`Open product personal page, product id: ${id}`);
+    this.router.navigate(['product', id]);
   }
 }
