@@ -8,7 +8,8 @@ import { BaseProductService } from './services/base-product.service';
 import { TestProductService } from './services/test-product.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';  
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [
     {
