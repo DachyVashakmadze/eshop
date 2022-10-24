@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BaseProductService } from '../services/base-product.service';
+  
 
 @Component({
   selector: 'app-product-personal-page',
@@ -14,7 +15,7 @@ export class ProductPersonalPageComponent implements OnInit {
     price: 1300
   }
   displayedColumns: string[] = ['id', 'title', 'price'];
-  constructor() { }
+  constructor(private service: BaseProductService, /*private responseive: BreakpointObserver*/) { }
 
   ngOnInit(): void {
   }
