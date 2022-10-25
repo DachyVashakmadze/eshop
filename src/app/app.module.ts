@@ -9,18 +9,22 @@ import { TestProductService } from './services/test-product.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { ProductModule } from './product/product.module';
+import { MatButtonModule } from '@angular/material/button';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatSliderModule,
-    ProductModule
+    ProductModule,
+    MatButtonModule
   ],
   providers: [
     {

@@ -2,6 +2,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../products.model';
 import { BaseProductService } from '../../services/base-product.service';
+import { BreadcumbService } from '../../breadcrumb/breadcumb.service';
+import { Breadcrumb } from 'src/app/breadcrumb/breadcrumb.model';
 
 @Component({
   selector: 'app-product-list',
@@ -12,9 +14,18 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   columnCount = 0;
 
-  constructor(private service: BaseProductService, private responseive: BreakpointObserver) { }
+  constructor(private service: BaseProductService,
+     private responseive: BreakpointObserver,
+     private breadcrumbService: BreadcumbService
+     ) { }
 
   ngOnInit(): void {
+    //Set breadcrumb items
+    this.breadcrumbService.setItems([{
+      title: 'Products',
+      url: 'products'
+    }]);
+    
     this.service.getProductList().subscribe(products => this.products = products);
 
     if (this.responseive.isMatched([Breakpoints.Large, Breakpoints.XLarge])) {
