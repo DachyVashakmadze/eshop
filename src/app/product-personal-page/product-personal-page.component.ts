@@ -16,8 +16,23 @@ export class ProductPersonalPageComponent implements OnInit {
 //      image: "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
 //      price: 1300
 //  }
+testData=[
+  {
+      "Header": "Id",
+      "Value": 1
+  },
+  {
+      "Header": "Title",
+      "Value": "TEXT"
+  },
+  {
+      "Header": "price",
+      "Value": 125
+  }];
+
   element!: Product;
-  displayedColumns: string[] = ['id', 'title', 'price'];
+  // displayedColumns: string[] = ['title','id', 'price'];
+  displayedColumns: string[] = ['Header', 'Value'];
   constructor(private service: BaseProductService, private responseive: BreakpointObserver) { }
   
 

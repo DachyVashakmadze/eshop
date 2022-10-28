@@ -8,22 +8,14 @@
     </mat-grid-tile>
     <mat-grid-tile>
       <div class="content-wraper">
-        <table  mat-table [dataSource]="[element]" class="mat-elevation-z8" id="table">
-          <mat-text-column name="id"></mat-text-column>
+        <table  mat-table [dataSource]="testData" class="mat-elevation-z8 " id="table">
+          <!-- <mat-text-column name="id"></mat-text-column>
           <mat-text-column name="title"></mat-text-column>
-          <mat-text-column name="price"></mat-text-column>
-          <!-- <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef> id </th>
-              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container> -->
-          <!-- <ng-container matColumnDef="title">
-              <th mat-header-cell *matHeaderCellDef> title </th>
-              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-          </ng-container>
-          <ng-container matColumnDef="price">
-              <th mat-header-cell *matHeaderCellDef> price </th>
-              <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-          </ng-container> -->
+          <mat-text-column name="price"></mat-text-column> -->
+
+          <mat-text-column name="Header"></mat-text-column>
+          <mat-text-column name="Value"></mat-text-column>
+          
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
