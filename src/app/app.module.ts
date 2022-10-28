@@ -9,12 +9,14 @@ import { TestProductService } from './services/test-product.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatTableModule} from '@angular/material/table';
-import {MatGridListModule} from '@angular/material/grid-list';  
+import {MatGridListModule} from '@angular/material/grid-list';
+import { Page404Component } from './page404/page404.component';  
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductPersonalPageComponent
+    ProductPersonalPageComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

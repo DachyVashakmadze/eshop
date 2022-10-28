@@ -1,5 +1,5 @@
 
-  <mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-list  cols="2" rowHeight="1:1">
     <mat-grid-tile >
       <div class="content-wraper">
         <img src={{element.image}} alt={{element.title}}>
@@ -9,10 +9,6 @@
     <mat-grid-tile>
       <div class="content-wraper">
         <table  mat-table [dataSource]="testData" class="mat-elevation-z8 " id="table">
-          <!-- <mat-text-column name="id"></mat-text-column>
-          <mat-text-column name="title"></mat-text-column>
-          <mat-text-column name="price"></mat-text-column> -->
-
           <mat-text-column name="Header"></mat-text-column>
           <mat-text-column name="Value"></mat-text-column>
           

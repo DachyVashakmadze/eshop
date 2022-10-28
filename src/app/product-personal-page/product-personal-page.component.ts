@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BaseProductService } from '../services/base-product.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Product } from '../products.model';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { map } from 'rxjs';
     
 
 @Component({
@@ -10,12 +12,7 @@ import { Product } from '../products.model';
   styleUrls: ['./product-personal-page.component.css']
 })
 export class ProductPersonalPageComponent implements OnInit {
-//   element ={
-//      id: 1,
-//      title: "Samsung Galaxy S12",
-//      image: "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
-//      price: 1300
-//  }
+
 testData=[
   {
       "Header": "Id",
@@ -33,16 +30,24 @@ testData=[
   element!: Product;
   // displayedColumns: string[] = ['title','id', 'price'];
   displayedColumns: string[] = ['Header', 'Value'];
-  constructor(private service: BaseProductService, private responseive: BreakpointObserver) { }
+  constructor(
+    private service: BaseProductService, 
+    private responseive: BreakpointObserver, 
+    private route: ActivatedRoute,
+    private router: Router
+    ){}
   
 
   ngOnInit(): void {
-    // if( (this.element=this.service.getProductById(1))!=null )this.element=this.service.getProductById(1);
-    this.service.getProductById(1).subscribe(p => { 
-      if(p===null) return;/*redirect to 404 page*/ 
-      this.element= p
-    });
-    // this.service.getProductList().subscribe(products => this.products = products);
+    this.route.params.subscribe(params=>{
+      const id= params["id"]
+      this.service.getProductById(id).subscribe(p=> { 
+        if(!p) {
+          this.router.navigate(["urlNotFound"], {skipLocationChange:true})
+        }else{
+          this.element=p
+        }
+      });
+    })
   }
-
 }
