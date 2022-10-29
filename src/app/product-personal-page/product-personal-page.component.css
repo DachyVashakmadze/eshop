@@ -19,3 +19,10 @@ mat-grid-tile {
   background: lightblue;
   border-radius: 5px;
 }
+
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{
+  color: black;
+}
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description{
+  color: gray;
+}

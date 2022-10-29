@@ -7,21 +7,10 @@
       
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-accordion>
-        <mat-expansion-panel disabled>
+      <mat-accordion multi>
+        <mat-expansion-panel disabled  >
           <mat-expansion-panel-header>
-            <mat-panel-title>
-              id
-            </mat-panel-title>
-            <mat-panel-description>
-              {{element.id}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel disabled>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="black">
               title
             </mat-panel-title>
             <mat-panel-description>
@@ -30,9 +19,9 @@
           </mat-expansion-panel-header>
         </mat-expansion-panel>
 
-        <mat-expansion-panel disabled>
+        <mat-expansion-panel disabled >
           <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="black">
               price
             </mat-panel-title>
             <mat-panel-description>
@@ -58,7 +47,7 @@
           <mat-expansion-panel *ngIf="element.specifications" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
               <mat-expansion-panel-header >
                 <mat-panel-title>
-                  {{specification.title}};
+                  {{specification.title}}
                 </mat-panel-title>
                 <mat-panel-description>
                   {{specification.value}}
