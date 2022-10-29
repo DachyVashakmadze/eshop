@@ -10,6 +10,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { Page404Component } from './page404/page404.component';  
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Page404Component } from './page404/page404.component';
     NoopAnimationsModule,
     MatSliderModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatExpansionModule
   ],
   providers: [
     {

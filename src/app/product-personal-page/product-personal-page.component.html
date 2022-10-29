@@ -1,5 +1,5 @@
 
-  <mat-grid-list  cols="2" rowHeight="1:1">
+  <mat-grid-list *ngIf="element" cols="2" rowHeight="1:1">
     <mat-grid-tile >
       <div class="content-wraper">
         <img src={{element.image}} alt={{element.title}}>
@@ -7,16 +7,73 @@
       
     </mat-grid-tile>
     <mat-grid-tile>
-      <div class="content-wraper">
-        <table  mat-table [dataSource]="testData" class="mat-elevation-z8 " id="table">
-          <mat-text-column name="Header"></mat-text-column>
-          <mat-text-column name="Value"></mat-text-column>
-          
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </div>
+      <mat-accordion>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              id
+            </mat-panel-title>
+            <mat-panel-description>
+              {{element.id}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              title
+            </mat-panel-title>
+            <mat-panel-description>
+              {{element.title}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              price
+            </mat-panel-title>
+            <mat-panel-description>
+              {{element.price}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+
+
+        <ng-container *ngFor="let specification of element.specifications;">
+          <mat-expansion-panel *ngIf="element.specifications" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header >
+                <mat-panel-title>
+                  {{specification.title}};
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{specification.value}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>{{specification.valueLong}}</p>
+          </mat-expansion-panel>
+        </ng-container>
+
+        
+      </mat-accordion>
     </mat-grid-tile>
   </mat-grid-list>
+
+ 
+  
   
   

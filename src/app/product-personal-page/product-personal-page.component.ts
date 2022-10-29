@@ -12,24 +12,8 @@ import { map } from 'rxjs';
   styleUrls: ['./product-personal-page.component.css']
 })
 export class ProductPersonalPageComponent implements OnInit {
-
-testData=[
-  {
-      "Header": "Id",
-      "Value": 1
-  },
-  {
-      "Header": "Title",
-      "Value": "TEXT"
-  },
-  {
-      "Header": "price",
-      "Value": 125
-  }];
-
+panelOpenState = false;
   element!: Product;
-  // displayedColumns: string[] = ['title','id', 'price'];
-  displayedColumns: string[] = ['Header', 'Value'];
   constructor(
     private service: BaseProductService, 
     private responseive: BreakpointObserver, 

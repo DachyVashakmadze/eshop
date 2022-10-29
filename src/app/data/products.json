@@ -1,14 +1,34 @@
 [
     {
         "id": 1,
-        "title": "Samsung Galaxy S12",
+        "title": "Samsung Galaxy S22",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
-        "price": 1300
-    },
-    {
-        "id": 2,
-        "title": "Iphone 12", 
-        "image": "", 
-        "price": 390
+        "images": [
+            "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71PvHfU+pwL._SX679_.jpg",
+            "https://fs.npstatic.com/userfiles/7687254/image/Samsung_Galaxy_S22/NextPit_Samsung_Galaxy_S22-w810h462.jpg"  
+        ],
+        "price": 1300,
+        "priceHistory": [
+
+        ],
+        "specifications":[
+            {
+                "title": "camera",
+                "value": "triple samsung breanded",
+                "valueLong": "50 MP, f/1.8, 23mm (wide), 1/1.56, 1.0µm, Dual Pixel PDAF, OIS 10 MP, f/2.4, 70mm (telephoto), 1/3.94, 1.0µm, PDAF, OIS, 3x optical zoom 12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55 1.4µm, Super Steady video Features LED flash, auto-HDR, panorama",
+                "knowledge": "https://www.gsmarena.com/glossary.php3?term=camera",
+                "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
+            },
+            {
+                "title": "CPU",
+                "value": "snapdragon 8 gen 1",
+                "valueLong": "The Snapdragon® 8+ Gen 1 Mobile Platform is our latest premium-tier powerhouse. Qualcomm® Adreno™ GPU offers a 10% increase in GPU clock speeds and 30% GPU power reduction while the Qualcomm® Kryo™ CPU provides 10% better CPU performance and 30% CPU improved power efficiency.",
+                "knowledge": "https://www.gsmarena.com/glossary.php3?term=camera",
+                "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
+            }
+            
+        ]
+        
     }
 ]
