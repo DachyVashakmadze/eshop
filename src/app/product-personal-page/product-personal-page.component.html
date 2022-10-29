@@ -1,4 +1,4 @@
-
+<div class="main-wraper">
   <mat-grid-list *ngIf="element" cols="2" rowHeight="1:1">
     <mat-grid-tile >
       <div class="content-wraper">
@@ -7,10 +7,10 @@
       
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-accordion multi>
+      <mat-accordion multi class="content-wraper">
         <mat-expansion-panel disabled  >
           <mat-expansion-panel-header>
-            <mat-panel-title class="black">
+            <mat-panel-title >
               title
             </mat-panel-title>
             <mat-panel-description>
@@ -21,11 +21,11 @@
 
         <mat-expansion-panel disabled >
           <mat-expansion-panel-header>
-            <mat-panel-title class="black">
+            <mat-panel-title >
               price
             </mat-panel-title>
             <mat-panel-description>
-              {{element.price}}
+              {{element.price | currency }}
             </mat-panel-description>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
@@ -61,6 +61,8 @@
       </mat-accordion>
     </mat-grid-tile>
   </mat-grid-list>
+</div>
+  
 
  
   

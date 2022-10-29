@@ -1,22 +1,21 @@
+.main-wraper *{
+  border-radius: 15px;
+}
 .content-wraper {
-  width: 85%;
+  width: 94%;
   align-items: center;
   justify-content: center;
-  background-color: red; 
+  background-color: rgba(255, 0, 0, 0.33);
+  border-radius: 15px;
 }
 img{
-  width: 90%;
-  height: 90%;
-  margin: 5%;
-}
-table{
-  width: 100%;
-}
-body{
-  background-color: blue; 
+  width: 94%;
+  height: 94%;
+  margin: 3%;
+  border-radius: 15px;
 }
 mat-grid-tile {
-  background: lightblue;
+  background: rgba(255, 165, 0, 0.33);
   border-radius: 5px;
 }
 
