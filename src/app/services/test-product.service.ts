@@ -13,7 +13,7 @@ export class TestProductService extends BaseProductService {
     return of(productList);
   }
 
-  getProductById(id: number): Observable<Product | null> {
+  getProductById(id: number) : Observable<Product | null> {
     const products = productList.filter(product => product.id == id) as Product[];
     const product = (products && products.length) ? products[0] : null 
     return of(product);

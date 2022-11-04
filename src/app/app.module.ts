@@ -3,28 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductPersonalPageComponent } from './product-personal-page/product-personal-page.component';
+import { ProductPersonalPageComponent } from './product/product-personal-page/product-personal-page.component';
 import { BaseProductService } from './services/base-product.service';
 import { TestProductService } from './services/test-product.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { ProductModule } from './product/product.module';
-import { MatButtonModule } from '@angular/material/button';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { Page404Component } from './page404/page404.component';  
 
 @NgModule({
   declarations: [
     AppComponent,
-    BreadcrumbComponent
+    ProductPersonalPageComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatSliderModule,
-    ProductModule,
-    MatButtonModule
+    MatTableModule,
+    MatGridListModule,
+    MatExpansionModule
   ],
   providers: [
     {
