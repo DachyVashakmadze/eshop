@@ -1,0 +1,27 @@
+.main-wraper *{
+  border-radius: 15px;
+}
+.content-wraper {
+  width: 94%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.33);
+  border-radius: 15px;
+}
+img{
+  width: 94%;
+  height: 94%;
+  margin: 3%;
+  border-radius: 15px;
+}
+mat-grid-tile {
+  background: rgba(255, 165, 0, 0.33);
+  border-radius: 5px;
+}
+
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{
+  color: black;
+}
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description{
+  color: gray;
+}

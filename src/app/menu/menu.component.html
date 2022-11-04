@@ -1,6 +1,6 @@
 <nav class="menu">
     <div class="menu-left">
-        <span class="logo"></span>
+        <span class="logo" [routerLink]="'/'"></span>
         <button mat-button [matMenuTriggerFor]="animals">Products</button>
         <mat-menu #animals="matMenu">
             <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>

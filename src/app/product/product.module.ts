@@ -8,9 +8,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule} from '@angular/material/divider';
 import { LayoutModule } from '@angular/cdk/layout'; 
 import { MatIconModule } from '@angular/material/icon';
-import { ProductPersonalPageComponent } from '../product-personal-page/product-personal-page.component';
+import { ProductPersonalPageComponent } from './product-personal-page/product-personal-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
     MatGridListModule,
     MatDividerModule,
     MatIconModule,
-    LayoutModule
+    LayoutModule,
+    MatTableModule,
+    MatExpansionModule
   ],
 })
 export class ProductModule { }

@@ -24,3 +24,7 @@ nav.menu {
     padding: 0;
     margin: -5px 60px -13px;
 }
+
+.logo:hover {
+    cursor: pointer;
+}
