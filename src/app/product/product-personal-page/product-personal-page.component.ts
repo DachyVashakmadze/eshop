@@ -3,7 +3,6 @@ import { BaseProductService } from '../../services/base-product.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Product } from '../products.model';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { map } from 'rxjs';
     
 
 @Component({
