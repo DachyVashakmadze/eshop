@@ -15,10 +15,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   productSubscription!: Subscription;
   breakpointSubscriptions: Subscription[] = [];
 
-  constructor(private service: BaseProductService,
-     private responseive: BreakpointObserver,
-    //  private breadcrumbService: BreadcumbService
-     ) { }
+  constructor(private service: BaseProductService, private responseive: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
