@@ -25,3 +25,15 @@ mat-grid-tile {
 .mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description{
   color: gray;
 }
+.title{
+  color: blueviolet;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  background-color: rgba(255, 165, 0, 0.33);
+}
+.ICons{
+  position: relative;
+  left: 10px;
+}
