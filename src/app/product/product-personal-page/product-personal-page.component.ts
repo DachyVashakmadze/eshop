@@ -12,7 +12,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./product-personal-page.component.css']
 })
 export class ProductPersonalPageComponent implements OnInit {
-panelOpenState = false;
+  panelOpenState = false;
   element!: Product;
   constructor(
     private service: BaseProductService, 
@@ -33,5 +33,9 @@ panelOpenState = false;
         }
       });
     })
+  }
+
+  getGoogleSearchURL(value: string): string{
+    return "https://www.google.com/search?q="+value;
   }
 }

@@ -66,7 +66,7 @@
               <p>{{specification.valueLong}}</p>
               <a 
               class="ICons" 
-              href="https://www.google.com/search?q={{specification.partReview}} "
+              [href]="getGoogleSearchURL(specification.knowledge)"
               target="_blank"
               >
                 <mat-icon aria-hidden="false" aria-label="Example home" fontIcon="help"></mat-icon>
