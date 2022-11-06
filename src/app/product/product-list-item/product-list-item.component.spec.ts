@@ -1,5 +1,4 @@
-import { CurrencyPipe, getLocaleId } from '@angular/common';
-import { LOCALE_ID } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';

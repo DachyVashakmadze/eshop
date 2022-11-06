@@ -7,8 +7,6 @@ import { ProductListComponent } from './product-list.component';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
-  let service: BaseProductService;
-  let responsive: BreakpointObserver;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -21,8 +19,6 @@ describe('ProductListComponent', () => {
       .compileComponents();
 
     component = TestBed.inject(ProductListComponent);
-    service = TestBed.inject(BaseProductService);
-    responsive = TestBed.inject(BreakpointObserver);
   });
 
   it('should create', () => {
