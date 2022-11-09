@@ -19,13 +19,17 @@ import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { Page404Component } from './page404/page404.component'; 
+import { BaseCategoryService } from './services/base-categoryservice';
+import { TestCategoryService } from './services/test-category.service';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FooterComponent,
-    Page404Component
+    Page404Component,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,10 @@ import { Page404Component } from './page404/page404.component';
     {
       provide: BaseProductService,
       useClass: TestProductService
+    },
+    {
+      provide: BaseCategoryService,
+      useClass: TestCategoryService
     }
   ],
   bootstrap: [AppComponent]
