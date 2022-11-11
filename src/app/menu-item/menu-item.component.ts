@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { MatMenuPanel } from '@angular/material/menu';
 import { Category } from '../category/category.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { Category } from '../category/category.model';
 })
 export class MenuItemComponent implements OnInit {
   @Input() items!: Category[];
-  @ViewChild('childMenu') public childMenu: any;
+  @ViewChild('childMenu') public childMenu!: MatMenuPanel;
 
   constructor() { }
 

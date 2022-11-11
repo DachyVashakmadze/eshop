@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Category } from '../category/category.model';
 import { BaseCategoryService } from '../services/base-categoryservice';
