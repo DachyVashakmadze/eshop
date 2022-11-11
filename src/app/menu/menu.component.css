@@ -28,3 +28,7 @@ nav.menu {
 .logo:hover {
     cursor: pointer;
 }
+
+nav.menu button {
+    margin-inline: .5em;
+}
