@@ -28,12 +28,12 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
-        
+        ],
+        "categoryId": 59
     },
     {
         "id": 2,
-        "title": "Samsung Galaxy S22",
+        "title": "Smart Watch for Galaxy S22",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
         "images": [
             "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
@@ -60,12 +60,13 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 60
         
     },
     {
         "id": 3,
-        "title": "Samsung Galaxy S22",
+        "title": "Iphone 14",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
         "images": [
             "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
@@ -92,12 +93,12 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
-        
+        ],
+        "categoryId": 59
     },
     {
         "id": 4,
-        "title": "Samsung Galaxy S22",
+        "title": "Xiaomi",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
         "images": [
             "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
@@ -124,12 +125,13 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 59
         
     },
     {
         "id": 5,
-        "title": "Samsung Galaxy S22",
+        "title": "Asus ROG notebook",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
         "images": [
             "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
@@ -156,7 +158,8 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 3
         
     }
 ]

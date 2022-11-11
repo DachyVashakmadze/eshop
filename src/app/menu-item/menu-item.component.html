@@ -2,14 +2,14 @@
     <ng-container *ngFor="let child of items">
         <!-- Handle branch node menu items -->
         <ng-container *ngIf="child.children && child.children.length > 0">
-            <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu" [routerLink]="'categories/' + child.id">
+            <button mat-menu-item color="primary" [matMenuTriggerFor]="menu.childMenu" [routerLink]="'category/' + child.id">
                 {{child.name}}
             </button>
             <app-menu-item #menu [items]="child.children"></app-menu-item>
         </ng-container>
         <!-- Handle leaf node menu items -->
         <ng-container *ngIf="!child.children || child.children.length === 0">
-            <button mat-menu-item [routerLink]="'categories/' + child.id">
+            <button mat-menu-item [routerLink]="'category/' + child.id">
                 {{child.name}}
             </button>
         </ng-container>

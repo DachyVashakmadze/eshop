@@ -11,7 +11,7 @@
               </ng-container>
               <!-- Leaf node buttons here -->
               <ng-container *ngIf="!cat.children || cat.children.length === 0">
-                <button mat-button color="primary" [routerLink]="'categories/' + cat.id">
+                <button mat-button color="primary" [routerLink]="'category/' + cat.id">
                   {{cat.name}}
                 </button>
               </ng-container>

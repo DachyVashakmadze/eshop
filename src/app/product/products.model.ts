@@ -5,7 +5,8 @@ export interface Product {
     images: string[],
     price: number,
     priceHistory: PriceHistory[],
-    specifications?: Specification[]
+    specifications?: Specification[],
+    categoryId: number
 }
 export interface PriceHistory{
     date: Date,

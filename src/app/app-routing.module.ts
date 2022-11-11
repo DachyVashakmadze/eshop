@@ -11,12 +11,15 @@ const routes: Routes = [
   { 
     path: 'products', component: ProductListComponent
   },
+  {
+    path: "category/:id", component: ProductListComponent
+  },
   { 
     path: "", component: ProductListComponent
   },
   {
     path: "**", component: Page404Component
-  }
+  },
 ];
 
 @NgModule({
