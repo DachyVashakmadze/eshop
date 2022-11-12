@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@import '/src/theme';
+@use '/src/theme' as theme;
 
 
 .main-wraper *{
@@ -20,7 +20,7 @@ img{
 }
 mat-grid-tile {
   border-radius: 5px;
-  background: mat.get-color-from-palette($eshop-accent, 100);
+  background: mat.get-color-from-palette(theme.$eshop-accent, 100);
 }
 
 .mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{

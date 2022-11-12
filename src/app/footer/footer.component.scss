@@ -1,7 +1,10 @@
+@use '@angular/material' as mat;
+@use '/src/theme' as theme;
+
 :host{
     display: block;
     width: 100%;
     height: 200px;
-    background-color: darkslateblue;
-    color: white;
+    background-color: mat.get-color-from-palette(theme.$eshop-primary, 600);
+    color: mat.get-color-from-palette(theme.$eshop-primary, 600-contrast);
 }

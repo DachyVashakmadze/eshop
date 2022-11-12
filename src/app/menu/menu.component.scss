@@ -1,7 +1,10 @@
+@use '@angular/material' as mat;
+@use '/src/theme' as theme;
+
 nav.menu {
-    background: darkslateblue;
+    background: mat.get-color-from-palette(theme.$eshop-primary, 600);
     padding: 1em;
-    color: white;
+    color: mat.get-color-from-palette(theme.$eshop-primary, 600-contrast);
     display: flex;
     justify-content: space-between;
     align-items: center;

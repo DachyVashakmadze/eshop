@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
-@import 'theme';
+@use 'theme' as theme;
 
-@include mat.all-component-themes($eshop-theme);
+@include mat.all-component-themes(theme.$eshop-theme);
 
 html,
 body {
