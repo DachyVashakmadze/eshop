@@ -13,7 +13,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import {MatTabsModule} from '@angular/material/tabs'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatIconModule,
     LayoutModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTabsModule
   ],
 })
 export class ProductModule { }

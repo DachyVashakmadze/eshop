@@ -37,3 +37,19 @@ mat-grid-tile {
   position: relative;
   left: 10px;
 }
+.flexSpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
+.meniuPicrure{
+  width: 140px;
+  height: 40px;
+  border: 2px solid blue;
+}
+.manePicture{
+  width: 800px;
+  height: 600px;
+}
+.manePicture img{
+  border: 2px solid purple;
+}

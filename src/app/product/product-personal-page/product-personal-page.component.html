@@ -4,10 +4,52 @@
       <h1>{{element.title}}</h1>
     </div>
     <mat-grid-tile >
-      <div class="content-wraper">
+      <!-- <div class="content-wraper">
         <img src={{element.image}} alt={{element.title}}>
-      </div>
+      </div> -->
+      <div>   
+        <mat-tab-group>
+          <mat-tab >
+            <ng-template mat-tab-label>
+              <img src={{element.images[1]}} alt={{element.title}} class="meniuPicrure">
+            </ng-template> 
+            <div class="manePicture">
+              <img src={{element.images[1]}} alt={{element.title}}  >
+            </div>
+          </mat-tab>
+
+          <mat-tab >
+            <ng-template mat-tab-label>
+              <img src={{element.images[2]}} alt={{element.title}} class="meniuPicrure">
+            </ng-template> 
+            <div class="manePicture">
+              <img src={{element.images[2]}} alt={{element.title}}  >
+            </div>
+          </mat-tab>
+
+          <mat-tab >
+            <ng-template mat-tab-label>
+              <img src={{element.images[3]}} alt={{element.title}} class="meniuPicrure">
+            </ng-template> 
+            <div class="manePicture">
+              <img src={{element.images[3]}} alt={{element.title}}  >
+            </div>
+          </mat-tab>
+
+          <mat-tab >
+            <ng-template mat-tab-label>
+              <img src={{element.images[4]}} alt={{element.title}} class="meniuPicrure">
+            </ng-template>
+            <div class="manePicture">
+              <img src={{element.images[4]}} alt={{element.title}}>
+            </div> 
+            
+          </mat-tab>
+
+        </mat-tab-group> 
+    </div>   
     </mat-grid-tile>
+   
 
     <mat-grid-tile>
       <mat-accordion multi class="content-wraper">
@@ -49,7 +91,7 @@
         <ng-container *ngFor="let specification of element.specifications;">
           <mat-expansion-panel *ngIf="element.specifications" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
               <mat-expansion-panel-header >
-                <mat-panel-title>
+                <mat-panel-title class="flexSpaceBetween">
                   {{specification.title}}
                   <a
                   class="ICons" 
