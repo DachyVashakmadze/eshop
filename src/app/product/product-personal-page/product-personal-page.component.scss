@@ -1,3 +1,7 @@
+@use '@angular/material' as mat;
+@import '/src/theme';
+
+
 .main-wraper *{
   border-radius: 15px;
 }
@@ -15,8 +19,8 @@ img{
   border-radius: 15px;
 }
 mat-grid-tile {
-  background: rgba(255, 165, 0, 0.33);
   border-radius: 5px;
+  background: mat.get-color-from-palette($eshop-accent, 100);
 }
 
 .mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{
