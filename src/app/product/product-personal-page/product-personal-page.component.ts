@@ -8,7 +8,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-product-personal-page',
   templateUrl: './product-personal-page.component.html',
-  styleUrls: ['./product-personal-page.component.css']
+  styleUrls: ['./product-personal-page.component.scss']
 })
 export class ProductPersonalPageComponent implements OnInit {
 panelOpenState = false;
