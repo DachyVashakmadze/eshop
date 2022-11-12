@@ -1,0 +1,7 @@
+@use '/src/mixins' as mixin;
+
+@mixin apply-theme($theme) {
+    mat-grid-tile {
+        @include mixin.background-color($theme, 'accent', default);
+    }
+}

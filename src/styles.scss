@@ -1,7 +1,14 @@
 @use '@angular/material' as mat;
 @use 'theme' as theme;
 
-@include mat.all-component-themes(theme.$eshop-theme);
+
+@media (prefers-color-scheme: light) {
+    @include mat.all-component-themes(theme.$light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+    @include mat.all-component-colors(theme.$dark-theme);
+}
 
 html,
 body {
@@ -16,5 +23,13 @@ body {
 .container {
     margin: 0 35px;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

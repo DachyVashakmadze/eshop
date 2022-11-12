@@ -1,0 +1,7 @@
+@use '/src/mixins' as mixin;
+
+@mixin apply-theme($theme) {
+    :host{
+        @include mixin.background-color($theme, 'primary', 600);
+    }
+}

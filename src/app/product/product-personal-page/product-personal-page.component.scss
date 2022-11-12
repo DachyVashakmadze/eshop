@@ -1,6 +1,14 @@
 @use '@angular/material' as mat;
 @use '/src/theme' as theme;
+@use 'product-personal-page-component-theme' as t;
 
+@media (prefers-color-scheme: light) {
+  @include t.apply-theme(theme.$light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  @include t.apply-theme(theme.$dark-theme);
+}
 
 .main-wraper *{
   border-radius: 15px;
@@ -20,7 +28,6 @@ img{
 }
 mat-grid-tile {
   border-radius: 5px;
-  background: mat.get-color-from-palette(theme.$eshop-accent, 100);
 }
 
 .mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{

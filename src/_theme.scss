@@ -9,18 +9,29 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-$eshop-primary: mat.define-palette(mat.$indigo-palette);
-$eshop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$light-primary: mat.define-palette(mat.$indigo-palette);
+$light-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$eshop-warn: mat.define-palette(mat.$red-palette);
+$light-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$eshop-theme: mat.define-light-theme((
+$light-theme: mat.define-light-theme((
   color: (
-    primary: $eshop-primary,
-    accent: $eshop-accent,
-    warn: $eshop-warn,
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
   )
+));
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$lime-palette);
+$dark-accent: mat.define-palette(mat.$blue-grey-palette);
+
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
 ));

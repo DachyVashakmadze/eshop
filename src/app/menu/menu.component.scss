@@ -1,9 +1,17 @@
 @use '@angular/material' as mat;
 @use '/src/theme' as theme;
-@use '/src/mixins' as mixin;
+@use 'menu.component-theme' as t;
+
+
+@media (prefers-color-scheme: light) {
+    @include t.apply-theme(theme.$light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+    @include t.apply-theme(theme.$dark-theme);
+}
 
 nav.menu {
-    @include mixin.color(theme.$eshop-primary, 600);
     padding: 1em;
     display: flex;
     justify-content: space-between;
