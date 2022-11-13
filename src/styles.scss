@@ -1,13 +1,16 @@
 @use '@angular/material' as mat;
 @use 'theme' as theme;
 
-
-@media (prefers-color-scheme: light) {
-    @include mat.all-component-themes(theme.$light-theme);
+.light-theme {
+    @media (prefers-color-scheme: light) {
+        @include mat.all-component-themes(theme.$light-theme);
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-    @include mat.all-component-colors(theme.$dark-theme);
+.dark-theme {
+    @media (prefers-color-scheme: dark) {
+        @include mat.all-component-colors(theme.$dark-theme);
+    }
 }
 
 html,
