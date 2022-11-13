@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ThemingServiceService {
+export class ThemingService {
   // მასივი, სადაც ყველა თემის სიაა
   themes = ["light-theme", "dark-theme"];
 
@@ -24,13 +24,29 @@ export class ThemingServiceService {
       this.theme.next('dark-theme');
     }
 
+    // ამით ხდება მთელი აპლიკაციისთვის მინიშნება, რომ რელოადი გაკეთდეს სტილების, რომ ახალი თემა აისახოს ვიზუალურად
+    this.ref.tick();
+
     // აქ ვაკვირდებით იმის ცვლილებას, user რომელ თემას ანიჭებს უპირატესობას. ანუ ჯერ შეიძლება უპირატესობას ანიჭებდეს ნათელ თემას 
     // და მერე აპლიკაციის მსვლელობისას უპირატესობა ბნელ თემას მიანიჭოს. 
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', e => {
       this.theme.next(e.matches ? 'dark-theme' : 'light-theme');
-
-      // ამით ხდება მთელი აპლიკაციისთვის მინიშნება, რომ რელოადი გაკეთდეს სტილების, რომ ახალი თემა აისახოს ვიზუალურად
       this.ref.tick();
     });
+
+    // უბრალოდ ხდება შემოწმება რამდენად კარგად მუშაობს თემების გადართვა
+    this.disco();
+  }
+
+  private disco() {
+    if(this.theme.value === 'light-theme') {
+      this.theme.next('dark-theme');
+    } else {
+      this.theme.next('light-theme');
+    }
+    this.ref.tick();
+    setTimeout(() => {
+      this.disco();
+    }, 5000);
   }
 }

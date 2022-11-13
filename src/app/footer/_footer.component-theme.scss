@@ -1,7 +1,7 @@
 @use '/src/mixins' as mixin;
 
 @mixin apply-theme($theme) {
-    :host{
+    .wrapper{
         @include mixin.background-color($theme, 'primary', 600);
     }
 }

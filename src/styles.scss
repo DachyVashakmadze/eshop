@@ -2,15 +2,11 @@
 @use 'theme' as theme;
 
 .light-theme {
-    @media (prefers-color-scheme: light) {
-        @include mat.all-component-themes(theme.$light-theme);
-    }
+    @include mat.all-component-themes(theme.$light-theme);
 }
 
 .dark-theme {
-    @media (prefers-color-scheme: dark) {
-        @include mat.all-component-colors(theme.$dark-theme);
-    }
+    @include mat.all-component-colors(theme.$dark-theme);
 }
 
 html,
