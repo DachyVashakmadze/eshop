@@ -1,17 +1,7 @@
-@use '@angular/material' as mat;
-@use '/src/theme' as theme;
-@use 'footer.component-theme' as t;
+@use "footer.component-theme"as t;
+@include t.theming();
 
-
-:host.light-theme {
-    @include t.apply-theme(theme.$light-theme);
-}
-
-:host.dark-theme {
-    @include t.apply-theme(theme.$dark-theme);
-}
-
-.wrapper {
+.wrapper{
     display: block;
     width: 100%;
     height: 200px;
