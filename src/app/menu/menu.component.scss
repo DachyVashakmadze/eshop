@@ -1,4 +1,3 @@
-@use '/src/theme' as theme;
 @use 'menu.component-theme' as t;
 @include t.theming();
 
@@ -14,6 +13,7 @@ nav.menu {
     display: flex;
     gap: 1em;
     margin-right: 2em;
+    align-items: center;
 }
 
 .logo {

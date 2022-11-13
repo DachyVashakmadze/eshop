@@ -1,7 +1,6 @@
 @use '/src/mixins' as mixin;
 @use '/src/theme' as theme;
 
-
 @mixin theming() {
     :host.light-theme {
         @include apply-theme(theme.$light-theme);

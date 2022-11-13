@@ -18,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { Page404Component } from './page404/page404.component'; 
+import { Page404Component } from './page404/page404.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Page404Component } from './page404/page404.component';
     HttpClientModule,
     MatTableModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSlideToggleModule
   ],
   providers: [
     {

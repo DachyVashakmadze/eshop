@@ -35,11 +35,21 @@ export class ThemingService {
     });
 
     // უბრალოდ ხდება შემოწმება რამდენად კარგად მუშაობს თემების გადართვა
-    this.disco();
+    // this.disco();
+  }
+
+  // ამ ფუნქციით ხდება თემის შეცვლა, ხელით
+  toggleMode() {
+    if (this.theme.value === 'light-theme') {
+      this.theme.next('dark-theme');
+    } else {
+      this.theme.next('light-theme');
+    }
+    this.ref.tick();
   }
 
   private disco() {
-    if(this.theme.value === 'light-theme') {
+    if (this.theme.value === 'light-theme') {
       this.theme.next('dark-theme');
     } else {
       this.theme.next('light-theme');

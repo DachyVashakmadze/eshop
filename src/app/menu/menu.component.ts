@@ -11,6 +11,7 @@ import { ThemingService } from '../services/theming.service';
 })
 export class MenuComponent implements OnInit {
   @HostBinding('class') cssThemeClass!: string;
+  isDarkMode: boolean = false;
 
   constructor(private iconRegistry: MatIconRegistry, 
     private sanitizer: DomSanitizer,
@@ -18,10 +19,18 @@ export class MenuComponent implements OnInit {
     ) { 
     iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('/assets/images/logo.svg'))
 
-    this.themingService.theme.subscribe(theme => this.cssThemeClass = theme);
+    this.themingService.theme.subscribe(theme => {
+      this.cssThemeClass = theme;
+      
+      this.isDarkMode = theme === 'dark-theme';
+    });
   }
 
   ngOnInit(): void {
+  }
+
+  toggleMode() {
+    this.themingService.toggleMode();
   }
 
 }

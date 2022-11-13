@@ -6,6 +6,34 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+//custom palette
+// #303030
+$test-palette: (
+  50: #999999,
+  100: #909090,
+  200: #858585,
+  300: #808080,
+  400: #757575,
+  500: #707070,
+  600: #303030,
+  700: #202020,
+  800: #101010,
+  900: #000000,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(white, 0.87),
+    700: rgba(white, 0.87),
+    800: rgba(white, 0.87),
+    900: rgba(white, 0.87),
+  )
+ );
+
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -27,8 +55,8 @@ $light-theme: mat.define-light-theme((
 ));
 
 // Define a dark theme
-$dark-primary: mat.define-palette(mat.$lime-palette);
-$dark-accent: mat.define-palette(mat.$blue-grey-palette);
+$dark-primary: mat.define-palette($test-palette);
+$dark-accent: mat.define-palette(mat.$orange-palette);
 
 $dark-theme: mat.define-dark-theme((
  color: (
