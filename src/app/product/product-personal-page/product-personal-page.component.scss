@@ -1,15 +1,6 @@
-
-@use '@angular/material' as mat;
-@use '/src/theme' as theme;
 @use 'product-personal-page-component-theme' as t;
+@include t.theming();
 
-@media (prefers-color-scheme: light) {
-  @include t.apply-theme(theme.$light-theme);
-}
-
-@media (prefers-color-scheme: dark) {
-  @include t.apply-theme(theme.$dark-theme);
-}
 
 .main-wraper *{
   border-radius: 15px;
@@ -18,7 +9,6 @@
   width: 94%;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 0, 0, 0.33);
   border-radius: 15px;
 }
 img{
@@ -38,12 +28,10 @@ mat-grid-tile {
   color: gray;
 }
 .title{
-  color: blueviolet;
   align-items: center;
   justify-content: center;
   text-align: center;
   display: block;
-  background-color: rgba(255, 165, 0, 0.33);
 }
 .ICons{
   position: relative;

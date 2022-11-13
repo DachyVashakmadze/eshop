@@ -1,7 +1,19 @@
 @use '/src/mixins' as mixin;
+@use '/src/theme' as theme;
 
-@mixin apply-theme($theme) {
-    mat-grid-tile {
-        @include mixin.background-color($theme, 'accent', default);
+@mixin theming() {
+    :host.light-theme {
+        @include apply-theme(theme.$light-theme);
+    }
+    
+    :host.dark-theme {
+        @include apply-theme(theme.$dark-theme);
     }
 }
+
+@mixin apply-theme($theme) {
+    .title{
+        @include mixin.background-color($theme, 'accent', 600);
+    }
+}
+
