@@ -18,7 +18,9 @@ export class ProductPersonalPageComponent implements OnInit {
     private responseive: BreakpointObserver, 
     private route: ActivatedRoute,
     private router: Router
-    ){}
+    ){
+    
+    }
   
 
   ngOnInit(): void {
@@ -32,6 +34,8 @@ export class ProductPersonalPageComponent implements OnInit {
         }
       });
     })
+
+    
   }
 
   getGoogleSearchURL(value: string): string{
