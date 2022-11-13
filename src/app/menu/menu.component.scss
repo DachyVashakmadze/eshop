@@ -1,7 +1,8 @@
+@use 'menu.component-theme' as t;
+@include t.theming();
+
 nav.menu {
-    background: darkslateblue;
     padding: 1em;
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +13,7 @@ nav.menu {
     display: flex;
     gap: 1em;
     margin-right: 2em;
+    align-items: center;
 }
 
 .logo {

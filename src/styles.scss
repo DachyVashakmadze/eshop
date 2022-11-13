@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use 'theme' as theme;
+@use 'mixins' as mixins;
+
+.light-theme {
+    @include mat.all-component-themes(theme.$light-theme);
+}
+
+.dark-theme {
+    @include mat.all-component-colors(theme.$dark-theme);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+    margin: 0 35px;
+}

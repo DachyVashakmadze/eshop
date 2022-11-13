@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-list-item',
   templateUrl: './product-list-item.component.html',
-  styleUrls: ['./product-list-item.component.css']
+  styleUrls: ['./product-list-item.component.scss']
 })
 export class ProductListItemComponent implements OnInit {
   @Input() product!: Product;
@@ -15,16 +15,16 @@ export class ProductListItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(id: number) {
-    console.log(`Add to cart, product id: ${id}`);
+  addToCart() {
+    console.log(`Add to cart, product id: ${this.product.id}`);
   }
 
-  addToWatchlist(id: number) {
-    console.log(`Add to watchlist, product id: ${id}`);
+  addToWatchlist() {
+    console.log(`Add to watchlist, product id: ${this.product.id}`);
   }
 
-  openProduct(id: number) {
-    console.log(`Open product personal page, product id: ${id}`);
-    this.router.navigate(['product', id]);
+  openProduct() {
+    console.log(`Open product personal page, product id: ${this.product.id}`);
+    this.router.navigate(['product', this.product.id]);
   }
 }

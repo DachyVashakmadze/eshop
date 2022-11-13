@@ -1,3 +1,15 @@
+@use '@angular/material' as mat;
+@use '/src/theme' as theme;
+@use 'product-personal-page-component-theme' as t;
+
+@media (prefers-color-scheme: light) {
+  @include t.apply-theme(theme.$light-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  @include t.apply-theme(theme.$dark-theme);
+}
+
 .main-wraper *{
   border-radius: 15px;
 }
@@ -15,7 +27,6 @@ img{
   border-radius: 15px;
 }
 mat-grid-tile {
-  background: rgba(255, 165, 0, 0.33);
   border-radius: 5px;
 }
 

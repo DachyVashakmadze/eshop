@@ -1,4 +1,3 @@
-import { identifierName } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { BaseProductService } from '../../services/base-product.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -9,7 +8,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 @Component({
   selector: 'app-product-personal-page',
   templateUrl: './product-personal-page.component.html',
-  styleUrls: ['./product-personal-page.component.css']
+  styleUrls: ['./product-personal-page.component.scss']
 })
 export class ProductPersonalPageComponent implements OnInit {
   panelOpenState = false;

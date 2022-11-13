@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   products: Product[] = [];
@@ -74,7 +74,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.productSubscription.unsubscribe();
-    this.breakpointSubscriptions.forEach(Subscription => Subscription.unsubscribe());
+    if (this.productSubscription) {
+      this.productSubscription.unsubscribe();
+    }
+    this.breakpointSubscriptions.forEach(subscription => subscription.unsubscribe());
   }
 }

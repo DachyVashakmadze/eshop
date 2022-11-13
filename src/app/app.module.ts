@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { MatSliderModule } from '@angular/material/slider';
     NoopAnimationsModule,
     ProductModule,
     HttpClientModule,
-
+    
     MatSliderModule,
     MatMenuModule,
     MatButtonModule,
@@ -42,7 +43,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatTableModule,
     MatGridListModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSlideToggleModule
   ],
   providers: [
     {

@@ -52,6 +52,11 @@
     </div>
 
     <div class="menu-right">
+        <mat-slide-toggle color="accent"
+            [checked]="isDarkMode"
+            (toggleChange)="toggleMode()">
+            Dark Mode
+        </mat-slide-toggle>
         <button mat-fab color="accent" aria-label="Shopping Card button">
             <mat-icon>shopping_cart</mat-icon>
         </button>

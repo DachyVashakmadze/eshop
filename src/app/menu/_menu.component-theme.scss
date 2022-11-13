@@ -1,0 +1,18 @@
+@use '/src/mixins' as mixin;
+@use '/src/theme' as theme;
+
+@mixin theming() {
+    :host.light-theme {
+        @include apply-theme(theme.$light-theme);
+    }
+    
+    :host.dark-theme {
+        @include apply-theme(theme.$dark-theme);
+    }
+}
+
+@mixin apply-theme($theme) {
+    nav.menu {
+        @include mixin.background-color($theme, 'primary', 600);
+    }
+}
