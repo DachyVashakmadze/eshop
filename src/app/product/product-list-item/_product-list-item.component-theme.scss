@@ -14,6 +14,6 @@
 
 @mixin apply-theme($theme) {
     mat-card:hover {
-        outline: 2px solid rgba(mixin.get-color($theme, 'accent', 300), .4);
+        outline: 2px solid rgba(mixin.get-color($theme, 'accent', 300), .7);
     }
 }
