@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Product } from '../products.model';
 import { Router } from '@angular/router';
+import { ThemingService } from 'src/app/services/theming.service';
 
 @Component({
   selector: 'app-product-list-item',
@@ -9,8 +10,11 @@ import { Router } from '@angular/router';
 })
 export class ProductListItemComponent implements OnInit {
   @Input() product!: Product;
+  @HostBinding('class') cssThemeClass!: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private themingService: ThemingService) {
+    this.themingService.theme.subscribe(theme => this.cssThemeClass = theme);
+  }
 
   ngOnInit(): void {
   }

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseProductService } from './services/base-product.service';
 import { TestProductService } from './services/test-product.service';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductModule } from './product/product.module';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
@@ -32,9 +32,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule,
     ProductModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     
     MatSliderModule,
     MatMenuModule,
