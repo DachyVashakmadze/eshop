@@ -13,6 +13,6 @@
 
 @mixin apply-theme($theme) {
     .wrapper{
-        @include mixin.background-color($theme, 'primary', 600);
+        @include mixin.background-color($theme, 'primary', 700);
     }
 }
