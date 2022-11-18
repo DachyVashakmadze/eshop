@@ -1,12 +1,17 @@
-@use 'menu.component-theme' as t;
-@include t.theming();
+@use '/src/mixins' as mixin;
+
+@include mixin.theming() using($theme) {
+    nav.menu {
+        @include mixin.background-color($theme, 'primary', 600);
+    }
+}
 
 nav.menu {
     padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 5px 1px rgba(0,0,0,.4);
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
 }
 
 .menu-right {

@@ -2,10 +2,27 @@
 @use '@angular/material' as mat;
 @use '/src/theme' as theme;
 
+@mixin theming() {
+    :host.light-theme {
+        @content(theme.$light-theme);
+    }
+    
+    :host.dark-theme {
+        @content(theme.$dark-theme);
+    }
+}
+
 @mixin background-color($theme, $type, $hue) {
     $color-config: mat.get-color-config($theme);
     $palette: map.get($color-config, $type);
 
     background-color: mat.get-color-from-palette($palette, $hue);
     color: mat.get-color-from-palette($palette, $hue + '-contrast');
+}
+
+@function get-color($theme, $type, $hue) {
+    $color-config: mat.get-color-config($theme);
+    $palette: map.get($color-config, $type);
+
+    @return mat.get-color-from-palette($palette, $hue);
 }
