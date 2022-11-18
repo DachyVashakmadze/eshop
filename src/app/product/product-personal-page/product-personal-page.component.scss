@@ -1,55 +1,69 @@
-@use 'product-personal-page-component-theme' as t;
-@include t.theming();
+@use '/src/mixins' as mixin;
 
+@include mixin.theming() using($theme) {
+  .title {
+    @include mixin.background-color($theme, 'accent', 600);
+  }
+}
 
-.main-wraper *{
+.main-wraper * {
   border-radius: 15px;
 }
+
 .content-wraper {
   width: 94%;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
 }
-img{
+
+img {
   width: 94%;
   height: 94%;
   margin: 3%;
   border-radius: 15px;
 }
+
 mat-grid-tile {
   border-radius: 5px;
 }
 
-.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title{
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-title {
   color: black;
 }
-.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description{
+
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description {
   color: gray;
 }
-.title{
+
+.title {
   align-items: center;
   justify-content: center;
   text-align: center;
   display: block;
 }
-.ICons{
+
+.ICons {
   position: relative;
   left: 10px;
 }
-.flexSpaceBetween{
+
+.flexSpaceBetween {
   display: flex;
   justify-content: space-between;
 }
-.meniuPicrure{
+
+.meniuPicrure {
   width: 140px;
   height: 40px;
   border: 2px solid blue;
 }
-.manePicture{
+
+.manePicture {
   width: 800px;
   height: 600px;
 }
-.manePicture img{
+
+.manePicture img {
   border: 2px solid purple;
 }

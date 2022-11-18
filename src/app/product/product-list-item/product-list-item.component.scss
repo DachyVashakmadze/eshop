@@ -1,5 +1,10 @@
-@use 'product-list-item.component-theme.scss' as t;
-@include t.theming();
+@use '/src/mixins' as mixin;
+
+@include mixin.theming() using($theme) {
+    mat-card:hover {
+        outline: 2px solid rgba(mixin.get-color($theme, 'accent', 300), .7);
+    }
+}
 
 :host {
     width: 100%;
