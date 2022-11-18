@@ -1,0 +1,10 @@
+<div class="mainContentWraper">
+    <div class="mainPiture">
+        <img src={{manePicture}} alt="main picture">
+    </div>
+    <div class="pictureMenu">
+        <div class="menuPictureWraper" *ngFor="let picture of pictures; let i=index ">
+            <img class="menuPicture" [src]="picture" [alt]="'picture ' +(i+1) ">
+        </div>
+    </div>
+</div>
