@@ -14,12 +14,14 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs'; 
+import { ProductCaruselComponent } from './product-carusel/product-carusel.component'; 
 
 @NgModule({
   declarations: [
     ProductPersonalPageComponent,
     ProductListComponent,
-    ProductListItemComponent
+    ProductListItemComponent,
+    ProductCaruselComponent
   ],
   imports: [
     CommonModule,

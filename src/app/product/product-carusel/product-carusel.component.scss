@@ -1,0 +1,31 @@
+.mainContentWraper{
+    background-color: green;
+}
+.mainContentWraper *{
+    outline: 2px solid red;
+}
+.mainContentWraper >*{
+    margin-bottom: 1em;
+}
+.mainPiture {
+    text-align: center;
+}
+.mainPiture img {
+    max-width: 400px;
+}
+
+.pictureMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menuPictureWraper{
+    width: 50px;
+    height: 50px;
+}
+
+.menuPicture{
+    width: 100%;
+}
