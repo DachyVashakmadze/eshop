@@ -1,6 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ThemeableComponent } from '../common/theamable.component';
 import { ThemingService } from '../services/theming.service';
 
 
@@ -9,21 +10,15 @@ import { ThemingService } from '../services/theming.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
-  @HostBinding('class') cssThemeClass!: string;
+export class MenuComponent extends ThemeableComponent implements OnInit {
   isDarkMode: boolean = false;
 
-  constructor(private iconRegistry: MatIconRegistry, 
+  constructor(private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
-    private themingService: ThemingService
-    ) { 
+    protected override themingService: ThemingService
+  ) {
     iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('/assets/images/logo.svg'))
-
-    this.themingService.theme.subscribe(theme => {
-      this.cssThemeClass = theme;
-      
-      this.isDarkMode = theme === 'dark-theme';
-    });
+    super(themingService);
   }
 
   ngOnInit(): void {
@@ -33,4 +28,9 @@ export class MenuComponent implements OnInit {
     this.themingService.toggleMode();
   }
 
+  protected override applyTheme(theme: string): void {
+    this.cssThemeClass = theme;
+
+    this.isDarkMode = theme === 'dark-theme';
+  }
 }
