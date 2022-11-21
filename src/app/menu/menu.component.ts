@@ -28,6 +28,11 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
     this.themingService.toggleMode();
   }
 
+  toggleMenu(event: MouseEvent) {
+    const el = event.target as Element;
+    el.classList.toggle('active');
+  }
+
   protected override applyTheme(theme: string): void {
     this.cssThemeClass = theme;
 

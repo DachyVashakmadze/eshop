@@ -4,13 +4,42 @@
     nav.menu {
         @include mixin.background-color($theme, 'primary', 600);
     }
+
+    .downBtn > a {
+        color: mixin.get-color($theme, 'accent', 50);
+    }
+
+    .downMenu:hover .downBtn {
+        border-bottom: 4px solid mixin.get-color($theme, 'accent', 600);
+    }
+
+    /* For hover effect on button */
+    .navigationBar a:hover,
+    .downMenu:hover .downBtn {
+        @include mixin.background-color($theme, 'primary', 700);
+    }
+
+    .megaMenu {
+        @include mixin.background-color($theme, 'primary', 100);
+    }
+
+    /* Style the columns */
+    .menuCol {
+        width: 80%;
+
+        & > * {
+            color: mixin.get-color($theme, 'primary', 900);
+
+            &:hover {
+                @include mixin.background-color($theme, 'primary', 600);
+            }
+        }
+    }
 }
 
 nav.menu {
-    padding: 1em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
 }
 
@@ -19,6 +48,7 @@ nav.menu {
     gap: 1em;
     margin-right: 2em;
     align-items: center;
+    padding: 1em;
 }
 
 .logo {
@@ -34,4 +64,100 @@ nav.menu {
 
 .logo:hover {
     cursor: pointer;
+}
+
+/* For navigation menu */
+.navigationBar {
+    display: inline-flex;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    height: 100%;
+
+    .downMenu {
+        height: 100%;
+
+        .downBtn {
+            height: 100%;
+        }
+    }
+}
+
+/* For texts in navigation bar */
+.navigationBar a {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* The dropdown div */
+.downMenu {
+    overflow: hidden;
+}
+
+/* For downButton to work as menu */
+.downMenu .downBtn {
+    padding: 15px 15px;
+    background-color: inherit;
+    border: none;
+    border-bottom: 4px solid transparent;
+}
+
+/* To hide mega menu */
+.downMenu-content {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .7);
+    }
+}
+
+/* To show mega menu on hover */
+.downMenu:hover .downMenu-content {
+    display: block;
+}
+
+.megaMenu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em 5em;
+
+    /* Style the columns */
+    .menuCol {
+        width: 80%;
+
+        & * {
+            display: block;
+            padding: 10px;
+        }
+
+        & h3 {
+            margin-bottom: .75em;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        & a {
+            margin-bottom: .5em;
+            text-decoration: none;
+        }
+    }
 }

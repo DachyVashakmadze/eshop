@@ -1,60 +1,87 @@
 <nav class="menu">
     <div class="menu-left">
         <span class="logo" [routerLink]="'/'"></span>
-        <button mat-button [matMenuTriggerFor]="animals">Products</button>
-        <mat-menu #animals="matMenu">
-            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-        </mat-menu>
+        <!-- Created a div for navigation bar-->
+        <div class="navigationBar">
+            <!-- Created a button to work as a menu-->
+            <div class="downMenu">
+                <button class="downBtn">
+                    <a href="#">Mega Menu 1</a>
+                </button>
+                <div class="downMenu-content" (mouseenter)="$event.stopPropagation()">
+                    <!-- Added items in mega menu 1-->
+                    <div class="megaMenu">
+                        <!-- Column 1-->
+                        <div class="menuCol">
+                            <h3>კომპიუტერული ტექნიკა</h3>
+                            <a href="#">Menu 1 Col 1 Item 1</a>
+                            <a href="#">Menu 1 Col 1 Item 2</a>
+                            <a href="#">Menu 1 Col 1 Item 3</a>
+                            <a href="#">Menu 1 Col 1 Item 4</a>
+                            <a href="#">Menu 1 Col 1 Item 5</a>
+                        </div>
+                        <!-- Column 2-->
+                        <div class="menuCol">
+                            <h3>აქსესუარები</h3>
+                            <a href="#">Menu 1 Col 2 Item 1</a>
+                            <a href="#">Menu 1 Col 2 Item 2</a>
+                            <a href="#">Menu 1 Col 2 Item 3</a>
+                            <a href="#">Menu 1 Col 2 Item 4</a>
+                            <a href="#">Menu 1 Col 2 Item 5</a>
+                        </div>
+                        <!-- Column 3-->
+                        <div class="menuCol">
+                            <a href="#">Menu 1 Col 3 Item 1</a>
+                            <a href="#">Menu 1 Col 3 Item 2</a>
+                            <a href="#">Menu 1 Col 3 Item 3</a>
+                            <a href="#">Menu 1 Col 3 Item 4</a>
+                            <a href="#">Menu 1 Col 3 Item 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <mat-menu #vertebrates="matMenu">
-            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-            <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-            <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-            <button mat-menu-item>Birds</button>
-            <button mat-menu-item>Mammals</button>
-        </mat-menu>
+            <!-- Created another button to work as a menu-->
+            <div class="downMenu">
+                <button class="downBtn">
+                    <a href="#">Mega Menu 2</a>
+                </button>
+                <div class="downMenu-content">
 
-        <mat-menu #invertebrates="matMenu">
-            <button mat-menu-item>Insects</button>
-            <button mat-menu-item>Molluscs</button>
-            <button mat-menu-item>Crustaceans</button>
-            <button mat-menu-item>Corals</button>
-            <button mat-menu-item>Arachnids</button>
-            <button mat-menu-item>Velvet worms</button>
-            <button mat-menu-item>Horseshoe crabs</button>
-        </mat-menu>
-
-        <mat-menu #fish="matMenu">
-            <button mat-menu-item>Baikal oilfish</button>
-            <button mat-menu-item>Bala shark</button>
-            <button mat-menu-item>Ballan wrasse</button>
-            <button mat-menu-item>Bamboo shark</button>
-            <button mat-menu-item>Banded killifish</button>
-        </mat-menu>
-
-        <mat-menu #amphibians="matMenu">
-            <button mat-menu-item>Sonoran desert toad</button>
-            <button mat-menu-item>Western toad</button>
-            <button mat-menu-item>Arroyo toad</button>
-            <button mat-menu-item>Yosemite toad</button>
-        </mat-menu>
-
-        <mat-menu #reptiles="matMenu">
-            <button mat-menu-item>Banded Day Gecko</button>
-            <button mat-menu-item>Banded Gila Monster</button>
-            <button mat-menu-item>Black Tree Monitor</button>
-            <button mat-menu-item>Blue Spiny Lizard</button>
-            <button mat-menu-item disabled>Velociraptor</button>
-        </mat-menu>
-
-        <button mat-button>Contact</button>
+                    <!-- Added items in mega menu 2-->
+                    <div class="megaMenu">
+                        <!-- Column 1-->
+                        <div class="menuCol">
+                            <a href="#">Menu 2 Col 1 Item 1</a>
+                            <a href="#">Menu 2 Col 1 Item 2</a>
+                            <a href="#">Menu 2 Col 1 Item 3</a>
+                            <a href="#">Menu 2 Col 1 Item 4</a>
+                            <a href="#">Menu 2 Col 1 Item 5</a>
+                        </div>
+                        <!-- Column 2-->
+                        <div class="menuCol">
+                            <a href="#">Menu 2 Col 2 Item 1</a>
+                            <a href="#">Menu 2 Col 2 Item 2</a>
+                            <a href="#">Menu 2 Col 2 Item 3</a>
+                            <a href="#">Menu 2 Col 2 Item 4</a>
+                            <a href="#">Menu 2 Col 2 Item 5</a>
+                        </div>
+                        <!-- Column 3-->
+                        <div class="menuCol">
+                            <a href="#">Menu 2 Col 3 Item 1</a>
+                            <a href="#">Menu 2 Col 3 Item 2</a>
+                            <a href="#">Menu 2 Col 3 Item 3</a>
+                            <a href="#">Menu 2 Col 3 Item 4</a>
+                            <a href="#">Menu 2 Col 3 Item 5</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="menu-right">
-        <mat-slide-toggle color="accent"
-            [checked]="isDarkMode"
-            (toggleChange)="toggleMode()">
+        <mat-slide-toggle color="accent" [checked]="isDarkMode" (toggleChange)="toggleMode()">
             Dark Mode
         </mat-slide-toggle>
         <button mat-fab color="accent" aria-label="Shopping Card button">
