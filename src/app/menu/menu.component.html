@@ -3,76 +3,17 @@
         <span class="logo" [routerLink]="'/'"></span>
         <!-- Created a div for navigation bar-->
         <div class="navigationBar">
-            <!-- Created a button to work as a menu-->
-            <div class="downMenu">
+            <div *ngFor="let cat of categories" class="downMenu">
                 <button class="downBtn">
-                    <a href="#">Mega Menu 1</a>
-                </button>
-                <div class="downMenu-content" (mouseenter)="$event.stopPropagation()">
-                    <!-- Added items in mega menu 1-->
-                    <div class="megaMenu">
-                        <!-- Column 1-->
-                        <div class="menuCol">
-                            <h3>კომპიუტერული ტექნიკა</h3>
-                            <a href="#">Menu 1 Col 1 Item 1</a>
-                            <a href="#">Menu 1 Col 1 Item 2</a>
-                            <a href="#">Menu 1 Col 1 Item 3</a>
-                            <a href="#">Menu 1 Col 1 Item 4</a>
-                            <a href="#">Menu 1 Col 1 Item 5</a>
-                        </div>
-                        <!-- Column 2-->
-                        <div class="menuCol">
-                            <h3>აქსესუარები</h3>
-                            <a href="#">Menu 1 Col 2 Item 1</a>
-                            <a href="#">Menu 1 Col 2 Item 2</a>
-                            <a href="#">Menu 1 Col 2 Item 3</a>
-                            <a href="#">Menu 1 Col 2 Item 4</a>
-                            <a href="#">Menu 1 Col 2 Item 5</a>
-                        </div>
-                        <!-- Column 3-->
-                        <div class="menuCol">
-                            <a href="#">Menu 1 Col 3 Item 1</a>
-                            <a href="#">Menu 1 Col 3 Item 2</a>
-                            <a href="#">Menu 1 Col 3 Item 3</a>
-                            <a href="#">Menu 1 Col 3 Item 4</a>
-                            <a href="#">Menu 1 Col 3 Item 5</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Created another button to work as a menu-->
-            <div class="downMenu">
-                <button class="downBtn">
-                    <a href="#">Mega Menu 2</a>
+                    <a href="#">{{cat.name}}</a>
                 </button>
                 <div class="downMenu-content">
-
-                    <!-- Added items in mega menu 2-->
                     <div class="megaMenu">
-                        <!-- Column 1-->
-                        <div class="menuCol">
-                            <a href="#">Menu 2 Col 1 Item 1</a>
-                            <a href="#">Menu 2 Col 1 Item 2</a>
-                            <a href="#">Menu 2 Col 1 Item 3</a>
-                            <a href="#">Menu 2 Col 1 Item 4</a>
-                            <a href="#">Menu 2 Col 1 Item 5</a>
-                        </div>
-                        <!-- Column 2-->
-                        <div class="menuCol">
-                            <a href="#">Menu 2 Col 2 Item 1</a>
-                            <a href="#">Menu 2 Col 2 Item 2</a>
-                            <a href="#">Menu 2 Col 2 Item 3</a>
-                            <a href="#">Menu 2 Col 2 Item 4</a>
-                            <a href="#">Menu 2 Col 2 Item 5</a>
-                        </div>
-                        <!-- Column 3-->
-                        <div class="menuCol">
-                            <a href="#">Menu 2 Col 3 Item 1</a>
-                            <a href="#">Menu 2 Col 3 Item 2</a>
-                            <a href="#">Menu 2 Col 3 Item 3</a>
-                            <a href="#">Menu 2 Col 3 Item 4</a>
-                            <a href="#">Menu 2 Col 3 Item 5</a>
+                        <div *ngFor="let subCat of cat.children" class="menuCol">
+                            <h3>{{subCat.name}}</h3>
+                            <ng-container  *ngFor="let subSubCat of subCat.children">
+                                <a href="#">{{subSubCat.name}}</a>
+                            </ng-container>
                         </div>
                     </div>
                 </div>
