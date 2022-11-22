@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
@@ -31,6 +31,33 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
       this.categories = cat;
       console.log(this.categories);
     });
+  }
+
+  closeMenu(event: Event, rootMenuItem = false) {
+    const el = event.target as Element;
+
+    let menuEl: HTMLDivElement | null | undefined;
+    if (rootMenuItem) {
+      menuEl = el.parentElement?.parentElement?.querySelector('.megaMenu');
+    } else {
+      menuEl = el.closest('.megaMenu') as HTMLDivElement;
+    }
+    
+    console.log(el.parentElement?.parentElement);
+    console.log(menuEl);
+
+    if (menuEl) {
+      menuEl.style.display = 'none';
+      setTimeout(() => {
+        if (menuEl) {
+          menuEl.style.display = 'flex';
+        }
+      }, 0);
+    }
+  }
+
+  getCategoryURL(id: number) {
+    return `category/${id}`;
   }
 
   toggleMode() {
