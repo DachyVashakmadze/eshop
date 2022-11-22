@@ -2,7 +2,7 @@
     <div class="menu-left">
         <span class="logo" [routerLink]="'/'"></span>
         <!-- Created a div for navigation bar-->
-        <div class="navigationBar">
+        <div class="navigationBar" #navigationBar>
             <div *ngFor="let cat of categories" class="downMenu">
                 <button class="downBtn">
                     <a href="#">{{cat.name}}</a>
@@ -10,9 +10,12 @@
                 <div class="downMenu-content">
                     <div class="megaMenu">
                         <div *ngFor="let subCat of cat.children" class="menuCol">
-                            <h3>{{subCat.name}}</h3>
+                            <h3 [routerLink]="'category/' + subCat.id">{{subCat.name}}</h3>
                             <ng-container  *ngFor="let subSubCat of subCat.children">
-                                <a href="#">{{subSubCat.name}}</a>
+                                <a href="#" [routerLink]="'category/' + subSubCat.id">
+                                    <mat-icon *ngIf="subSubCat.icon">{{subSubCat.icon}}</mat-icon>
+                                    {{subSubCat.name}}
+                                </a>
                             </ng-container>
                         </div>
                     </div>

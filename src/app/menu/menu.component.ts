@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
@@ -35,11 +35,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
 
   toggleMode() {
     this.themingService.toggleMode();
-  }
-
-  toggleMenu(event: MouseEvent) {
-    const el = event.target as Element;
-    el.classList.toggle('active');
   }
 
   protected override applyTheme(theme: string): void {
