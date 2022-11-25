@@ -13,7 +13,7 @@ import { BaseCategoryService } from '../services/base-categoryservice';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent extends ThemeableComponent implements OnInit {
-  isDarkMode: boolean = false;
+  isDarkMode!: boolean;
   categories!: Category[];
 
   constructor(
@@ -29,7 +29,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
-      console.log(this.categories);
     });
   }
 
@@ -42,9 +41,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
     } else {
       menuEl = el.closest('.megaMenu') as HTMLDivElement;
     }
-    
-    console.log(el.parentElement?.parentElement);
-    console.log(menuEl);
 
     if (menuEl) {
       menuEl.style.display = 'none';
@@ -66,7 +62,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
 
   protected override applyTheme(theme: string): void {
     this.cssThemeClass = theme;
-
-    this.isDarkMode = theme === 'dark-theme';
+    this.isDarkMode = (theme === 'dark-theme');
   }
 }
