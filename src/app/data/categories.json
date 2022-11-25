@@ -75,11 +75,13 @@
                     },
                     {
                         "id": 17,
-                        "name": "ქულერები"
+                        "name": "ქულერები",
+                        "icon": "heat_pump"
                     },
                     {
                         "id": 18,
                         "name": "მყარი დისკები",
+                        "icon": "storage",
                         "children": [
                             {
                                 "id": 19,
