@@ -4,6 +4,9 @@
   .title {
     @include mixin.background-color($theme, 'accent', 600);
   }
+  .manePicture img {
+    border: 20px solid mixin.get-color($theme, 'accent', 200);
+  }
 }
 
 .main-wraper * {
@@ -64,6 +67,3 @@ mat-grid-tile {
   height: 600px;
 }
 
-.manePicture img {
-  border: 2px solid purple;
-}

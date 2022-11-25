@@ -3,8 +3,15 @@
         <img src={{manePicture}} alt="main picture">
     </div>
     <div class="pictureMenu">
-        <div class="menuPictureWraper" *ngFor="let picture of pictures; let i=index ">
+        <div id="perviousButton" (click)="perviousButton()" class="button">
+            <p><strong>PERVIOUS</strong></p> <!--  termporery -->
+        </div>
+        <div class="menuPictureWraper" (click)="changeManePicture(i)" *ngFor="let picture of pictures; let i=index ">
             <img class="menuPicture" [src]="picture" [alt]="'picture ' +(i+1) ">
+        </div>
+
+        <div id="nextButton" (click)="nextButton()" class="button">
+            <p><strong>NEXT</strong></p> <!--  termporery -->
         </div>
     </div>
 </div>
