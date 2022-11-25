@@ -1,33 +1,63 @@
+@use '/src/mixins' as mixin;
+
+@include mixin.theming() using($theme) {
+    .mainContentWraper{
+        @include mixin.background-color($theme, "primary", 300);
+    }
+    .menuPictureWraper{
+        @include mixin.background-color($theme, "primary", 600);
+        &.active {
+            border: .25em solid mixin.get-color($theme, "accent", 600);
+        }
+    }
+}
+
 .mainContentWraper{
-    background-color: green;
+    padding: 2em;
+    border-radius: 10px;
+    width: 50vw;
+    height: 60vh;
 }
-.mainContentWraper *{
-    outline: 2px solid red;
-}
+
 .mainContentWraper >*{
     margin-bottom: 1em;
 }
+
 .mainPiture {
     text-align: center;
+    min-width: 100%;
+    height: 79%;
 }
+
 .mainPiture img {
-    max-width: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 400px;
+
 }
 
 .pictureMenu{
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-.button {
-    width: 200px;
-    height: 100px;
-    background-color: red;
-}
 .menuPictureWraper{
+    display: flex;
     width: 50px;
     height: 50px;
+    border-radius: 5px;
+    opacity: .5;
+    img {
+        margin: auto 0;
+        border-radius: 2px;
+    }
+
+    &.active {
+        opacity: 1;
+        border: 5px solid orangered;
+    }
 }
 
 .menuPicture{

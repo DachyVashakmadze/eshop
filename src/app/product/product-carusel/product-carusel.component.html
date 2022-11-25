@@ -3,15 +3,15 @@
         <img src={{manePicture}} alt="main picture">
     </div>
     <div class="pictureMenu">
-        <div id="perviousButton" (click)="perviousButton()" class="button">
-            <p><strong>PERVIOUS</strong></p> <!--  termporery -->
-        </div>
-        <div class="menuPictureWraper" (click)="changeManePicture(i)" *ngFor="let picture of pictures; let i=index ">
+        <button (click)="perviousButton()" mat-fab color="accent"><mat-icon>arrow_back_ios</mat-icon></button>
+
+        <div class="menuPictureWraper" 
+            *ngFor="let picture of pictures; 
+            let i=index" (click)="changeManePicture(i)" 
+            [ngClass]="{'active': i == picturMenuPointer}">
             <img class="menuPicture" [src]="picture" [alt]="'picture ' +(i+1) ">
         </div>
 
-        <div id="nextButton" (click)="nextButton()" class="button">
-            <p><strong>NEXT</strong></p> <!--  termporery -->
-        </div>
+        <button (click)="nextButton()" mat-fab color="accent"><mat-icon>arrow_forward_ios</mat-icon></button>
     </div>
 </div>

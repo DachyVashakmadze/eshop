@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ThemeableComponent } from 'src/app/common/theamable.component';
 
 @Component({
   selector: 'app-product-carusel',
   templateUrl: './product-carusel.component.html',
   styleUrls: ['./product-carusel.component.scss']
 })
-export class ProductCaruselComponent implements OnInit {
+export class ProductCaruselComponent extends ThemeableComponent implements OnInit {
   manePicture: string =""; //at start, mane picture should be first picture in array, see (*1)
 
-  caruselMeniuSize: number=4; //UC (under construction), there should not be 4 here !!!, pearent should be able to set number
+  @Input() caruselMeniuSize: number=4; //UC (under construction), there should not be 4 here !!!, pearent should be able to set number
   picturMenuPointer: number=0; //this number shows were should be focus, in picture menu list
   sourseArrayPointer: number=0; //this number points spot from we should start coping picturs
 
@@ -30,8 +31,6 @@ export class ProductCaruselComponent implements OnInit {
     "https://www.electrorates.com/blogimg/Google_Pixel_7a.png",
     "https://telecomtalk.info/wp-content/uploads/2022/10/google-pixel-7a-launch-is-near-amazon.jpeg"
   ];
-
-  constructor() { }
 
   ngOnInit(): void {
     this.getSorce();
