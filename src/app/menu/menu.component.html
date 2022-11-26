@@ -2,7 +2,7 @@
     <div class="menu-left">
         <span class="logo" [routerLink]="'/'"></span>
         <!-- Created a div for navigation bar-->
-        <div class="navigationBar" #navigationBar>
+        <div *ngIf="!isMobile" class="navigationBar" #navigationBar>
             <div *ngFor="let cat of categories" class="downMenu">
                 <button class="downBtn">
                     <a href="#" (click)="$event.preventDefault()">{{cat.name}}</a>
@@ -10,8 +10,9 @@
                 <div class="downMenu-content">
                     <div class="megaMenu">
                         <div *ngFor="let subCat of cat.children" class="menuCol">
-                            <h3 [routerLink]="getCategoryURL(subCat.id)" (click)="closeMenu($event)">{{subCat.name}}</h3>
-                            <ng-container  *ngFor="let subSubCat of subCat.children">
+                            <h3 [routerLink]="getCategoryURL(subCat.id)" (click)="closeMenu($event)">{{subCat.name}}
+                            </h3>
+                            <ng-container *ngFor="let subSubCat of subCat.children">
                                 <a href="#" [routerLink]="getCategoryURL(subSubCat.id)" (click)="closeMenu($event)">
                                     <mat-icon *ngIf="subSubCat.icon">{{subSubCat.icon}}</mat-icon>
                                     {{subSubCat.name}}
@@ -34,6 +35,9 @@
         </button>
         <button mat-fab color="primary" aria-label="User button">
             <mat-icon>perm_identity</mat-icon>
+        </button>
+        <button *ngIf="isMobile" mat-fab color="warn" aria-label="Toggle hamburger menu" (click)="toggleSidenav()">
+            <mat-icon>menu</mat-icon>
         </button>
     </div>
 </nav>

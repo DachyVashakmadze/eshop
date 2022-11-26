@@ -43,6 +43,14 @@ nav.menu {
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
 }
 
+.menu-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-left: 2em;
+}
+
 .menu-right {
     display: flex;
     gap: 1em;
@@ -59,7 +67,6 @@ nav.menu {
     background-position: center;
     background-size: cover;
     padding: 0;
-    margin: -5px 60px -13px;
 }
 
 .logo:hover {

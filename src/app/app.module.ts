@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatExpansionModule,
     MatTabsModule,
     MatSlideToggleModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSidenavModule
   ],
   providers: [
     {
