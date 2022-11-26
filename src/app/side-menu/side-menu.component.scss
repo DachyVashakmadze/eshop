@@ -1,0 +1,48 @@
+@use '/src/mixins' as mixin;
+@use '/src/theme' as theme;
+
+@include mixin.theming() using($theme) {
+    li:hover {
+        @if ($theme == theme.$light-theme) {
+            @include mixin.background-color($theme, 'primary', 100);
+        } @else {
+            @include mixin.background-color($theme, 'primary', 600);
+        }
+            box-shadow: -4px 0px 0px 0px mixin.get-color($theme, 'accent', 600)
+    }
+}
+
+.ul-top {
+    padding-left: .5em;
+}
+
+li {
+    list-style: none;
+    padding: .5em;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+.li-icon {
+    display: inline-flex;
+    align-items: end;
+    gap: .5em;
+    width: 100%;
+}
+
+.close-btn {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+}
+
+.sidenav-wrapper >ul:first-of-type {
+    margin-top: 1.75em;
+}

@@ -1,7 +1,7 @@
 <nav class="menu">
     <div class="menu-left">
-        <span class="logo" [routerLink]="'/'"></span>
-        <!-- Created a div for navigation bar-->
+        <button *ngIf="isMobile" mat-icon-button aria-label="Home" [routerLink]="'/'"><mat-icon>home</mat-icon></button>
+        <span *ngIf="!isMobile" class="logo" [routerLink]="'/'"></span>
         <div *ngIf="!isMobile" class="navigationBar" #navigationBar>
             <div *ngFor="let cat of categories" class="downMenu">
                 <button class="downBtn">
@@ -30,13 +30,19 @@
         <mat-slide-toggle [checked]="isDarkMode" (change)="toggleMode()" aria-label="Theme">
         </mat-slide-toggle>
         <mat-icon>dark_mode</mat-icon>
-        <button mat-fab color="accent" aria-label="Shopping Card button">
+        <button *ngIf="!isMobile" mat-fab color="accent" aria-label="Shopping Card button">
             <mat-icon>shopping_cart</mat-icon>
         </button>
-        <button mat-fab color="primary" aria-label="User button">
+        <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button *ngIf="!isMobile" mat-fab color="primary" aria-label="User button">
             <mat-icon>perm_identity</mat-icon>
         </button>
-        <button *ngIf="isMobile" mat-fab color="warn" aria-label="Toggle hamburger menu" (click)="toggleSidenav()">
+        <button *ngIf="isMobile" mat-mini-fab color="primary" aria-label="User button">
+            <mat-icon>perm_identity</mat-icon>
+        </button>
+        <button *ngIf="isMobile" mat-mini-fab color="warn" aria-label="Toggle hamburger menu" (click)="toggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>

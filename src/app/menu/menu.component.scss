@@ -5,7 +5,7 @@
         @include mixin.background-color($theme, 'primary', 600);
     }
 
-    .downBtn > a {
+    .downBtn>a {
         color: mixin.get-color($theme, 'accent', 50);
     }
 
@@ -27,7 +27,7 @@
     .menuCol {
         width: 80%;
 
-        & > * {
+        &>* {
             color: mixin.get-color($theme, 'primary', 900);
 
             &:hover {
@@ -57,6 +57,7 @@ nav.menu {
     margin-right: 2em;
     align-items: center;
     padding: 1em;
+    margin-left: auto;
 }
 
 .logo {
@@ -168,5 +169,17 @@ nav.menu {
             padding: 10px;
             align-items: flex-end;
         }
+    }
+}
+
+@media((max-width: 599.98px)) {
+    .menu-left {
+        margin-left: .5em;
+    }
+
+    .menu-right {
+        gap: .5em;
+        margin-right: .5em;
+        padding: .5em;
     }
 }

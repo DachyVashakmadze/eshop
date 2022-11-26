@@ -1,0 +1,21 @@
+<div class="sidenav-wrapper">
+    <button class="close-btn" mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <ul *ngFor="let cat of categories" class="ul-top">
+        <li (click)="toggleSidenav()">
+            <h2>{{cat.name}}</h2>
+        </li>
+        <ul *ngFor="let subCat of cat.children">
+            <li [routerLink]="getCategoryURL(subCat.id)" (click)="toggleSidenav()">
+                <h3>{{subCat.name}}</h3>
+            </li>
+            <ul *ngFor="let subSubCat of subCat.children" [routerLink]="getCategoryURL(subSubCat.id)">
+                <li class="li-icon" (click)="toggleSidenav()">
+                    <mat-icon *ngIf="subSubCat.icon">{{subSubCat.icon}}</mat-icon>
+                    {{subSubCat.name}}
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>

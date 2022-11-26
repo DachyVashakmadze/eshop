@@ -1,7 +1,7 @@
 <div class="mat-app-background">
     <mat-sidenav-container class="mat-sidenav-container">
         <mat-sidenav #sidenav class="mat-sidenav">
-            <h3>This is test sidenav content</h3>
+            <app-side-menu (sidenavToggle)="sidenav.toggle()"></app-side-menu>
         </mat-sidenav>
         <mat-sidenav-content class="mat-sidenav-content">
             <header>

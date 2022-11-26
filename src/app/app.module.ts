@@ -25,6 +25,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule} from '@angular/material/sidenav';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MatSidenavModule} from '@angular/material/sidenav';
     MenuComponent,
     FooterComponent,
     Page404Component,
+    SideMenuComponent,
   ],
   imports: [
     BrowserModule,
