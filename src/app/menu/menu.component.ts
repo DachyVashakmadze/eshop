@@ -16,7 +16,7 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class MenuComponent extends ThemeableComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter();
-  
+
   breakpointObserverDestroyed = new Subject<void>();
   isMobile = false;
 
@@ -49,18 +49,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
         Breakpoints.Small,
       ])
       .pipe(takeUntil(this.breakpointObserverDestroyed))
-      .subscribe(result => {
-        console.log("INSIDE OBSERVER");
-        console.log(result);
-        this.isMobile = result.matches;
-        // for (const query of Object.keys(result.breakpoints)) {
-        //   if (result.breakpoints[query]) {
-        //     this.isMobile = true;
-        //     return;
-        //   }
-        // }
-        // this.isMobile = false;
-      });
+      .subscribe(result => this.isMobile = result.matches);
   }
 
   closeMenu(event: Event, rootMenuItem = false) {
