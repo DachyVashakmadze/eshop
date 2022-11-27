@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "name": "კომპიუტერული ტექნიკა",
+        "children": [
+            {
+                "id": 2,
+                "name": "პერსონალური კომპიუტერი",
+                "children": [
+                    {
+                        "id": 3,
+                        "name": "ნოუთბუქები",
+                        "icon": "laptop"
+                    },
+                    {
+                        "id": 8,
+                        "name": "ბრენდული PC",
+                        "icon": "dns"
+                    },
+                    {
+                        "id": 22,
+                        "name": "ტაბლეტები",
+                        "icon": "tablet"
+                    },
+                    {
+                        "id": 27,
+                        "name": "მონიტორები",
+                        "icon": "tv"
+                    },
+                    {
+                        "id": 29,
+                        "name": "პროექტორები",
+                        "icon": "videocam"
+                    },
+                    {
+                        "id": 37,
+                        "name": "პრინტერები",
+                        "icon": "print"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "name": "PC კომპონენტები",
+                "children": [
+                    {
+                        "id": 11,
+                        "name": "პროცესორები",
+                        "icon": "memory"
+                    },
+                    {
+                        "id": 12,
+                        "name": "დედა დაფები",
+                        "icon": "developer_board"
+                    },
+                    {
+                        "id": 13,
+                        "name": "მეხსიერების ბარათები (RAM)",
+                        "icon": "repartition"
+                    },
+                    {
+                        "id": 14,
+                        "name": "ვიდეო ბარათები",
+                        "icon": "select_all"
+                    },
+                    {
+                        "id": 15,
+                        "name": "კვების ბლოკები",
+                        "icon": "power"
+                    },
+                    {
+                        "id": 16,
+                        "name": "ქეისები",
+                        "icon": "pallet"
+                    },
+                    {
+                        "id": 17,
+                        "name": "ქულერები",
+                        "icon": "heat_pump"
+                    },
+                    {
+                        "id": 18,
+                        "name": "მყარი დისკები",
+                        "icon": "storage",
+                        "children": [
+                            {
+                                "id": 19,
+                                "name": "HDD"
+                            },
+                            {
+                                "id": 20,
+                                "name": "SSD"
+                            },
+                            {
+                                "id": 21,
+                                "name": "NVME"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 43,
+                "name": "აქსესუარები",
+                "children": [
+                    {
+                        "id": 44,
+                        "name": "კლავიატურები",
+                        "icon": "keyboard",
+                        "children": [
+                            {
+                                "id": 45,
+                                "name": "უკაბელო კლავიატურები"
+                            },
+                            {
+                                "id": 55,
+                                "name": "კპავიატურის დასადები"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 46,
+                        "name": "მაუსები",
+                        "icon": "mouse",
+                        "children": [
+                            {
+                                "id": 47,
+                                "name": "უკაბელო მაუსები"
+                            },
+                            {
+                                "id": 54,
+                                "name": "მაუსის დასადები"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 50,
+                        "name": "ყურსასმენები",
+                        "icon": "headphones",
+                        "children": [
+                            {
+                                "id": 51,
+                                "name": "უკაბელო ყურსასმენები"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 52,
+                        "name": "ვებკამერები",
+                        "icon": "video_camera_front"
+                    },
+                    {
+                        "id": 53,
+                        "name": "მიკროფონები",
+                        "icon": "mic-none"
+                    },
+                    {
+                        "id": 48,
+                        "name": "დინამიკები",
+                        "icon": "speaker",
+                        "children": [
+                            {
+                                "id": 49,
+                                "name": "Bluetooth დინამიკები"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 56,
+                        "name": "USB მეხსიერების ბარათები",
+                        "icon": "usb"
+                    },
+                    {
+                        "id": 57,
+                        "name": "კაბელები და ადაპტერები",
+                        "icon": "cable"
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "name": "ქსელური მოწყობილობები",
+                "children": [
+                    {
+                        "id": 33,
+                        "name": "როუტერები",
+                        "icon": "router"
+                    },
+                    {
+                        "id": 34,
+                        "name": "Wi-Fi როუტერები",
+                        "icon": "wifi"
+                    },
+                    {
+                        "id": 35,
+                        "name": "გამანაწილებლები და სვიჩები",
+                        "icon": "lan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "name": "მობილური ტელეფონები",
+        "children": [
+            {
+                "id": 59,
+                "name": "სმარტფონები",
+                "children": [
+                    {
+                        "id": 61,
+                        "name": "Android სმარტფონები",
+                        "icon": "phone_android"
+                    },
+                    {
+                        "id": 62,
+                        "name": "iPhone",
+                        "icon": "phone_iphone"
+                    }
+                ]
+            },
+            {
+                "id": 60,
+                "name": "აქსესუარები",
+                "children": [
+                    {
+                        "id": 63,
+                        "name": "დამტენები",
+                        "icon": "electrical_services"
+                    }
+                ]
+            }
+        ]
+    }
+]

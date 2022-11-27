@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 @use 'theme' as theme;
-@use 'mixins' as mixins;
+@use 'mixins' as mixin;
 
 .light-theme {
     @include mat.all-component-themes(theme.$light-theme);
@@ -26,4 +26,34 @@ body {
 
 .container {
     margin: 0 35px;
+}
+
+// აქ ხდება ნაგულისხმები სტილების გადაწერა toggle slider-ის კომპონენტზე.
+.light-theme .mat-mdc-slide-toggle {
+    --mdc-switch-unselected-focus-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
+    --mdc-switch-unselected-pressed-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
+    --mdc-switch-unselected-hover-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
+    --mdc-switch-unselected-focus-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
+    --mdc-switch-unselected-hover-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
+    --mdc-switch-unselected-pressed-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
+    --mdc-switch-unselected-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
+    --mdc-switch-unselected-focus-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
+    --mdc-switch-unselected-hover-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
+    --mdc-switch-unselected-pressed-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
+    --mdc-switch-unselected-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 400)};
+}
+
+
+// ფაქტიურად "ვმალავთ" icon-ს...
+:root {
+    --mdc-switch-selected-icon-size: 0px;
+    --mdc-switch-unselected-icon-size: 0px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }

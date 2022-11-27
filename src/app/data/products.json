@@ -31,8 +31,8 @@
                 "partReview": "snapdragon 8 gen 1"
             }
             
-        ]
-        
+        ],
+        "categoryId": 59
     },
     {
         "id": 2,
@@ -63,7 +63,8 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 60
         
     },
     {
@@ -95,8 +96,8 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
-        
+        ],
+        "categoryId": 59
     },
     {
         "id": 4,
@@ -127,12 +128,13 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 59
         
     },
     {
         "id": 5,
-        "title": "Samsung Galaxy S22",
+        "title": "Asus ROG notebook",
         "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
         "images": [
             "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
@@ -159,7 +161,8 @@
                 "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
             }
             
-        ]
+        ],
+        "categoryId": 3
         
     }
 ]

@@ -1,24 +1,26 @@
-<mat-card>
+<mat-card appearance="outlined" class="mat-card">
     <div class="product-content" (click)="openProduct()">
         <div class="image-wrapper">
             <img mat-card-image [src]="product.image" [alt]="product.title" />
         </div>
-        <mat-card-title>
-            <span class="truncate-wrapper">
-                <span class="truncate">{{product.title}}</span>
-            </span>
-        </mat-card-title>
-        <mat-card-content>
-            <h3>{{product.price | currency}}</h3>
-        </mat-card-content>
+        <mat-card-header>
+            <mat-card-title>
+                <span class="truncate-wrapper">
+                    <span class="truncate">{{product.title}}</span>
+                </span>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <h3>{{product.price | currency}}</h3>
+            </mat-card-subtitle>
+        </mat-card-header>
     </div>
-    <mat-card-actions>
+    <mat-card-actions class="mat-card-actions">
         <button mat-raised-button color="primary" (click)="addToCart()">
-            <mat-icon inline="true">add_shopping_cart</mat-icon>
+            <mat-icon>add_shopping_cart</mat-icon>
             <span class="button-text">Cart</span>
         </button>
         <button mat-raised-button color="accent" (click)="addToWatchlist()">
-            <mat-icon inline="true">star_border</mat-icon>
+            <mat-icon>star_border</mat-icon>
             <span class="button-text">Watchlist</span>
         </button>
     </mat-card-actions>

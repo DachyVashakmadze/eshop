@@ -19,4 +19,9 @@ export class TestProductService extends BaseProductService {
     return of(product);
   }
 
+  getProductsByCategory(id: number): Observable<Product[]> {
+    const products = productList.filter(product => product.categoryId == id) as Product[];
+    return of(products);
+  }
+
 }

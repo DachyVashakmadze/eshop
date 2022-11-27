@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Product } from '../products.model';
 import { BaseProductService } from '../../services/base-product.service';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -10,15 +11,26 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  products: Product[] = [];
+  products: null | Product[] = [];
   columnCount = 0;
   productSubscription!: Subscription;
   breakpointSubscriptions: Subscription[] = [];
 
-  constructor(private service: BaseProductService, private responseive: BreakpointObserver) { }
+  constructor(
+    private service: BaseProductService,
+    private responseive: BreakpointObserver,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
+    this.route.params.subscribe(param => {
+      let categoryId = param['id'];
+      if (categoryId) {
+        this.productSubscription = this.service.getProductsByCategory(categoryId).subscribe(products => this.products = products);
+      } else {
+        this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
+      }
+    });
 
     if (this.responseive.isMatched([Breakpoints.Large, Breakpoints.XLarge])) {
       this.columnCount = 4;

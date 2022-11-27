@@ -1,23 +1,25 @@
 <div class="mat-app-background">
-    <header>
-        <app-menu></app-menu>
-    </header>
-    <div class="container">
-        <section>
-            <h1>Breadcrumb/is/waiting!!!</h1>
-        </section>
-
-        <div class="grid-container">
-            <!-- <aside>
-            <h2>FILTERS are waiting!</h2>
-        </aside> -->
-            <main>
-                <router-outlet></router-outlet>
-            </main>
-        </div>
-    </div>
-
-    <footer>
-        <app-footer></app-footer>
-    </footer>
+    <mat-sidenav-container class="mat-sidenav-container">
+        <mat-sidenav #sidenav class="mat-sidenav">
+            <app-side-menu (sidenavToggle)="sidenav.toggle()"></app-side-menu>
+        </mat-sidenav>
+        <mat-sidenav-content class="mat-sidenav-content">
+            <header>
+                <app-menu (sidenavToggle)="sidenav.toggle()"></app-menu>
+            </header>
+            <div class="container">
+                <section>
+                    <h1>Breadcrumb/is/waiting!!!</h1>
+                </section>
+                <div class="grid-container">
+                    <main>
+                        <router-outlet></router-outlet>
+                    </main>
+                </div>
+            </div>
+            <footer>
+                <app-footer></app-footer>
+            </footer>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
