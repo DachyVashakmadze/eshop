@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
@@ -14,7 +14,7 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent extends ThemeableComponent implements OnInit {
+export class MenuComponent extends ThemeableComponent implements OnInit, OnDestroy {
   @Output() sidenavToggle = new EventEmitter();
   
   breakpointObserverDestroyed = new Subject<void>();
@@ -34,6 +34,10 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
     super(themingService);
   }
 
+  ngOnDestroy(): void {
+    this.breakpointObserverDestroyed.next();
+    this.breakpointObserverDestroyed.complete();
+  }
   ngOnInit(): void {
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
@@ -46,13 +50,16 @@ export class MenuComponent extends ThemeableComponent implements OnInit {
       ])
       .pipe(takeUntil(this.breakpointObserverDestroyed))
       .subscribe(result => {
-        for (const query of Object.keys(result.breakpoints)) {
-          if (result.breakpoints[query]) {
-            this.isMobile = true;
-            return;
-          }
-        }
-        this.isMobile = false;
+        console.log("INSIDE OBSERVER");
+        console.log(result);
+        this.isMobile = result.matches;
+        // for (const query of Object.keys(result.breakpoints)) {
+        //   if (result.breakpoints[query]) {
+        //     this.isMobile = true;
+        //     return;
+        //   }
+        // }
+        // this.isMobile = false;
       });
   }
 
