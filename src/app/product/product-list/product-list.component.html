@@ -1,7 +1,15 @@
 <div class="container">
-    <mat-grid-list [cols]="columnCount" rowHeight="380px">
+    <mat-grid-list *ngIf="products && products.length; else no_products" [cols]="columnCount" rowHeight="380px">
         <mat-grid-tile *ngFor="let product of products">
                 <app-product-list-item [product]="product"></app-product-list-item>
         </mat-grid-tile>
     </mat-grid-list>
+    <ng-template #no_products>
+        <div class="no-products-wrapper">
+            <div class="info-box">
+                <mat-icon class="icon" color="accent">info</mat-icon>
+                <h2>ამ კატეგორიაში პროდუქტები ვერ მოიძებნა.</h2>
+            </div>
+        </div>
+    </ng-template>
 </div>
