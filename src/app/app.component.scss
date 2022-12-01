@@ -12,6 +12,21 @@
 .mat-sidenav-container, .mat-sidenav-content, .mat-sidenav {
     height: 100%;
 }
+
+.mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .mat-sidenav {
     width: 100%;
+}
+
+.page-wrapper {
+    flex: 1;
+}
+
+.breadcrumb {
+    margin: 1em;
 }

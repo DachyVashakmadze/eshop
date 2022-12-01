@@ -1,11 +1,11 @@
-<section>
+<section class="breadcrumb">
     <ng-container *ngFor="let item of items; last as isLast">
         <ng-container *ngIf="isLast; else elseBlock">
             <button mat-button disabled>{{item.title}}</button>
         </ng-container>
         <ng-template #elseBlock>
             <a mat-button [routerLink]="item.url">{{item.title}}</a>
-            <span>/</span>
+            <span> / </span>
         </ng-template>
     </ng-container>
 </section>

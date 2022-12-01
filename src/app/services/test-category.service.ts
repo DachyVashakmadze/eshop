@@ -8,8 +8,8 @@ import categories from '../data/categories.json';
 
 @Injectable()
 export class TestCategoryService extends BaseCategoryService {
-    getCategoriesLinear(): Observable<Category[]> {
-        throw new Error("Method not implemented.");
+    protected buildCatMap(): {} {
+        return this.buildCatMapRecursive(categories, [], {});
     }
 
     getCategoriesNested(): Observable<Category[]> {

@@ -4,6 +4,9 @@ import { Product } from '../products.model';
 import { BaseProductService } from '../../services/base-product.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { BreadcumbService } from 'src/app/services/breadcumb.service';
+import { BaseCategoryService } from 'src/app/services/base-categoryservice';
+import { Breadcrumb } from 'src/app/breadcrumb/breadcrumb.model';
 
 @Component({
   selector: 'app-product-list',
@@ -18,18 +21,27 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(
     private service: BaseProductService,
+    private categoryService: BaseCategoryService,
     private responseive: BreakpointObserver,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private breadcrumbService: BreadcumbService
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(param => {
       let categoryId = param['id'];
+      let breadcrumbItems: Breadcrumb[] = [];
       if (categoryId) {
         this.productSubscription = this.service.getProductsByCategory(categoryId).subscribe(products => this.products = products);
+        breadcrumbItems = this.categoryService.getBreadcrumbItemsForCategory(categoryId);
       } else {
         this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
+        breadcrumbItems = [ {
+          'title': 'ყველა პროდუქტი',
+          'url': '/'
+        }];
       }
+      this.breadcrumbService.setItems(breadcrumbItems);
     });
 
     if (this.responseive.isMatched([Breakpoints.Large, Breakpoints.XLarge])) {
