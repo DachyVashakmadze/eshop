@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription, takeUntil } from 'rxjs';
 import { Breadcrumb } from './breadcrumb.model';
-import { BreadcumbService } from './breadcumb.service';
+import { BreadcumbService } from '../services/breadcumb.service';
 
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent implements OnDestroy {
   items: Breadcrumb[] = [];
-  private breadcrumbUpdateSubscription!: Subscription;
+  private breadcrumbSubscription!: Subscription;
 
-  constructor(private service: BreadcumbService) { }
-
-  ngOnInit(): void {
-    this.breadcrumbUpdateSubscription = this.service.onItemUpdate.subscribe(items => this.items = items);
+  constructor(private service: BreadcumbService) {
+    this.breadcrumbSubscription = this.service.itemsSubject.subscribe(breadcrumbItems => this.items = breadcrumbItems);
   }
 
   ngOnDestroy() {
-    this.breadcrumbUpdateSubscription.unsubscribe();
+    this.breadcrumbSubscription.unsubscribe();
   }
 
 }

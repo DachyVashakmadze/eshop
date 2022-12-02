@@ -39,6 +39,9 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.breakpointObserverDestroyed.complete();
   }
   ngOnInit(): void {
+//Todo remove
+    console.log(this.categoryService.getCatMap());
+
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
     });
