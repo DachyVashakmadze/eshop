@@ -13,7 +13,7 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
   manePicture: string =""; //at start, mane picture should be first picture in array, see (*1)
 
   @Input() caruselMeniuSize: number=4; //pearent will set number, defult is 4
-  @Input() imgesSource: string[]=[];; //pearent will give string [] for pictures, defult is null
+  @Input() imagesSource: string[]=[];; //pearent will give string [] for pictures, defult is null
   picturMenuPointer: number=0; //this number shows were should be focus, in picture menu list
   sourseArrayPointer: number=0; //this number points spot from we should start coping picturs
 
@@ -30,19 +30,6 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const id = params["id"]
-      this.service.getProductById(id).subscribe(p => {
-        if (!p) {
-          this.router.navigate(["urlNotFound"], { skipLocationChange: true })
-        } else {
-          if(p.images.length>0){
-            this.imgesSource=p.images;
-            if(this.caruselMeniuSize>p.images.length) this.caruselMeniuSize=p.images.length; //if there is less images than carusel needs reduce size
-          }
-        }
-      });
-    })
     this.getSorce();
     this.fillPictures();
     if(this.pictures.length>0){//(*1), at start, mane picture should be first picture in array
@@ -55,7 +42,7 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
   fillPictures(): void{// fills picture array, from source
     this.pictures = [] ;
     for(let i=0; i<this.caruselMeniuSize; i++){
-      this.pictures[i]=this.imgesSource[this.sourseArrayPointer+i];
+      this.pictures[i]=this.imagesSource[this.sourseArrayPointer+i];
     }     
   }
 
@@ -64,11 +51,12 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
     console.log("tryed to get sourse");
   }
   fixArraySizeError(): void{ //FUC, this function will check if picture array size is more than pictureSource, if so multiplyes content in pictureSource
+    if(this.caruselMeniuSize>this.imagesSource.length) this.caruselMeniuSize=this.imagesSource.length; //if there is less images than carusel needs reduce size
     console.log("tring to get sourse, cheking for size error");
   }
 
   perviousButton(): void{ // clicking picture meniu button "pervious"
-    if(this.manePicture!=this.imgesSource[0]){
+    if(this.manePicture!=this.imagesSource[0]){
       //this button should not work if we are at the start of product pictures
       if(this.picturMenuPointer>0 ){
         //if you have pervious picture in pictures mini meniu
@@ -88,13 +76,13 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
   }
 
   nextButton(): void{ // clicking picture meniu button "next"
-    if(this.manePicture!=this.imgesSource[this.imgesSource.length-1]){
+    if(this.manePicture!=this.imagesSource[this.imagesSource.length-1]){
       //this button should not work if we are at the end of product pictures
       if(this.manePicture!=this.pictures[this.caruselMeniuSize-1]){
         //if you have next picture in pictures mini meniu
         this.picturMenuPointer++;
         this.manePicture=this.pictures[this.picturMenuPointer];
-      }else if(this.sourseArrayPointer<(this.imgesSource.length-1)){
+      }else if(this.sourseArrayPointer<(this.imagesSource.length-1)){
         //if you do not have next picture in pictures mini meniu, but you have more in sourse
         this.sourseArrayPointer++;
         this.fillPictures();
@@ -102,7 +90,7 @@ export class ProductCaruselComponent extends ThemeableComponent implements OnIni
         this.changeManePicture(this.picturMenuPointer);
       }
 
-    }else if(this.sourseArrayPointer>(this.imgesSource.length-this.caruselMeniuSize)){//temporery
+    }else if(this.sourseArrayPointer>(this.imagesSource.length-this.caruselMeniuSize)){//temporery
       console.log("ERROR!!! picture menius pointer out of bound");
     }
   }
