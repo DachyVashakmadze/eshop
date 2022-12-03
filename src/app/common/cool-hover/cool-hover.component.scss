@@ -1,0 +1,123 @@
+@use '/src/mixins' as mixin;
+
+
+@include mixin.theming() using($theme) {
+    $particleColor: mixin.get-color($theme, 'accent', 600);
+    .circle {
+        color: $particleColor;
+    //     background-image: radial-gradient(
+    //     $particleColor,
+    //     $particleColor 10%,
+    //     hsla(hue($particleColor), saturation($particleColor), lightness($particleColor), 0) 40%
+    //   );
+    }
+}
+
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.7s ease-in-out;
+    
+    &:hover {
+        background-color: rgba(0,0,0,0.3);
+
+        .circle-container {
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+    }
+}
+
+.circle-container {
+    $particleWidth: 8px;
+    $particleNum: 50;
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+  
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  
+    .circle {
+      width: 100%;
+      border-radius: 50%;
+      mix-blend-mode: screen;
+      font-size: 8px;
+  
+      animation: scale-frames 2s infinite;
+    //   transform-origin: center;
+  
+      @keyframes fade-frames {
+        0% {
+          opacity: 1;
+        }
+  
+        50% {
+          opacity: 0.7;
+        }
+  
+        100% {
+          opacity: 1;
+        }
+      }
+  
+      @keyframes scale-frames {
+        0% {
+          transform: scale3d(0.8, 0.8, 1);
+        }
+  
+        50% {
+          transform: scale3d(2.2, 2.2, 1);
+        }
+  
+        100% {
+            transform: scale3d(0.8, 0.8, 1);
+        }
+      }
+    }
+  
+    @for $i from 1 through $particleNum {
+      &:nth-child(#{$i}) {
+        $circleSize: random($particleWidth);
+        width: $circleSize + px;
+        height: $circleSize + px;
+
+        $startPositionY: random(200) - 10;
+
+        left: random(340) - 10 + px;
+        // top: #{$startPositionY + px};
+
+  
+        $startPositionY: random(200);
+        $framesName: "move-frames-" + $i;
+        $moveDuration: 3000 + random(2000) + ms;
+  
+        animation-name: #{$framesName};
+        animation-duration: $moveDuration;
+        animation-delay: random(5000) + ms;
+  
+        @keyframes #{$framesName} {
+          from {
+            transform: translateY(
+                #{$startPositionY + px}
+            );
+          }
+          
+          to {
+            transform: translateY(
+              #{$startPositionY + random(200) + px}
+            );
+          }
+        }
+  
+        .circle {
+          animation-delay: random(2000) + ms;
+        }
+      }
+    }
+  }
