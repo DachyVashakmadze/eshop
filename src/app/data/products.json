@@ -69,14 +69,24 @@
     },
     {
         "id": 3,
-        "title": "Samsung Galaxy S22",
-        "image": "https://static01.nyt.com/images/2022/07/13/reader-center/15DAILY-webb-audio-app/merlin_209939973_22f3329a-3549-4dd7-a36f-1f192521410d-superJumbo.jpg",
+        "title": "Google pixel 7",
+        "image": "https://www.ixbt.com/img/n1/news/2022/9/0/pixel_large.JPG",
         "images": [
-            "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
-            "https://m.media-amazon.com/images/I/71PvHfU+pwL._SX679_.jpg",
-            "https://fs.npstatic.com/userfiles/7687254/image/Samsung_Galaxy_S22/NextPit_Samsung_Galaxy_S22-w810h462.jpg"  
+            "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Hero_Image_Thumbnail.max-1000x1000.jpg",
+            "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Google_Pixel_7_Ultra_Pixel_7_Pixel_7_Pro_Pixel_Fold_Pixel_Tablet_Kamera_Details_im_Code_entdeckt.jpeg",
+            "https://fdn.gsmarena.com/imgroot/news/22/10/pixel-7-7pro-official/inline2/-1200/gsmarena_003.jpg",
+            "https://9to5toys.com/wp-content/uploads/sites/5/2022/10/google-pixel-7-pro-1.jpg",
+            "https://i.pcmag.com/imagery/reviews/066u20pOsJx1BG4PfEAD0RB-24..v1665583071.jpg",
+            "https://imgix.bustle.com/uploads/image/2022/10/12/c81e59c2-8e6e-4217-b80e-28005ccdaeaf-dsc00543-2.jpg?w=2000&h=980&fit=crop&crop=faces&auto=format%2Ccompress",
+            "https://mobiledrop.in/wp-content/uploads/2022/10/Google-Pixel-7-Pro-Review-Images-01.jpg",
+            "https://media.wired.com/photos/633dc4042d9f11bddfef6a1a/master/w_1600%2Cc_limit/Google-Pixel-7-All-Colors-Gear.jpg",
+            "https://www.91-cdn.com/hub/wp-content/uploads/2022/09/Pixel-6a-1.jpg",
+            "https://specs-tech.com/wp-content/uploads/2021/11/Google-Pixel-7a.jpg",
+            "https://www.ixbt.com/img/n1/news/2022/9/0/pixel_large.JPG",
+            "https://www.electrorates.com/blogimg/Google_Pixel_7a.png",
+            "https://telecomtalk.info/wp-content/uploads/2022/10/google-pixel-7a-launch-is-near-amazon.jpeg"  
         ],
-        "price": 1300,
+        "price": 599,
         "priceHistory": [
 
         ],
@@ -135,30 +145,40 @@
     {
         "id": 5,
         "title": "Asus ROG notebook",
-        "image": "https://m.media-amazon.com/images/I/71wGLBDEsvL._SX679_.jpg",
+        "image": "https://www.businessinsider.in/thumb.cms?msid=91010424&width=1200&height=900",
         "images": [
-            "https://m.media-amazon.com/images/I/71HUnJvHsbL._SL1500_.jpg",
-            "https://m.media-amazon.com/images/I/71PvHfU+pwL._SX679_.jpg",
-            "https://fs.npstatic.com/userfiles/7687254/image/Samsung_Galaxy_S22/NextPit_Samsung_Galaxy_S22-w810h462.jpg"  
+            "https://laptopmedia.com/wp-content/uploads/2021/02/slider5.jpg",
+            "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2021/01/10_StrixG_17_Grey-scaled-e1610550585920.jpg",
+            "https://www.notebookcheck.net/uploads/tx_nbc2/ASUSStrixG17-G713IM__5_.jpg",
+            "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+            "https://www.techtoyreviews.com/wp-content/uploads/2021/01/ASUS-ROG-Strix-G17-Review_5-1024x664.jpg",
+            "https://sm.ign.com/t/ign_ap/screenshot/default/pngimg-2370_1438.1080.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSullvIP9SUWsvemDcDTrpu4U0CsEeu7VK260QiJPFpDx8lWUhllLLtiL_9uVbe9DqTI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfTq97PKoM3pszRvg-VQLVRmFXcYvImSX9cQ&usqp=CAU",
+            "https://d1rlzxa98cyc61.cloudfront.net/catalog/product/cache/1801c418208f9607a371e61f8d9184d9/1/7/176138_2022_11.jpg",
+            "https://www.computerlounge.co.nz/data/media/images/catalogue/Products2/Laptops/Laptops/ASUS/40045_5.jpg?maxheight=800&maxwidth=800&quality=85&404=default.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wx04CW7SQ3sf9lGyWoYxitrNr9roFf6YMQ&usqp=CAU",
+            "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg"  
         ],
-        "price": 1300,
+        "price": 2199,
         "priceHistory": [
 
         ],
         "specifications":[
             {
-                "title": "camera",
-                "value": "triple samsung breanded",
-                "valueLong": "50 MP, f/1.8, 23mm (wide), 1/1.56, 1.0µm, Dual Pixel PDAF, OIS 10 MP, f/2.4, 70mm (telephoto), 1/3.94, 1.0µm, PDAF, OIS, 3x optical zoom 12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55 1.4µm, Super Steady video Features LED flash, auto-HDR, panorama",
-                "knowledge": "https://www.gsmarena.com/glossary.php3?term=camera",
-                "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
+                "title": "CPU",
+                "value": "R9 5900HX",
+                "valueLong": "The AMD Ryzen 9 5900HX is a processor for big (gaming) laptops based on the Cezanne generation. The R9 5900H integrates all eight cores based on the Zen 3 microarchitecture. They are clocked at 3.3 (guaranteed base clock) to 4.6 GHz (Turbo) and support SMT for a total of 16 threads.",
+                "knowledge": "What should you klnow about Laptop CPU",
+                "partReview": "compare R9 5900HX to other mobile CPUs"
             },
             {
-                "title": "CPU",
-                "value": "snapdragon 8 gen 1",
-                "valueLong": "The Snapdragon® 8+ Gen 1 Mobile Platform is our latest premium-tier powerhouse. Qualcomm® Adreno™ GPU offers a 10% increase in GPU clock speeds and 30% GPU power reduction while the Qualcomm® Kryo™ CPU provides 10% better CPU performance and 30% CPU improved power efficiency.",
-                "knowledge": "https://www.gsmarena.com/glossary.php3?term=camera",
-                "partReview": "https://www.phonearena.com/news/samsung-galaxy-s22-camera_id136460"
+                "title": "GPU",
+                "value": "RX 6800m",
+                "valueLong": "AMD has paired 12 GB GDDR6 memory with the Radeon RX 6800M, which are connected using a 192-bit memory interface. The GPU is operating at a frequency of 2116 MHz, which can be boosted up to 2390 MHz, memory is running at 2000 MHz (16 Gbps effective). Its power draw is rated at 145 W maximum.",
+                "knowledge": "What should you klnow about Laptop GPU",
+                "partReview": "compare RX 6800m to other mobile GPUs"
             }
             
         ],

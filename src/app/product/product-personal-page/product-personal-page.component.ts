@@ -17,7 +17,7 @@ import { Breadcrumb } from 'src/app/breadcrumb/breadcrumb.model';
 })
 export class ProductPersonalPageComponent extends ThemeableComponent implements OnInit {
   panelOpenState = false;
-  element!: Product;
+  product!: Product;
   constructor(
     private service: BaseProductService,
     private breadcrumbService: BreadcumbService,
@@ -38,7 +38,7 @@ export class ProductPersonalPageComponent extends ThemeableComponent implements 
         if (!p) {
           this.router.navigate(["urlNotFound"], { skipLocationChange: true })
         } else {
-          this.element = p;
+          this.product = p;
           // ბრედკრამბის მიბმა
           // აქ არის ბრედკრამბის ობიექტების მასივი კატეგორიის ჩათვლით.
           let breadcrumbItems = this.categoryService.getBreadcrumbItemsForCategory(p.categoryId);
