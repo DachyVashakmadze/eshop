@@ -1,69 +1,65 @@
 <div class="main-wraper">
-  <mat-grid-list *ngIf="product" cols="2" rowHeight="1:1">
     <div class="title">
       <h1>{{product.title}}</h1>
     </div>
-    <mat-grid-tile >
+    <div class="two-cols">
       <app-product-carusel [caruselMeniuSize]="6" [imagesSource]="product.images"></app-product-carusel>
-    </mat-grid-tile>
-   
-
-    <mat-grid-tile>
-      <mat-accordion multi class="content-wraper">
-        <mat-expansion-panel disabled >
-          <mat-expansion-panel-header>
-            <mat-panel-title >
-              price
-            </mat-panel-title>
-            <mat-panel-description>
-              {{product.price | currency }}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-
-
-        <ng-container *ngFor="let specification of product.specifications;">
-          <mat-expansion-panel *ngIf="product.specifications" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-              <mat-expansion-panel-header >
-                <mat-panel-title class="flexSpaceBetween">
-                  {{specification.title}}
-                  <a
-                  class="ICons" 
-                  [href]="getGoogleSearchURL(specification.knowledge)"
-                  target="_blank"
-                  >
-                    <mat-icon aria-hidden="false" aria-label="Example home" fontIcon="help"></mat-icon>
-                  </a>
-                </mat-panel-title>
-                <mat-panel-description>
-                  {{specification.value}}
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <p>{{specification.valueLong}}</p>
-              <a 
-              class="ICons" 
-              [href]="getGoogleSearchURL(specification.partReview)"
-              target="_blank"
-              >
-                <mat-icon aria-hidden="false" aria-label="Example home" fontIcon="help"></mat-icon>
-              </a>
+      <div class="specs">
+        <mat-accordion multi class="content-wraper">
+          <mat-expansion-panel disabled >
+            <mat-expansion-panel-header>
+              <mat-panel-title >
+                price
+              </mat-panel-title>
+              <mat-panel-description>
+                {{product.price | currency }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
           </mat-expansion-panel>
-        </ng-container>
-
-        
-      </mat-accordion>
-    </mat-grid-tile>
-  </mat-grid-list>
+  
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+  
+  
+          <ng-container *ngFor="let specification of product.specifications;">
+            <mat-expansion-panel *ngIf="product.specifications" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header >
+                  <mat-panel-title class="flexSpaceBetween">
+                    {{specification.title}}
+                    <a
+                    class="ICons" 
+                    [href]="getGoogleSearchURL(specification.knowledge)"
+                    target="_blank"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="Example home" fontIcon="help"></mat-icon>
+                    </a>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{specification.value}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{specification.valueLong}}</p>
+                <a 
+                class="ICons" 
+                [href]="getGoogleSearchURL(specification.partReview)"
+                target="_blank"
+                >
+                  <mat-icon aria-hidden="false" aria-label="Example home" fontIcon="help"></mat-icon>
+                </a>
+            </mat-expansion-panel>
+          </ng-container>
+  
+          
+        </mat-accordion>
+      </div>
+    </div>
 </div>

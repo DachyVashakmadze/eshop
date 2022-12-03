@@ -67,3 +67,12 @@ mat-grid-tile {
   height: 600px;
 }
 
+.two-cols {
+  margin-block: 2em;
+  display: flex;
+  gap: 2em;
+
+  > * {
+    flex: 1;
+  }
+}
