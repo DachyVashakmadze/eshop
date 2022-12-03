@@ -1,6 +1,7 @@
 <mat-card appearance="outlined" class="mat-card">
     <div class="product-content" (click)="openProduct()">
         <div class="image-wrapper">
+            <app-cool-hover></app-cool-hover>
             <img mat-card-image [src]="product.image" [alt]="product.title" />
         </div>
         <mat-card-header>

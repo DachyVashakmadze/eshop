@@ -14,14 +14,18 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs'; 
-import { ProductCaruselComponent } from './product-carusel/product-carusel.component'; 
+import { ProductCaruselComponent } from './product-carusel/product-carusel.component';
+import { TimesDirective } from '../common/times.directive';
+import { CoolHoverComponent } from '../common/cool-hover/cool-hover.component';
 
 @NgModule({
   declarations: [
     ProductPersonalPageComponent,
     ProductListComponent,
     ProductListItemComponent,
-    ProductCaruselComponent
+    ProductCaruselComponent,
+    CoolHoverComponent,
+    TimesDirective
   ],
   imports: [
     CommonModule,

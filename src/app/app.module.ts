@@ -27,6 +27,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { CoolHoverDirective } from './common/cool-hover.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     FooterComponent,
     Page404Component,
     SideMenuComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    CoolHoverDirective
   ],
   imports: [
     BrowserModule,
