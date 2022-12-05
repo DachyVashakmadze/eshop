@@ -6,24 +6,26 @@
         @include mixin.background-color($theme, 'primary', 600);
     }
 
-    .downBtn>a {
-        color: mixin.get-color($theme, 'accent', 50);
-    }
-
-    .downMenu:hover .downBtn {
+    .downMenu.active .downBtn {
+        @include mixin.background-color($theme, 'primary', 700);
+        color: mixin.get-color($theme, 'accent', 300);
         border-bottom: 4px solid mixin.get-color($theme, 'accent', 600);
     }
 
-    /* For hover effect on button */
-    .navigationBar a:hover,
-    .downMenu:hover .downBtn {
-        @include mixin.background-color($theme, 'primary', 700);
+    .downBtn {
+        color: mixin.get-color($theme, 'accent', 50);
+
+        &:hover {
+            @include mixin.background-color($theme, 'primary', 700);
+            color: mixin.get-color($theme, 'accent', 300);
+        }
     }
 
     .megaMenu a:hover {
-        $color: mixin.get-color($theme, 'accent', 400); 
-        @if ($theme == theme.$light-theme) {
-            $color: mixin.get-color($theme, 'accent', 200); 
+        $color: mixin.get-color($theme, 'accent', 400);
+
+        @if ($theme ==theme.$light-theme) {
+            $color: mixin.get-color($theme, 'accent', 200);
         }
 
         color: $color;
@@ -52,6 +54,7 @@ nav.menu {
     display: flex;
     justify-content: space-between;
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
+    position: relative;
 }
 
 .menu-left {
@@ -90,7 +93,6 @@ nav.menu {
     display: inline-flex;
     outline: none;
     border: none;
-    overflow: hidden;
     height: 100%;
 
     .downMenu {
@@ -110,80 +112,69 @@ nav.menu {
 
 /* The dropdown div */
 .downMenu {
-    overflow: hidden;
-}
-
-/* For downButton to work as menu */
-.downMenu .downBtn {
-    padding: 15px 15px;
-    background-color: inherit;
-    border: none;
-    border-bottom: 4px solid transparent;
-}
-
-/* To hide mega menu */
-.downMenu-content {
-    position: absolute;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
-    transition: visibility 0.2s, opacity 0.2s linear;
-    transition-delay: 500ms;
-
-    &::after {
-        content: "";
-        display: block;
+    .downMenu-content {
         position: absolute;
+        left: 0;
+        right: 0;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        top: 100%;
+        height: calc(100vh - 100%);
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 2;
+        
+        opacity: 0;
+        transform: translateY(-15px);
         pointer-events: none;
-        z-index: 1;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .7);
-    }
-}
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 
-/* To show mega menu on hover */
-.downMenu:hover .downMenu-content {
-    visibility: visible;
-    opacity: 1;
-}
 
-.megaMenu {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2em 5em;
-
-    /* Style the columns */
-    .menuCol {
-        width: 80%;
-
-        & h3 {
-            font-size: 18px;
-            margin-bottom: .75em;
-            cursor: pointer;
-            font-weight: bold;
-            display: block;
-            padding: 10px;
-        }
-
-        & a {
+        .megaMenu {
             display: flex;
-            gap: 10px;
-            margin-bottom: .25em;
-            text-decoration: none;
-            padding: 10px;
-            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 1em;
+            border-radius: 20px;
+            box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .4);
+
+            /* Style the columns */
+            .menuCol {
+                width: 80%;
+
+                & h3 {
+                    font-size: 18px;
+                    margin-bottom: .75em;
+                    cursor: pointer;
+                    font-weight: bold;
+                    display: block;
+                    padding: 10px;
+                }
+
+                & a {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: .25em;
+                    text-decoration: none;
+                    padding: 10px;
+                    align-items: center;
+                }
+            }
         }
+    }
+
+    .downBtn {
+        padding: 15px 15px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 4px solid transparent;
+        cursor: pointer;
+        transition: all 150ms;
+    }
+
+    &.active .downMenu-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 }
 

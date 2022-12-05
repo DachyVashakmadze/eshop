@@ -3,10 +3,8 @@
         <button *ngIf="isMobile" mat-icon-button aria-label="Home" [routerLink]="'/'"><mat-icon>home</mat-icon></button>
         <span *ngIf="!isMobile" class="logo" [routerLink]="'/'"></span>
         <div *ngIf="!isMobile" class="navigationBar" #navigationBar>
-            <div *ngFor="let cat of categories" class="downMenu">
-                <button class="downBtn">
-                    <a href="#" (click)="$event.preventDefault()">{{cat.name}}</a>
-                </button>
+            <div *ngFor="let cat of categories" class="downMenu" data-dropdown>
+                <button class="downBtn" data-dropdown-button>{{cat.name}}</button>
                 <div class="downMenu-content">
                     <div class="megaMenu">
                         <div *ngFor="let subCat of cat.children" class="menuCol">
