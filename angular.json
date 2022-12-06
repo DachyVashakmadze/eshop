@@ -56,6 +56,12 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en": {
+              "localize": ["en"]
+            },
+            "all_lang": {
+              "localize": true
             }
           },
           "defaultConfiguration": "production"
@@ -68,6 +74,9 @@
             },
             "development": {
               "browserTarget": "eshop:build:development"
+            },
+            "en": {
+              "browserTarget": "eshop:build:development,en"
             }
           },
           "defaultConfiguration": "development"
@@ -93,6 +102,14 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "ka",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf"
           }
         }
       }

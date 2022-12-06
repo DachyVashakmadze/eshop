@@ -64,7 +64,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     {
       provide: BaseCategoryService,
       useClass: TestCategoryService
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })
