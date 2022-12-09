@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, LOCALE_ID, Inject } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
@@ -6,7 +6,7 @@ import { ThemingService } from '../services/theming.service';
 import { Category } from '../category/category.model';
 import { BaseCategoryService } from '../services/base-categoryservice';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Subject, takeUntil } from 'rxjs';
+import { startWith, Subject, takeUntil } from 'rxjs';
 
 
 @Component({
@@ -19,6 +19,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
   breakpointObserverDestroyed = new Subject<void>();
   isMobile = false;
+  flagIconClass = '';
+  flagMap = new Map<string, string>().set("ka", 'fi-ge').set("en", "fi-gb");
 
   isDarkMode!: boolean;
   categories!: Category[];
@@ -28,7 +30,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     private categoryService: BaseCategoryService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
-    protected override themingService: ThemingService
+    protected override themingService: ThemingService,
+    @Inject(LOCALE_ID) private locale: string
   ) {
     iconRegistry.addSvgIcon('logo', sanitizer.bypassSecurityTrustResourceUrl('/assets/images/logo.svg'))
     super(themingService);
@@ -39,7 +42,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.breakpointObserverDestroyed.complete();
   }
   ngOnInit(): void {
-    this.categoryService.getCategoriesNested().subscribe(cat => {
+    this.categoryService.getCategoriesNested().subscribe((cat: Category[]) => {
       this.categories = cat;
     });
 
@@ -49,7 +52,10 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
         Breakpoints.Small,
       ])
       .pipe(takeUntil(this.breakpointObserverDestroyed))
-      .subscribe(result => this.isMobile = result.matches);
+      .subscribe((result: { matches: boolean; }) => this.isMobile = result.matches);
+
+      
+      this.flagIconClass = this.flagMap.has(this.locale) ? (this.flagMap.get(this.locale) as string) : '';
   }
 
   ngAfterViewInit() {
@@ -79,7 +85,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
 
       activeDropdowns = document.querySelectorAll('[data-dropdown].active');
-      console.log(activeDropdowns);
       if(activeDropdowns.length > 0) {
         document.querySelector('body')?.classList.add('no-scroll');
       } else {

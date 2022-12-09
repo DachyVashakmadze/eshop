@@ -24,6 +24,19 @@
     </div>
 
     <div class="menu-right">
+        <div class="language-dropdown">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <span class="fi icon-flag" [class]="flagIconClass"></span>
+            </button>
+            <mat-menu #menu="matMenu">
+                <a href="/ka" class="mat-menu-item" mat-menu-item>
+                    <span class="fi fi-ge icon-flag"></span><span i18n="@@menu_language_ka">ქართული</span>
+                </a>
+                <a href="/en" class="mat-menu-item" mat-menu-item>
+                    <span class="fi fi-gb icon-flag"></span><span i18n="@@menu_language_en">ინგლისური</span>
+                </a>
+            </mat-menu>
+        </div>
         <mat-icon>light_mode</mat-icon>
         <mat-slide-toggle [checked]="isDarkMode" (change)="toggleMode()" aria-label="Theme">
         </mat-slide-toggle>

@@ -49,15 +49,21 @@ body {
     --mdc-switch-selected-icon-size: 0px;
     --mdc-switch-unselected-icon-size: 0px;
 }
-
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48
-}
-
 .no-scroll {
     overflow: hidden;
+}
+
+
+body.light-theme {
+    // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
+    .mdc-menu-surface {
+        @include mixin.background-color(theme.$light-theme, 'primary', 50);
+    }
+}
+
+body.dark-theme {
+    // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
+    .mdc-menu-surface {
+        @include mixin.background-color(theme.$dark-theme, 'primary', 700);
+    }
 }

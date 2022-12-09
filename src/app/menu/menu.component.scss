@@ -122,7 +122,7 @@ nav.menu {
         height: calc(100vh - 100%);
         background-color: rgba(0, 0, 0, .4);
         z-index: 2;
-        
+
         opacity: 0;
         transform: translateY(-15px);
         pointer-events: none;
@@ -176,6 +176,10 @@ nav.menu {
         transform: translateY(0);
         pointer-events: auto;
     }
+}
+
+.mat-menu-item .icon-flag {
+    margin-right: 0.5em;
 }
 
 @media((max-width: 599.98px)) {

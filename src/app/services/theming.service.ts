@@ -34,8 +34,9 @@ export class ThemingService {
       this.ref.tick();
     });
 
-    // უბრალოდ ხდება შემოწმება რამდენად კარგად მუშაობს თემების გადართვა
-    // this.disco();
+    // აქ ვაკვირდებით თემის ცვლილებას და შესაბამის თემის კლასს ვადებთ HTML-ის body tag-ს. 
+    // ეს საჭიროა ცალკეული კომპონენტებისთვის, მაგალითად overlay, მატერიალის menu...
+    this.theme.subscribe(this.setThemeToBodyTag);
   }
 
   // ამ ფუნქციით ხდება თემის შეცვლა, ხელით
@@ -48,15 +49,12 @@ export class ThemingService {
     this.ref.tick();
   }
 
-  private disco() {
-    if (this.theme.value === 'light-theme') {
-      this.theme.next('dark-theme');
+  setThemeToBodyTag(theme: string) {
+    if (theme === 'light-theme') {
+        document.body.classList.remove('dark-theme');
     } else {
-      this.theme.next('light-theme');
+        document.body.classList.remove('light-theme');
     }
-    this.ref.tick();
-    setTimeout(() => {
-      this.disco();
-    }, 5000);
+    document.body.classList.add(theme);  
   }
 }
