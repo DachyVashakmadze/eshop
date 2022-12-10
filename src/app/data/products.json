@@ -184,5 +184,173 @@
         ],
         "categoryId": 3
         
+    },
+    {
+        "id": 6,
+        "title": "Asus ROG notebook",
+        "image": "https://www.notebookcheck.net/uploads/tx_nbc2/ASUSStrixG17-G713IM__5_.jpg",
+        "images": [
+            "https://laptopmedia.com/wp-content/uploads/2021/02/slider5.jpg",
+            "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2021/01/10_StrixG_17_Grey-scaled-e1610550585920.jpg",
+            "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+            "https://www.techtoyreviews.com/wp-content/uploads/2021/01/ASUS-ROG-Strix-G17-Review_5-1024x664.jpg",
+            "https://sm.ign.com/t/ign_ap/screenshot/default/pngimg-2370_1438.1080.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSullvIP9SUWsvemDcDTrpu4U0CsEeu7VK260QiJPFpDx8lWUhllLLtiL_9uVbe9DqTI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfTq97PKoM3pszRvg-VQLVRmFXcYvImSX9cQ&usqp=CAU",
+            "https://d1rlzxa98cyc61.cloudfront.net/catalog/product/cache/1801c418208f9607a371e61f8d9184d9/1/7/176138_2022_11.jpg",
+            "https://www.computerlounge.co.nz/data/media/images/catalogue/Products2/Laptops/Laptops/ASUS/40045_5.jpg?maxheight=800&maxwidth=800&quality=85&404=default.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wx04CW7SQ3sf9lGyWoYxitrNr9roFf6YMQ&usqp=CAU",
+            "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg"  
+        ],
+        "price": 2199,
+        "priceHistory": [
+
+        ],
+        "specifications":[
+            {
+                "title": "CPU",
+                "value": "R9 5900HX",
+                "valueLong": "The AMD Ryzen 9 5900HX is a processor for big (gaming) laptops based on the Cezanne generation. The R9 5900H integrates all eight cores based on the Zen 3 microarchitecture. They are clocked at 3.3 (guaranteed base clock) to 4.6 GHz (Turbo) and support SMT for a total of 16 threads.",
+                "knowledge": "What should you klnow about Laptop CPU",
+                "partReview": "compare R9 5900HX to other mobile CPUs"
+            },
+            {
+                "title": "GPU",
+                "value": "RX 6800m",
+                "valueLong": "AMD has paired 12 GB GDDR6 memory with the Radeon RX 6800M, which are connected using a 192-bit memory interface. The GPU is operating at a frequency of 2116 MHz, which can be boosted up to 2390 MHz, memory is running at 2000 MHz (16 Gbps effective). Its power draw is rated at 145 W maximum.",
+                "knowledge": "What should you klnow about Laptop GPU",
+                "partReview": "compare RX 6800m to other mobile GPUs"
+            }
+            
+        ],
+        "categoryId": 3
+        
+    },
+    {
+        "id": 7,
+        "title": "Asus ROG notebook",
+        "image": "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+        "images": [
+            "https://laptopmedia.com/wp-content/uploads/2021/02/slider5.jpg",
+            "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2021/01/10_StrixG_17_Grey-scaled-e1610550585920.jpg",
+            "https://www.notebookcheck.net/uploads/tx_nbc2/ASUSStrixG17-G713IM__5_.jpg",
+            "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+            "https://www.techtoyreviews.com/wp-content/uploads/2021/01/ASUS-ROG-Strix-G17-Review_5-1024x664.jpg",
+            "https://sm.ign.com/t/ign_ap/screenshot/default/pngimg-2370_1438.1080.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSullvIP9SUWsvemDcDTrpu4U0CsEeu7VK260QiJPFpDx8lWUhllLLtiL_9uVbe9DqTI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfTq97PKoM3pszRvg-VQLVRmFXcYvImSX9cQ&usqp=CAU",
+            "https://d1rlzxa98cyc61.cloudfront.net/catalog/product/cache/1801c418208f9607a371e61f8d9184d9/1/7/176138_2022_11.jpg",
+            "https://www.computerlounge.co.nz/data/media/images/catalogue/Products2/Laptops/Laptops/ASUS/40045_5.jpg?maxheight=800&maxwidth=800&quality=85&404=default.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wx04CW7SQ3sf9lGyWoYxitrNr9roFf6YMQ&usqp=CAU",
+            "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg"  
+        ],
+        "price": 2199,
+        "priceHistory": [
+
+        ],
+        "specifications":[
+            {
+                "title": "CPU",
+                "value": "R9 5900HX",
+                "valueLong": "The AMD Ryzen 9 5900HX is a processor for big (gaming) laptops based on the Cezanne generation. The R9 5900H integrates all eight cores based on the Zen 3 microarchitecture. They are clocked at 3.3 (guaranteed base clock) to 4.6 GHz (Turbo) and support SMT for a total of 16 threads.",
+                "knowledge": "What should you klnow about Laptop CPU",
+                "partReview": "compare R9 5900HX to other mobile CPUs"
+            },
+            {
+                "title": "GPU",
+                "value": "RX 6800m",
+                "valueLong": "AMD has paired 12 GB GDDR6 memory with the Radeon RX 6800M, which are connected using a 192-bit memory interface. The GPU is operating at a frequency of 2116 MHz, which can be boosted up to 2390 MHz, memory is running at 2000 MHz (16 Gbps effective). Its power draw is rated at 145 W maximum.",
+                "knowledge": "What should you klnow about Laptop GPU",
+                "partReview": "compare RX 6800m to other mobile GPUs"
+            }
+            
+        ],
+        "categoryId": 3
+        
+    },
+    {
+        "id": 8,
+        "title": "Asus ROG notebook",
+        "image": "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg",
+        "images": [
+            "https://laptopmedia.com/wp-content/uploads/2021/02/slider5.jpg",
+            "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2021/01/10_StrixG_17_Grey-scaled-e1610550585920.jpg",
+            "https://www.notebookcheck.net/uploads/tx_nbc2/ASUSStrixG17-G713IM__5_.jpg",
+            "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+            "https://www.techtoyreviews.com/wp-content/uploads/2021/01/ASUS-ROG-Strix-G17-Review_5-1024x664.jpg",
+            "https://sm.ign.com/t/ign_ap/screenshot/default/pngimg-2370_1438.1080.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSullvIP9SUWsvemDcDTrpu4U0CsEeu7VK260QiJPFpDx8lWUhllLLtiL_9uVbe9DqTI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfTq97PKoM3pszRvg-VQLVRmFXcYvImSX9cQ&usqp=CAU",
+            "https://d1rlzxa98cyc61.cloudfront.net/catalog/product/cache/1801c418208f9607a371e61f8d9184d9/1/7/176138_2022_11.jpg",
+            "https://www.computerlounge.co.nz/data/media/images/catalogue/Products2/Laptops/Laptops/ASUS/40045_5.jpg?maxheight=800&maxwidth=800&quality=85&404=default.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6wx04CW7SQ3sf9lGyWoYxitrNr9roFf6YMQ&usqp=CAU",
+            "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg"  
+        ],
+        "price": 2199,
+        "priceHistory": [
+
+        ],
+        "specifications":[
+            {
+                "title": "CPU",
+                "value": "R9 5900HX",
+                "valueLong": "The AMD Ryzen 9 5900HX is a processor for big (gaming) laptops based on the Cezanne generation. The R9 5900H integrates all eight cores based on the Zen 3 microarchitecture. They are clocked at 3.3 (guaranteed base clock) to 4.6 GHz (Turbo) and support SMT for a total of 16 threads.",
+                "knowledge": "What should you klnow about Laptop CPU",
+                "partReview": "compare R9 5900HX to other mobile CPUs"
+            },
+            {
+                "title": "GPU",
+                "value": "RX 6800m",
+                "valueLong": "AMD has paired 12 GB GDDR6 memory with the Radeon RX 6800M, which are connected using a 192-bit memory interface. The GPU is operating at a frequency of 2116 MHz, which can be boosted up to 2390 MHz, memory is running at 2000 MHz (16 Gbps effective). Its power draw is rated at 145 W maximum.",
+                "knowledge": "What should you klnow about Laptop GPU",
+                "partReview": "compare RX 6800m to other mobile GPUs"
+            }
+            
+        ],
+        "categoryId": 3
+        
+    },
+    {
+        "id": 9,
+        "title": "Asus ROG notebook",
+        "image": "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+        "images": [
+            "https://laptopmedia.com/wp-content/uploads/2021/02/slider5.jpg",
+            "https://media.ldlc.com/r1600/ld/products/00/05/82/42/LD0005824210_1_0005867377_0005891739.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2021/01/10_StrixG_17_Grey-scaled-e1610550585920.jpg",
+            "https://www.notebookcheck.net/uploads/tx_nbc2/ASUSStrixG17-G713IM__5_.jpg",
+            "https://i.ebayimg.com/images/g/CLwAAOSw8IJiKWUI/s-l640.jpg",
+            "https://www.techtoyreviews.com/wp-content/uploads/2021/01/ASUS-ROG-Strix-G17-Review_5-1024x664.jpg",
+            "https://sm.ign.com/t/ign_ap/screenshot/default/pngimg-2370_1438.1080.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSullvIP9SUWsvemDcDTrpu4U0CsEeu7VK260QiJPFpDx8lWUhllLLtiL_9uVbe9DqTI&usqp=CAU",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfTq97PKoM3pszRvg-VQLVRmFXcYvImSX9cQ&usqp=CAU",
+            "https://media.karousell.com/media/photos/products/2022/9/12/asus_rog_g17_i7_10th_gen_rtx_2_1662974605_f65af258_progressive.jpg"  
+        ],
+        "price": 2199,
+        "priceHistory": [
+
+        ],
+        "specifications":[
+            {
+                "title": "CPU",
+                "value": "R9 5900HX",
+                "valueLong": "The AMD Ryzen 9 5900HX is a processor for big (gaming) laptops based on the Cezanne generation. The R9 5900H integrates all eight cores based on the Zen 3 microarchitecture. They are clocked at 3.3 (guaranteed base clock) to 4.6 GHz (Turbo) and support SMT for a total of 16 threads.",
+                "knowledge": "What should you klnow about Laptop CPU",
+                "partReview": "compare R9 5900HX to other mobile CPUs"
+            },
+            {
+                "title": "GPU",
+                "value": "RX 6800m",
+                "valueLong": "AMD has paired 12 GB GDDR6 memory with the Radeon RX 6800M, which are connected using a 192-bit memory interface. The GPU is operating at a frequency of 2116 MHz, which can be boosted up to 2390 MHz, memory is running at 2000 MHz (16 Gbps effective). Its power draw is rated at 145 W maximum.",
+                "knowledge": "What should you klnow about Laptop GPU",
+                "partReview": "compare RX 6800m to other mobile GPUs"
+            }
+            
+        ],
+        "categoryId": 3
+        
     }
 ]
