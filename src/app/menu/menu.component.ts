@@ -39,9 +39,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.breakpointObserverDestroyed.complete();
   }
   ngOnInit(): void {
-//Todo remove
-    console.log(this.categoryService.getCatMap());
-
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
     });
@@ -55,24 +52,47 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
       .subscribe(result => this.isMobile = result.matches);
   }
 
+  ngAfterViewInit() {
+    document.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      const isDropdownButton = target.matches('[data-dropdown-button]');
+      if (!isDropdownButton && target.closest('[data-dropdown]') != null) {
+        document.querySelector('body')?.classList.remove('no-scroll');
+      }
+
+      let currentDropdown: HTMLElement|null;
+      if (isDropdownButton) {
+        currentDropdown = target.closest('[data-dropdown]');
+        currentDropdown?.classList.toggle('active');
+      }
+
+      let activeDropdowns = document.querySelectorAll('[data-dropdown].active');
+
+      activeDropdowns.forEach(dropdown => {
+        if(dropdown === currentDropdown) {
+            return;
+        }
+
+        dropdown.classList.remove('active');
+      })
+
+
+      activeDropdowns = document.querySelectorAll('[data-dropdown].active');
+      console.log(activeDropdowns);
+      if(activeDropdowns.length > 0) {
+        document.querySelector('body')?.classList.add('no-scroll');
+      } else {
+        document.querySelector('body')?.classList.remove('no-scroll');
+      }
+
+    });
+  }
+
   closeMenu(event: Event, rootMenuItem = false) {
     const el = event.target as Element;
-
-    let menuEl: HTMLDivElement | null | undefined;
-    if (rootMenuItem) {
-      menuEl = el.parentElement?.parentElement?.querySelector('.megaMenu');
-    } else {
-      menuEl = el.closest('.megaMenu') as HTMLDivElement;
-    }
-
-    if (menuEl) {
-      menuEl.style.display = 'none';
-      setTimeout(() => {
-        if (menuEl) {
-          menuEl.style.display = 'flex';
-        }
-      }, 0);
-    }
+    const dropdown = el.closest('[data-dropdown]') as HTMLDivElement;
+    dropdown.classList.remove('active');
   }
 
   getCategoryURL(id: number) {
