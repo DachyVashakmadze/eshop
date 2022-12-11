@@ -1,5 +1,8 @@
 @use 'scss/index' as *;
 
+@include all-component-typographies();
+@include core();
+
 .light-theme {
     @include all-component-themes($light-theme);
 }
