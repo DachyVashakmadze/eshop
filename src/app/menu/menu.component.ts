@@ -22,7 +22,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   flagIconClass = '';
   flagMap = new Map<string, string>()
     .set("ka", 'fi-ge')
-    .set("ka-GE", 'fi-ge')
     .set("en", "fi-gb");
 
   isDarkMode!: boolean;
