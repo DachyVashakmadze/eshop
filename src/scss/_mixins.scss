@@ -1,0 +1,28 @@
+@forward 'theme';
+@use 'theme' as *;
+
+
+@mixin theming() {
+    :host.light-theme {
+        @content($light-theme);
+    }
+    
+    :host.dark-theme {
+        @content($dark-theme);
+    }
+  }
+  
+  @mixin background-color($theme, $type, $hue) {
+    $color-config: get-color-config($theme);
+    $palette: get($color-config, $type);
+  
+    background-color: get-color-from-palette($palette, $hue);
+    color: get-color-from-palette($palette, $hue + '-contrast');
+  }
+  
+  @function get-color($theme, $type, $hue) {
+    $color-config: get-color-config($theme);
+    $palette: get($color-config, $type);
+  
+    @return get-color-from-palette($palette, $hue);
+  }

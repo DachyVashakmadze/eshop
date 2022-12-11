@@ -1,8 +1,8 @@
-@use '/src/mixins' as mixin;
+@use '/src/scss/' as *;
 
-@include mixin.theming() using($theme) {
+@include theming() using($theme) {
     .no-products-wrapper .info-box {
-        border: 4px solid mixin.get-color($theme, 'accent', 600);
+        border: 4px solid get-color($theme, 'accent', 600);
     }
 }
 

@@ -1,13 +1,13 @@
-@use '/src/mixins' as mixin;
+@use '/src/scss/' as *;
 
-@include mixin.theming() using($theme) {
+@include theming() using($theme) {
     .mainContentWraper{
-        @include mixin.background-color($theme, "primary", 300);
+        @include background-color($theme, "primary", 300);
     }
     .menuPictureWraper{
-        @include mixin.background-color($theme, "primary", 600);
+        @include background-color($theme, "primary", 600);
         &.active {
-            border: .25em solid mixin.get-color($theme, "accent", 600);
+            border: .25em solid get-color($theme, "accent", 600);
         }
     }
 }
