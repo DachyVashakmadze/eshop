@@ -58,13 +58,13 @@ body {
 body.light-theme {
     // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
     .mdc-menu-surface {
-        @include mixin.background-color(theme.$light-theme, 'primary', 50);
+        @include background-color($light-theme, 'primary', 50);
     }
 }
 
 body.dark-theme {
     // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
     .mdc-menu-surface {
-        @include mixin.background-color(theme.$dark-theme, 'primary', 700);
+        @include background-color($dark-theme, 'primary', 700);
     }
 }
