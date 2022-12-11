@@ -1,31 +1,30 @@
-@use '/src/mixins' as mixin;
-@use '/src/theme' as theme;
+@use '/src/scss/' as *;
 
-@include mixin.theming() using($theme) {
+@include theming() using($theme) {
     nav.menu {
-        @include mixin.background-color($theme, 'primary', 600);
+        @include background-color($theme, 'primary', 600);
     }
 
     .downMenu.active .downBtn {
-        @include mixin.background-color($theme, 'primary', 700);
-        color: mixin.get-color($theme, 'accent', 300);
-        border-bottom: 4px solid mixin.get-color($theme, 'accent', 600);
+        @include background-color($theme, 'primary', 700);
+        color: get-color($theme, 'accent', 300);
+        border-bottom: 4px solid get-color($theme, 'accent', 600);
     }
 
     .downBtn {
-        color: mixin.get-color($theme, 'accent', 50);
+        color: get-color($theme, 'accent', 50);
 
         &:hover {
-            @include mixin.background-color($theme, 'primary', 700);
-            color: mixin.get-color($theme, 'accent', 300);
+            @include background-color($theme, 'primary', 700);
+            color: get-color($theme, 'accent', 300);
         }
     }
 
     .megaMenu a:hover {
-        $color: mixin.get-color($theme, 'accent', 400);
+        $color: get-color($theme, 'accent', 400);
 
-        @if ($theme ==theme.$light-theme) {
-            $color: mixin.get-color($theme, 'accent', 200);
+        @if ($theme ==$light-theme) {
+            $color: get-color($theme, 'accent', 200);
         }
 
         color: $color;
@@ -34,7 +33,7 @@
     }
 
     .megaMenu {
-        @include mixin.background-color($theme, 'primary', 100);
+        @include background-color($theme, 'primary', 100);
     }
 
     /* Style the columns */
@@ -50,15 +49,15 @@
                 $Datest: 1;
             }
             @if($Datest==1){//UC
-                @include mixin.background-color($theme, 'primary', 300);
+                @include background-color($theme, 'primary', 300);
                 border-radius: 10px;
             }
         }
         &>* {
-            color: mixin.get-color($theme, 'primary', 900);
+            color: get-color($theme, 'primary', 900);
 
             &:hover {
-                @include mixin.background-color($theme, 'primary', 600);
+                @include background-color($theme, 'primary', 600);
                 border-radius: 10px;
 
             }

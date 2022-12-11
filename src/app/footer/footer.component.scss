@@ -1,8 +1,8 @@
-@use '/src/mixins' as mixin;
+@use '/src/scss/' as *;
 
-@include mixin.theming() using($theme) {
+@include theming() using($theme) {
     .wrapper {
-        @include mixin.background-color($theme, 'primary', 700);
+        @include background-color($theme, 'primary', 700);
     }
 }
 

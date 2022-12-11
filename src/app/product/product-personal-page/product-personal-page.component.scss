@@ -1,11 +1,11 @@
-@use '/src/mixins' as mixin;
+@use '/src/scss/' as *;
 
-@include mixin.theming() using($theme) {
+@include theming() using($theme) {
   .title {
-    @include mixin.background-color($theme, 'accent', 600);
+    @include background-color($theme, 'accent', 600);
   }
   .manePicture img {
-    border: 20px solid mixin.get-color($theme, 'accent', 200);
+    border: 20px solid get-color($theme, 'accent', 200);
   }
 }
 
