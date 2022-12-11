@@ -1,13 +1,12 @@
-@use '@angular/material' as mat;
-@use '/src/theme';
+// @use '/src/scss/' as *;
 
-:host.light-theme {
-    @include mat.all-component-themes(theme.$light-theme);
-}
+// :host.light-theme {
+//     @include all-component-themes($light-theme);
+// }
 
-:host.dark-theme {
-    @include mat.all-component-colors(theme.$dark-theme);
-}
+// :host.dark-theme {
+//     @include all-component-colors($dark-theme);
+// }
 
 .mat-sidenav-container, .mat-sidenav-content, .mat-sidenav {
     height: 100%;

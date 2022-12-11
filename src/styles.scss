@@ -1,13 +1,11 @@
-@use '@angular/material' as mat;
-@use 'theme' as theme;
-@use 'mixins' as mixin;
+@use 'scss/index' as *;
 
 .light-theme {
-    @include mat.all-component-themes(theme.$light-theme);
+    @include all-component-themes($light-theme);
 }
 
 .dark-theme {
-    @include mat.all-component-colors(theme.$dark-theme);
+    @include all-component-colors($dark-theme);
 }
 
 * {
@@ -30,17 +28,17 @@ body {
 
 // აქ ხდება ნაგულისხმები სტილების გადაწერა toggle slider-ის კომპონენტზე.
 .light-theme .mat-mdc-slide-toggle {
-    --mdc-switch-unselected-focus-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
-    --mdc-switch-unselected-pressed-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
-    --mdc-switch-unselected-hover-state-layer-color: #{mixin.get-color(theme.$light-theme, 'accent', 300)};
-    --mdc-switch-unselected-focus-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
-    --mdc-switch-unselected-hover-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
-    --mdc-switch-unselected-pressed-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
-    --mdc-switch-unselected-track-color: #{mixin.get-color(theme.$light-theme, 'accent', 200)};
-    --mdc-switch-unselected-focus-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
-    --mdc-switch-unselected-hover-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
-    --mdc-switch-unselected-pressed-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 500)};
-    --mdc-switch-unselected-handle-color: #{mixin.get-color(theme.$light-theme, 'accent', 400)};
+    --mdc-switch-unselected-focus-state-layer-color: #{get-color($light-theme, 'accent', 300)};
+    --mdc-switch-unselected-pressed-state-layer-color: #{get-color($light-theme, 'accent', 300)};
+    --mdc-switch-unselected-hover-state-layer-color: #{get-color($light-theme, 'accent', 300)};
+    --mdc-switch-unselected-focus-track-color: #{get-color($light-theme, 'accent', 200)};
+    --mdc-switch-unselected-hover-track-color: #{get-color($light-theme, 'accent', 200)};
+    --mdc-switch-unselected-pressed-track-color: #{get-color($light-theme, 'accent', 200)};
+    --mdc-switch-unselected-track-color: #{get-color($light-theme, 'accent', 200)};
+    --mdc-switch-unselected-focus-handle-color: #{get-color($light-theme, 'accent', 500)};
+    --mdc-switch-unselected-hover-handle-color: #{get-color($light-theme, 'accent', 500)};
+    --mdc-switch-unselected-pressed-handle-color: #{get-color($light-theme, 'accent', 500)};
+    --mdc-switch-unselected-handle-color: #{get-color($light-theme, 'accent', 400)};
 }
 
 

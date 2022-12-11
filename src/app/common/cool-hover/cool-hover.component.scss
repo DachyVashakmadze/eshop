@@ -1,8 +1,8 @@
-@use '/src/mixins' as mixin;
+@use '/src/scss/' as *;
 
 
-@include mixin.theming() using($theme) {
-    $particleColor: mixin.get-color($theme, 'accent', 600);
+@include theming() using($theme) {
+    $particleColor: get-color($theme, 'accent', 600);
     .circle {
         color: $particleColor;
     //     background-image: radial-gradient(
