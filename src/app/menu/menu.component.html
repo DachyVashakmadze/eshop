@@ -8,7 +8,7 @@
                 <div class="downMenu-content">
                     <div class="megaMenu">
                         <div *ngFor="let subCat of cat.children" class="menuCol">
-                            <h3 [routerLink]="getCategoryURL(subCat.id)" (click)="closeMenu($event)">{{subCat.name}}
+                            <h3 class="Dtest" [routerLink]="getCategoryURL(subCat.id)" (click)="closeMenu($event)">{{subCat.name}}
                             </h3>
                             <ng-container *ngFor="let subSubCat of subCat.children">
                                 <a href="#" [routerLink]="getCategoryURL(subSubCat.id)" (click)="closeMenu($event)">
