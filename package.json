@@ -8,6 +8,7 @@
     "build": "ng build",
     "build:en": "ng build --configuration en",
     "build:all_lang": "ng build --configuration all_lang",
+    "build:prod:all_lang": "ng build --configuration production,all_lang",
     "watch": "ng build --watch --configuration development",
     "watch:en": "ng build --watch --configuration development,en",
     "watch:all_lang": "ng build --watch --configuration development,all_lang",

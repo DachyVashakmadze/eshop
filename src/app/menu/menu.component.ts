@@ -20,7 +20,10 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   breakpointObserverDestroyed = new Subject<void>();
   isMobile = false;
   flagIconClass = '';
-  flagMap = new Map<string, string>().set("ka", 'fi-ge').set("en", "fi-gb");
+  flagMap = new Map<string, string>()
+    .set("ka", 'fi-ge')
+    .set("ka-GE", 'fi-ge')
+    .set("en", "fi-gb");
 
   isDarkMode!: boolean;
   categories!: Category[];
@@ -54,7 +57,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
       .pipe(takeUntil(this.breakpointObserverDestroyed))
       .subscribe((result: { matches: boolean; }) => this.isMobile = result.matches);
 
-      
+
+      console.log(this.locale);
       this.flagIconClass = this.flagMap.has(this.locale) ? (this.flagMap.get(this.locale) as string) : '';
   }
 
