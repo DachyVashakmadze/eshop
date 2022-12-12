@@ -115,6 +115,12 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.sidenavToggle.emit();
   }
 
+  changeLanguage(event: MouseEvent, lang: string) {
+    event.preventDefault();
+    const newUrl = window.location.href.replace(/\/..\//, `/${lang}/`);
+    window.location.href = newUrl;
+  }
+
   protected override applyTheme(theme: string): void {
     this.cssThemeClass = theme;
     this.isDarkMode = (theme === 'dark-theme');
