@@ -12,7 +12,7 @@
       </trans-unit>
       <trans-unit id="menu_language_ka" datatype="html">
         <source>ქართული</source>
-        <source>Georgian</source>
+        <target>Georgian</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">33</context>
@@ -20,7 +20,7 @@
       </trans-unit>
       <trans-unit id="menu_language_en" datatype="html">
         <source>ინგლისური</source>
-        <source>English</source>
+        <target>English</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">36</context>
