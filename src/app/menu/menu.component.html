@@ -1,7 +1,7 @@
 <nav class="menu">
     <div class="menu-left">
         <button *ngIf="isMobile" mat-icon-button aria-label="Home" [routerLink]="'/'"><mat-icon>home</mat-icon></button>
-        <span *ngIf="!isMobile" class="logo" [routerLink]="'/'"></span>
+        <span *ngIf="!isMobile" class="logo" [style.background-image]="'url(' + logoUrl + ')'" [routerLink]="'/'"></span>
         <div *ngIf="!isMobile" class="navigationBar" #navigationBar>
             <div *ngFor="let cat of categories" class="downMenu" data-dropdown>
                 <button class="downBtn" data-dropdown-button>{{cat.name}}</button>

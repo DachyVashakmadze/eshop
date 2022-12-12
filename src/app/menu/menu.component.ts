@@ -27,6 +27,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   isDarkMode!: boolean;
   categories!: Category[];
 
+  logoUrl = 'assets/images/logo.svg';
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private categoryService: BaseCategoryService,
