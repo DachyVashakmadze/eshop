@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "name": "Computers",
+        "children": [
+            {
+                "id": 2,
+                "name": "PC",
+                "children": [
+                    {
+                        "id": 3,
+                        "name": "Laptops",
+                        "icon": "laptop"
+                    },
+                    {
+                        "id": 8,
+                        "name": "Brand PC",
+                        "icon": "dns"
+                    },
+                    {
+                        "id": 22,
+                        "name": "Tablets",
+                        "icon": "tablet"
+                    },
+                    {
+                        "id": 27,
+                        "name": "Displays",
+                        "icon": "tv"
+                    },
+                    {
+                        "id": 29,
+                        "name": "Projectors",
+                        "icon": "videocam"
+                    },
+                    {
+                        "id": 37,
+                        "name": "Printers",
+                        "icon": "print"
+                    }
+                ]
+            },
+            {
+                "id": 10,
+                "name": "PC Components",
+                "children": [
+                    {
+                        "id": 11,
+                        "name": "CPU",
+                        "icon": "memory"
+                    },
+                    {
+                        "id": 12,
+                        "name": "Motherboard",
+                        "icon": "developer_board"
+                    },
+                    {
+                        "id": 13,
+                        "name": "RAM",
+                        "icon": "repartition"
+                    },
+                    {
+                        "id": 14,
+                        "name": "GPU",
+                        "icon": "select_all"
+                    },
+                    {
+                        "id": 15,
+                        "name": "PSU",
+                        "icon": "power"
+                    },
+                    {
+                        "id": 16,
+                        "name": "Case",
+                        "icon": "pallet"
+                    },
+                    {
+                        "id": 17,
+                        "name": "Coolers",
+                        "icon": "heat_pump"
+                    },
+                    {
+                        "id": 18,
+                        "name": "Hard Drives",
+                        "icon": "storage",
+                        "children": [
+                            {
+                                "id": 19,
+                                "name": "HDD"
+                            },
+                            {
+                                "id": 20,
+                                "name": "SSD"
+                            },
+                            {
+                                "id": 21,
+                                "name": "NVME"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 43,
+                "name": "Accessories",
+                "children": [
+                    {
+                        "id": 44,
+                        "name": "Keyboards",
+                        "icon": "keyboard",
+                        "children": [
+                            {
+                                "id": 45,
+                                "name": "Wireless Keyboards"
+                            },
+                            {
+                                "id": 55,
+                                "name": "Keyboard Pads"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 46,
+                        "name": "Mouse",
+                        "icon": "mouse",
+                        "children": [
+                            {
+                                "id": 47,
+                                "name": "Wireless Mouse"
+                            },
+                            {
+                                "id": 54,
+                                "name": "Mouse Pad"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 50,
+                        "name": "Headphones",
+                        "icon": "headphones",
+                        "children": [
+                            {
+                                "id": 51,
+                                "name": "Wireless Headphones"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 52,
+                        "name": "Web-Cam",
+                        "icon": "video_camera_front"
+                    },
+                    {
+                        "id": 53,
+                        "name": "Microphones",
+                        "icon": "mic-none"
+                    },
+                    {
+                        "id": 48,
+                        "name": "Speakers",
+                        "icon": "speaker",
+                        "children": [
+                            {
+                                "id": 49,
+                                "name": "Bluetooth Speakers"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 56,
+                        "name": "USB Flash Drives",
+                        "icon": "usb"
+                    },
+                    {
+                        "id": 57,
+                        "name": "Cables and Adapters",
+                        "icon": "cable"
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "name": "Network Devices",
+                "children": [
+                    {
+                        "id": 33,
+                        "name": "Routers",
+                        "icon": "router"
+                    },
+                    {
+                        "id": 34,
+                        "name": "Wi-Fi Routers",
+                        "icon": "wifi"
+                    },
+                    {
+                        "id": 35,
+                        "name": "Switches",
+                        "icon": "lan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "name": "Mobile Phones",
+        "children": [
+            {
+                "id": 59,
+                "name": "Smartphones",
+                "children": [
+                    {
+                        "id": 61,
+                        "name": "Android Smartphones",
+                        "icon": "phone_android"
+                    },
+                    {
+                        "id": 62,
+                        "name": "iPhone",
+                        "icon": "phone_iphone"
+                    }
+                ]
+            },
+            {
+                "id": 60,
+                "name": "Accessories",
+                "children": [
+                    {
+                        "id": 63,
+                        "name": "Chargers",
+                        "icon": "electrical_services"
+                    }
+                ]
+            }
+        ]
+    }
+]

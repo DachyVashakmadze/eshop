@@ -47,6 +47,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   }
   ngOnInit(): void {
     this.categoryService.getCategoriesNested().subscribe((cat: Category[]) => {
+      console.log('cats received in menu');
       this.categories = cat;
     });
 

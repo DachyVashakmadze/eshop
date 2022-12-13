@@ -42,7 +42,7 @@ export class ProductListComponent extends ThemeableComponent implements OnInit, 
       } else {
         this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
         breadcrumbItems = [ {
-          'title': 'ყველა პროდუქტი',
+          'title': $localize `:@@all_products_static_text:ყველა პროდუქტი`,
           'url': '/'
         }];
       }
