@@ -14,11 +14,22 @@ import { CartItem } from '../cart-item.model';
 export class CartListItemComponent extends ThemeableComponent {
   @Input() cartItem!: CartItem;
 
+  constructor(
+    private cartService: BaseCartService,
+    protected override themingService: ThemingService
+  ) {
+    super(themingService);
+  }
+
   increaseQty() {
     this.cartItem.quantity += 1;
   }
 
   decreaseQty() {
     this.cartItem.quantity -= 1;
+  }
+
+  removeItem() {
+    this.cartService.removeItem(this.cartItem.product_id);
   }
 }

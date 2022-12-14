@@ -25,7 +25,9 @@ export class TestCartService extends BaseCartService {
   }
 
   removeItem(productId: number): Observable<number> {
-    throw new Error('Method not implemented.');
+    this.testItems.next(this.testItems.value.filter(i => i.product_id !== productId));
+
+    return scheduled([this.testItems.value.length], asyncScheduler);
   }
 
   updateQuantity(productId: number, quantity: number): Observable<number> {
