@@ -6,8 +6,9 @@ import { ThemingService } from '../services/theming.service';
 import { Category } from '../category/category.model';
 import { BaseCategoryService } from '../services/base-categoryservice';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Subject, takeUntil } from 'rxjs';
+import { count, map, Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
+import { BaseCartService } from '../services/base-cart.service';
 
 
 @Component({
@@ -24,10 +25,13 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   isDarkMode!: boolean;
   categories!: Category[];
 
+  cartItemCount = 0;
+
   constructor(
     private router: Router,
     private breakpointObserver: BreakpointObserver,
     private categoryService: BaseCategoryService,
+    private cartService: BaseCartService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     protected override themingService: ThemingService
@@ -41,6 +45,10 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.breakpointObserverDestroyed.complete();
   }
   ngOnInit(): void {
+    this.cartService.getCartItems()
+      .pipe(map(items => items.length))
+      .subscribe(itemCount => this.cartItemCount = itemCount);
+
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
     });
@@ -63,7 +71,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
         document.querySelector('body')?.classList.remove('no-scroll');
       }
 
-      let currentDropdown: HTMLElement|null;
+      let currentDropdown: HTMLElement | null;
       if (isDropdownButton) {
         currentDropdown = target.closest('[data-dropdown]');
         currentDropdown?.classList.toggle('active');
@@ -72,8 +80,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
       let activeDropdowns = document.querySelectorAll('[data-dropdown].active');
 
       activeDropdowns.forEach(dropdown => {
-        if(dropdown === currentDropdown) {
-            return;
+        if (dropdown === currentDropdown) {
+          return;
         }
 
         dropdown.classList.remove('active');
@@ -82,7 +90,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
       activeDropdowns = document.querySelectorAll('[data-dropdown].active');
       console.log(activeDropdowns);
-      if(activeDropdowns.length > 0) {
+      if (activeDropdowns.length > 0) {
         document.querySelector('body')?.classList.add('no-scroll');
       } else {
         document.querySelector('body')?.classList.remove('no-scroll');

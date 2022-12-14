@@ -23,8 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CartModule } from './cart/cart.module';
@@ -58,7 +59,8 @@ import { TestCartService } from './services/test-cart.service';
     MatTabsModule,
     MatSlideToggleModule,
     MatButtonToggleModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatBadgeModule
   ],
   providers: [
     {
