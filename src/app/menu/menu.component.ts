@@ -7,6 +7,7 @@ import { Category } from '../category/category.model';
 import { BaseCategoryService } from '../services/base-categoryservice';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   categories!: Category[];
 
   constructor(
+    private router: Router,
     private breakpointObserver: BreakpointObserver,
     private categoryService: BaseCategoryService,
     private iconRegistry: MatIconRegistry,
@@ -110,5 +112,9 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   protected override applyTheme(theme: string): void {
     this.cssThemeClass = theme;
     this.isDarkMode = (theme === 'dark-theme');
+  }
+
+  openShoppingCart() {
+    this.router.navigate(['cart']);
   }
 }

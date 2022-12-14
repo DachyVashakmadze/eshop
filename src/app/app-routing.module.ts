@@ -5,15 +5,6 @@ import { Page404Component } from './page404/page404.component';
 import { ProductPersonalPageComponent } from './product/product-personal-page/product-personal-page.component';
 
 const routes: Routes = [
-  {
-    path: "product/:id", component: ProductPersonalPageComponent
-  },
-  { 
-    path: 'products', component: ProductListComponent
-  },
-  {
-    path: "category/:id", component: ProductListComponent
-  },
   { 
     path: "", component: ProductListComponent
   },

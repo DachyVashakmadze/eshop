@@ -27,6 +27,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { CartModule } from './cart/cart.module';
+import { BaseCartService } from './services/base-cart.service';
+import { TestCartService } from './services/test-cart.service';
 
 @NgModule({
   declarations: [
@@ -39,8 +42,9 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ProductModule,
+    CartModule,
+    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
 
@@ -64,6 +68,10 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     {
       provide: BaseCategoryService,
       useClass: TestCategoryService
+    },
+    {
+      provide: BaseCartService,
+      useClass: TestCartService
     }
   ],
   bootstrap: [AppComponent]

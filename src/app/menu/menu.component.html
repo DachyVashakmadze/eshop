@@ -28,10 +28,10 @@
         <mat-slide-toggle [checked]="isDarkMode" (change)="toggleMode()" aria-label="Theme">
         </mat-slide-toggle>
         <mat-icon>dark_mode</mat-icon>
-        <button *ngIf="!isMobile" mat-fab color="accent" aria-label="Shopping Card button">
+        <button *ngIf="!isMobile" mat-fab color="accent" aria-label="Shopping Card button" (click)="openShoppingCart()">
             <mat-icon>shopping_cart</mat-icon>
         </button>
-        <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button">
+        <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button" (click)="openShoppingCart()">
             <mat-icon>shopping_cart</mat-icon>
         </button>
         <button *ngIf="!isMobile" mat-fab color="primary" aria-label="User button">

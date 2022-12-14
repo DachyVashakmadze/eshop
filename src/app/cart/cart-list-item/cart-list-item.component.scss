@@ -1,0 +1,12 @@
+@use '/src/scss/' as *;
+
+@include theming() using($theme) {
+    .item-wrapper {
+        border: 2px solid get-color($theme, 'accent', 600);
+    }
+}
+
+.item-wrapper {
+    border-radius: 20px;
+    padding: 1em;
+}

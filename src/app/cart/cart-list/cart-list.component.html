@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>კალათა</h1>
+    <div class="items-wrapper" *ngIf="cartItems && cartItems.length; else no_products">
+        <app-cart-list-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-cart-list-item>
+    </div>
+    <ng-template #no_products>
+        <div class="no-products-wrapper">
+            <div class="info-box">
+                <mat-icon class="icon" color="accent">info</mat-icon>
+                <h2>კალათა ცარიელია.</h2>
+            </div>
+        </div>
+    </ng-template>
+</div>
