@@ -4,7 +4,20 @@ h1 {
 
 .items-wrapper {
     margin-inline: 20vw;
+    margin-bottom: 2em;
     display: flex;
     gap: 1em;
     flex-direction: column;
+}
+
+@media((max-width: 1279.98px)) {
+    .items-wrapper {
+        margin-inline: 10vw;
+    }
+}
+
+@media((max-width: 959.98px)) {
+    .items-wrapper {
+        margin-inline: 1em;
+    }
 }

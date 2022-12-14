@@ -1,12 +1,76 @@
 @use '/src/scss/' as *;
 
 @include theming() using($theme) {
-    .item-wrapper {
-        border: 2px solid get-color($theme, 'accent', 600);
+    // .item-wrapper {
+    //     border: 2px solid get-color($theme, 'accent', 600);
+    // }
+    
+    .qty {
+        color: get-color($theme, 'accent', 600);
     }
 }
 
+.mat-card {
+    border-radius: 1em;
+    position: relative;
+
+    &:hover {
+        box-shadow: 2px 2px 0 5px, rgba(0,0,0, 0.3);
+    }
+}
+
+.mat-card-content {
+    padding-bottom: 1em;
+}
+
 .item-wrapper {
-    border-radius: 20px;
-    padding: 1em;
+    display: flex;
+    gap: 1em;
+    // padding: 1em;
+
+    .item-wrapper {
+        flex-direction: column;
+    }
+}
+
+img {
+    max-width: 150px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    >* {
+        margin: 0;
+    }
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.qty {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+@media((max-width: 599.98px)) {
+    .item-wrapper {
+        flex-direction: column;
+    }
+
+    img {
+        display: inline-block;
+        margin: 0 auto;
+    }
 }

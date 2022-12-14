@@ -1,7 +1,24 @@
-<div class="item-wrapper">
-    <div class="image-wrapper"></div>
-    <div class="item-content">
-        <h3>{{cartItem.product_name}}</h3>
-        <p>{{cartItem.quantity}}</p>
-    </div>
-</div>
+<mat-card class="mat-card">
+    <mat-card-content class="mat-card-content">
+        <div class="item-wrapper">
+            <img [src]="cartItem.image" [alt]="'პროდუქტის სურათი'" />
+            <div class="item-content">
+                <h2>{{cartItem.product_name}}</h2>
+                <div class="quantity-control">
+                    <h3>რაოდენობა: <span class="qty">{{cartItem.quantity}}</span></h3>
+                    <div class="button-wrapper">
+                        <button mat-mini-fab color="accent" aria-label="რაოდენობის შემცირება">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                        <button mat-mini-fab color="primary" aria-label="რაოდენობის გაზრდა">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <button class="close-button" mat-mini-fab color="warn" aria-label="კალათიდან წაშლა">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-card>
