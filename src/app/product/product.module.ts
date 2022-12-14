@@ -15,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatTabsModule} from '@angular/material/tabs'; 
 import { ProductCaruselComponent } from './product-carusel/product-carusel.component'; 
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import { ProductCaruselComponent } from './product-carusel/product-carusel.compo
   imports: [
     CommonModule,
     ProductRoutingModule,
+    SharedModule,
+
     MatCardModule,
     MatButtonModule,
     MatGridListModule,

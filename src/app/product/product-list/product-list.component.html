@@ -5,11 +5,6 @@
         </mat-grid-tile>
     </mat-grid-list>
     <ng-template #no_products>
-        <div class="no-products-wrapper">
-            <div class="info-box">
-                <mat-icon class="icon" color="accent">info</mat-icon>
-                <h2>ამ კატეგორიაში პროდუქტები ვერ მოიძებნა.</h2>
-            </div>
-        </div>
+        <app-info-box [text]="'ამ კატეგორიაში პროდუქტები ვერ მოიძებნა.'"></app-info-box>
     </ng-template>
 </div>

@@ -15,7 +15,7 @@ import { ThemingService } from 'src/app/services/theming.service';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
-export class ProductListComponent extends ThemeableComponent implements OnInit, OnDestroy {
+export class ProductListComponent implements OnInit, OnDestroy {
   products: null | Product[] = [];
   columnCount = 0;
   productSubscription!: Subscription;
@@ -27,10 +27,7 @@ export class ProductListComponent extends ThemeableComponent implements OnInit, 
     private responseive: BreakpointObserver,
     private route: ActivatedRoute,
     private breadcrumbService: BreadcumbService,
-    protected override themingService: ThemingService
-  ) {
-    super(themingService);
-   }
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(param => {

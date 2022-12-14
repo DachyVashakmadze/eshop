@@ -3,6 +3,7 @@ import { Product } from '../products.model';
 import { Router } from '@angular/router';
 import { ThemingService } from 'src/app/services/theming.service';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
+import { BaseCartService } from 'src/app/services/base-cart.service';
 
 @Component({
   selector: 'app-product-list-item',
@@ -12,7 +13,11 @@ import { ThemeableComponent } from 'src/app/common/theamable.component';
 export class ProductListItemComponent extends ThemeableComponent implements OnInit {
   @Input() product!: Product;
 
-  constructor(private router: Router, protected override themingService: ThemingService) {
+  constructor(
+    private router: Router,
+    private cartService: BaseCartService,
+    protected override themingService: ThemingService
+  ) {
     super(themingService);
   }
 
@@ -20,7 +25,7 @@ export class ProductListItemComponent extends ThemeableComponent implements OnIn
   }
 
   addToCart() {
-    console.log(`Add to cart, product id: ${this.product.id}`);
+    this.cartService.addItem(this.product);
   }
 
   addToWatchlist() {
