@@ -1,10 +1,6 @@
 @use '/src/scss/' as *;
 
 @include theming() using($theme) {
-    // .item-wrapper {
-    //     border: 2px solid get-color($theme, 'accent', 600);
-    // }
-    
     .qty {
         color: get-color($theme, 'accent', 600);
     }
@@ -13,9 +9,10 @@
 .mat-card {
     border-radius: 1em;
     position: relative;
+    transition: all 0.15s ease-in-out;
 
     &:hover {
-        box-shadow: 2px 2px 0 5px, rgba(0,0,0, 0.3);
+        box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -26,7 +23,6 @@
 .item-wrapper {
     display: flex;
     gap: 1em;
-    // padding: 1em;
 
     .item-wrapper {
         flex-direction: column;
@@ -62,6 +58,15 @@ img {
     position: absolute;
     top: 1em;
     right: 1em;
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+
+    > *:first-child {
+        flex: 1;
+    }
 }
 
 @media((max-width: 599.98px)) {

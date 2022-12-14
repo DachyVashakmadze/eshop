@@ -13,4 +13,12 @@ import { CartItem } from '../cart-item.model';
 })
 export class CartListItemComponent extends ThemeableComponent {
   @Input() cartItem!: CartItem;
+
+  increaseQty() {
+    this.cartItem.quantity += 1;
+  }
+
+  decreaseQty() {
+    this.cartItem.quantity -= 1;
+  }
 }
