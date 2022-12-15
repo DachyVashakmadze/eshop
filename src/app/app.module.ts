@@ -31,6 +31,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CartModule } from './cart/cart.module';
 import { BaseCartService } from './services/base-cart.service';
 import { TestCartService } from './services/test-cart.service';
+import { CookieService } from './services/cookie.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { TestCartService } from './services/test-cart.service';
     },
     {
       provide: BaseCartService,
-      useClass: TestCartService
+      useClass: TestCartService,
+      deps: [CookieService]
     }
   ],
   bootstrap: [AppComponent]

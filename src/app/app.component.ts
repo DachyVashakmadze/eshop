@@ -8,17 +8,11 @@ import { ThemingService } from './services/theming.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent extends ThemeableComponent implements OnInit {
+export class AppComponent extends ThemeableComponent{
   title = 'eshop';
 
   constructor(public service: BaseProductService,
     protected override themingService: ThemingService) {
     super(themingService);
-  }
-
-  ngOnInit(): void {
-    // Todo remove: this code is just to demonstrate that service is working
-    this.service.getProductList().subscribe(productList => console.log(productList));
-    this.service.getProductById(2).subscribe(product => console.log(product));
   }
 }
