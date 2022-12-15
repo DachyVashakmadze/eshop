@@ -17,6 +17,6 @@ export class CookieService {
 
   set(name: string, data: any, maxAge = 60 * 60 * 24 * 10) {
     const cookieValue = encodeURIComponent(data ? JSON.stringify(data) : '');
-    document.cookie = `${name}=${cookieValue}; max-age=${maxAge}; path=/`;
+    document.cookie = `${name}=${cookieValue}; max-age=${maxAge}; path=/; SameSite=Lax`;
   }
 }

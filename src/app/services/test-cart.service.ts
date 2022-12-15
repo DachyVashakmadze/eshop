@@ -14,7 +14,7 @@ export class TestCartService extends BaseCartService {
   constructor(
     private cookieService: CookieService,
     private productService: BaseProductService
-    ) {
+  ) {
     super();
     this.getItemsFromCookie();
   }
@@ -26,6 +26,13 @@ export class TestCartService extends BaseCartService {
 
   // Add cart item, set cookie
   addItem(product: Product): Observable<number> {
+
+    // If product is already in cart, just increase quantity
+    const productCartItem = this.cartItems.value.find(i => i.productId == product.id);
+    if (productCartItem) {
+      return this.updateQuantity(productCartItem.productId, productCartItem.quantity + 1)
+    }
+
     this.cartItems.next([...this.cartItems.value, {
       productId: product.id,
       productName: product.title,
@@ -83,24 +90,24 @@ export class TestCartService extends BaseCartService {
 
       let uniqueIds: number[] = [];
       cartCookieItems.forEach(item => {
-        if(!uniqueIds.includes(item.productId)) {
+        if (!uniqueIds.includes(item.productId)) {
           uniqueIds.push(item.productId);
           quantities[item.productId] = item.quantity;
         }
       });
 
       this.productService.getProductsByIds(uniqueIds).subscribe(products => {
-          const cartItems = products.map(p => {
-            return {
-              productId: p.id,
-              productName: p.title,
-              price: p.price,
-              quantity: quantities[p.id],
-              image: p.image
-            } as CartItem
-          });
+        const cartItems = products.map(p => {
+          return {
+            productId: p.id,
+            productName: p.title,
+            price: p.price,
+            quantity: quantities[p.id],
+            image: p.image
+          } as CartItem
+        });
 
-          this.cartItems.next(cartItems);
+        this.cartItems.next(cartItems);
       })
     }
   }

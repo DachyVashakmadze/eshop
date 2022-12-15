@@ -89,7 +89,6 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
 
       activeDropdowns = document.querySelectorAll('[data-dropdown].active');
-      console.log(activeDropdowns);
       if (activeDropdowns.length > 0) {
         document.querySelector('body')?.classList.add('no-scroll');
       } else {
