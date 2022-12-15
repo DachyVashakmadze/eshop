@@ -23,13 +23,16 @@ export class CartListItemComponent extends ThemeableComponent {
 
   increaseQty() {
     this.cartItem.quantity += 1;
+    console.log('Updating' + this.cartItem.productId);
+    this.cartService.updateQuantity(this.cartItem.productId, this.cartItem.quantity);
   }
 
   decreaseQty() {
     this.cartItem.quantity -= 1;
+    this.cartService.updateQuantity(this.cartItem.productId, this.cartItem.quantity);
   }
 
   removeItem() {
-    this.cartService.removeItem(this.cartItem.product_id);
+    this.cartService.removeItem(this.cartItem.productId);
   }
 }

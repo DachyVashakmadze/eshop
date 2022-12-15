@@ -75,7 +75,7 @@ import { CookieService } from './services/cookie.service';
     {
       provide: BaseCartService,
       useClass: TestCartService,
-      deps: [CookieService]
+      deps: [CookieService, BaseProductService]
     }
   ],
   bootstrap: [AppComponent]

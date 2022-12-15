@@ -8,7 +8,7 @@ export class CookieService {
   constructor() { }
 
   get(name: string) {
-    let cookieValue = document.cookie
+    const cookieValue = document.cookie
       .split('; ')
       .find((cookie) => cookie.startsWith(name + '='))?.split('=')[1];
     

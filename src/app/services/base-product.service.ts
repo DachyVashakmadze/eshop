@@ -8,6 +8,9 @@ export abstract class BaseProductService {
     // Return product by id
     abstract getProductById(id: number): Observable<Product | null>;
 
+    // Return products by ids
+    abstract getProductsByIds(ids: number[]): Observable<Product[]>;
+
     // Return products by category id
     abstract getProductsByCategory(id: number): Observable<Product[]>;
 }

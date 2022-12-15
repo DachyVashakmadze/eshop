@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { asyncScheduler, BehaviorSubject, from, Observable, of, scheduled } from 'rxjs';
+import { asyncScheduler, BehaviorSubject, Observable, scheduled } from 'rxjs';
+import { CartCookieItem } from '../cart/cart-cookie-item';
 import { CartItem } from '../cart/cart-item.model';
 import { Product } from '../product/products.model';
 import { BaseCartService } from './base-cart.service';
+import { BaseProductService } from './base-product.service';
 import { CookieService } from './cookie.service';
 
 export class TestCartService extends BaseCartService {
@@ -10,7 +11,10 @@ export class TestCartService extends BaseCartService {
   private cartItems = new BehaviorSubject<CartItem[]>([]);
   private cookieName = 'cart';
 
-  constructor(private cookieService: CookieService) {
+  constructor(
+    private cookieService: CookieService,
+    private productService: BaseProductService
+    ) {
     super();
     this.getItemsFromCookie();
   }
@@ -23,8 +27,8 @@ export class TestCartService extends BaseCartService {
   // Add cart item, set cookie
   addItem(product: Product): Observable<number> {
     this.cartItems.next([...this.cartItems.value, {
-      product_id: product.id,
-      product_name: product.title,
+      productId: product.id,
+      productName: product.title,
       price: product.price,
       quantity: 1,
       image: product.image
@@ -36,28 +40,68 @@ export class TestCartService extends BaseCartService {
 
   // Remove cart items, set cookie
   removeItem(productId: number): Observable<number> {
-    this.cartItems.next(this.cartItems.value.filter(i => i.product_id !== productId));
+    this.cartItems.next(this.cartItems.value.filter(i => i.productId !== productId));
 
     this.setCookie();
 
     return scheduled([this.cartItems.value.length], asyncScheduler);
   }
 
+
+  // Update quantity of cart item
   updateQuantity(productId: number, quantity: number): Observable<number> {
-    throw new Error('Method not implemented.');
+    const cartItemIndex = this.cartItems.value.findIndex(item => item.productId === productId);
+    let cartItems = this.cartItems.value;
+
+    if (cartItemIndex !== -1) {
+      cartItems[cartItemIndex].quantity = quantity;
+    }
+
+    this.cartItems.next(cartItems);
+
+    this.setCookie();
+
+    return scheduled([this.cartItems.value.length], asyncScheduler);
   }
 
   // Use cookie service to set cookie
   setCookie() {
-    this.cookieService.set(this.cookieName, this.cartItems.value);
+    this.cookieService.set(this.cookieName, this.cartItems.value.map(item => {
+      return {
+        productId: item.productId,
+        quantity: item.quantity
+      } as CartCookieItem
+    }));
   }
 
   // Read cookie and set cart items
   getItemsFromCookie() {
-    let cookieItems = this.cookieService.get(this.cookieName);
-    console.log(cookieItems);
+    const cookieItems = this.cookieService.get(this.cookieName);
     if (cookieItems) {
-      this.cartItems.next(JSON.parse(cookieItems));
+      const cartCookieItems: CartCookieItem[] = JSON.parse(cookieItems);
+      let quantities: any = [];
+
+      let uniqueIds: number[] = [];
+      cartCookieItems.forEach(item => {
+        if(!uniqueIds.includes(item.productId)) {
+          uniqueIds.push(item.productId);
+          quantities[item.productId] = item.quantity;
+        }
+      });
+
+      this.productService.getProductsByIds(uniqueIds).subscribe(products => {
+          const cartItems = products.map(p => {
+            return {
+              productId: p.id,
+              productName: p.title,
+              price: p.price,
+              quantity: quantities[p.id],
+              image: p.image
+            } as CartItem
+          });
+
+          this.cartItems.next(cartItems);
+      })
     }
   }
 
