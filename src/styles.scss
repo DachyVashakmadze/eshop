@@ -5,10 +5,18 @@
 
 .light-theme {
     @include all-component-themes($light-theme);
+
+    a {
+        color: get-color($light-theme, 'accent', 600);
+    }
 }
 
 .dark-theme {
     @include all-component-colors($dark-theme);
+
+    a {
+        color: get-color($dark-theme, 'accent', 600);
+    }
 }
 
 * {
@@ -27,6 +35,12 @@ body {
 
 .container {
     margin-inline: 2em;
+}
+
+a,
+a:visited,
+a:focus {
+    text-decoration: none;
 }
 
 // აქ ხდება ნაგულისხმები სტილების გადაწერა toggle slider-ის კომპონენტზე.

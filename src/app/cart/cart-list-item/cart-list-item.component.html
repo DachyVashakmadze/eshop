@@ -1,11 +1,15 @@
 <mat-card class="mat-card">
     <mat-card-content class="mat-card-content">
         <div class="item-wrapper">
-            <img [src]="cartItem.image" [alt]="'პროდუქტის სურათი'" />
+            <a [routerLink]="'/product/' + cartItem.productId">
+                <img [src]="cartItem.image" [alt]="'პროდუქტის სურათი'" />
+            </a>
             <div class="item-content">
                 <div>
                     <mat-card-title>
-                        {{cartItem.productName}}
+                        <a [routerLink]="'/product/' + cartItem.productId">
+                            {{cartItem.productName}}
+                        </a>
                     </mat-card-title>
                     <mat-card-subtitle>
                         ფასი: <span class="price">{{cartItem.price | currency}}</span>
@@ -14,9 +18,7 @@
                 <div class="quantity-control">
                     <h3>რაოდენობა: <span class="qty">{{cartItem.quantity}}</span></h3>
                     <div class="button-wrapper">
-                        <button mat-mini-fab color="accent" 
-                            (click)="decreaseQty()"
-                            [disabled]="cartItem.quantity == 1"
+                        <button mat-mini-fab color="accent" (click)="decreaseQty()" [disabled]="cartItem.quantity == 1"
                             aria-label="რაოდენობის შემცირება">
                             <mat-icon>remove</mat-icon>
                         </button>
