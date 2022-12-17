@@ -1,3 +1,11 @@
+@use '/src/scss' as *;
+
+@include theming() using($theme) {
+    .total {
+        color: get-color($theme, 'accent', 600);
+    }
+}
+
 h1 {
     text-align: center;
 }

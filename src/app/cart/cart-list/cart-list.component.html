@@ -1,11 +1,12 @@
 <div class="wrapper">
     <h1>კალათა</h1>
-    <ng-container *ngIf="!loading">
-        <div class="items-wrapper" *ngIf="cartItems && cartItems.length; else no_products">
+    <ng-container *ngIf="!loading && this.cartItems.length else no_products">
+        <div class="items-wrapper">
             <app-cart-list-item *ngFor="let cartItem of cartItems" [cartItem]="cartItem"></app-cart-list-item>
+            <h2>სულ: <b class="total">{{total | currency}}</b></h2>
         </div>
-        <ng-template #no_products>
-            <app-info-box [text]="'კალათა ცარიელია.'"></app-info-box>
-        </ng-template>
     </ng-container>
+    <ng-template #no_products>
+        <app-info-box [text]="'კალათა ცარიელია.'"></app-info-box>
+    </ng-template>
 </div>

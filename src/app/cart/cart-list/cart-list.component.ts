@@ -13,6 +13,7 @@ import { CartItem } from '../cart-item.model';
 export class CartListComponent extends ThemeableComponent implements OnInit {
   cartItems: CartItem[] = [];
   loading = true;
+  total = 0;
 
   constructor(
     private cartService: BaseCartService,
@@ -35,7 +36,14 @@ export class CartListComponent extends ThemeableComponent implements OnInit {
 
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
+      this.calculateTotal();
       this.loading = false;
     });
+  }
+
+  private calculateTotal() {
+    this.total = this.cartItems.reduce((acc, i) => {
+      return acc + (i.quantity * i.price)
+    }, 0);
   }
 }
