@@ -2,19 +2,23 @@
     <div class="form-wrapper">
         <h1>Login</h1>
         <form>
-            <mat-form-field appearance="fill" color="accent">
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="user@eshop.test" [formControl]="email" required>
                 <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="fill" color="accent">
+            <mat-form-field appearance="outline" color="accent">
                 <mat-label>Password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
                 <button mat-icon-button matSuffix (click)="toggleHide($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
-              </mat-form-field>
+            </mat-form-field>
+            <button class="login-button" mat-raised-button color="accent" (click)="login($event)">
+                <span>Log In</span>
+            </button>
         </form>
+        <h2 #errorText></h2>
     </div>
 </div>

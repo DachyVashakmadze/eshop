@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { ThemingService } from 'src/app/services/theming.service';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +13,14 @@ export class LoginComponent extends ThemeableComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
   hide = true;
+
+  @ViewChild('errorText') loginErrorText!: ElementRef;
+
+  constructor(private authService: AuthService,
+    protected override themingService: ThemingService
+  ) {
+    super(themingService);
+  }
 
   getErrorMessageEmail() {
     if (this.email.hasError('required')) {
@@ -31,5 +41,29 @@ export class LoginComponent extends ThemeableComponent {
   toggleHide(event: MouseEvent) {
     event.preventDefault();
     this.hide = !this.hide;
+  }
+
+  login(event: MouseEvent) {
+    event.preventDefault();
+    this.loginErrorText.nativeElement.innerText = '';
+
+    // todo display error
+    if (this.email.invalid) {
+      return;
+    }
+
+    if (this.password.invalid) {
+      return;
+    }    
+
+    // Todo needs error checking
+    this.authService.login(this.email.value as string, this.password.value as string)
+      .subscribe({
+        next: response => {
+          console.log("RESPONSE RECEIVED");
+          console.log(response);
+        },
+        error: response => this.loginErrorText.nativeElement.innerText = response.error.message
+      });
   }
 }

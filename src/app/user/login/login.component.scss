@@ -4,6 +4,12 @@
     h1 {
         color: get-color($theme, "accent", 600);
     }
+    h2 {
+        color: get-color($theme, "warn", 600);
+    }
+    .wrapper {
+         border-color: get-color($theme, "accent", 600);
+    }
 }
 
 h1 {
@@ -16,6 +22,10 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 2em;
+    border-radius: 1em;
+    border-width: 4px;
+    border-style: solid;
 }
 
 .form-wrapper {
@@ -28,4 +38,13 @@ h1 {
 form>* {
     width: 100%;
     margin-bottom: 1em;
+}
+
+.login-button {
+    padding-block: 1em;
+    font-size: 1.7rem;
+}
+
+h2 {
+    height: 1em;
 }
