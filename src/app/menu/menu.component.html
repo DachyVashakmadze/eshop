@@ -34,10 +34,10 @@
         <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button" (click)="openShoppingCart()">
             <mat-icon [matBadge]="cartItemCount ? cartItemCount : ''" matBadgeColor="warn">shopping_cart</mat-icon>
         </button>
-        <button *ngIf="!isMobile" mat-fab color="primary" aria-label="User button">
+        <button *ngIf="!isMobile" mat-fab color="primary" aria-label="User button" (click)="login()">
             <mat-icon>perm_identity</mat-icon>
         </button>
-        <button *ngIf="isMobile" mat-mini-fab color="primary" aria-label="User button">
+        <button *ngIf="isMobile" mat-mini-fab color="primary" aria-label="User button" (click)="login()">
             <mat-icon>perm_identity</mat-icon>
         </button>
         <button *ngIf="isMobile" mat-mini-fab color="warn" aria-label="Toggle hamburger menu" (click)="toggleSidenav()">

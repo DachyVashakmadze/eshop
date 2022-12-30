@@ -32,6 +32,7 @@ import { CartModule } from './cart/cart.module';
 import { BaseCartService } from './services/base-cart.service';
 import { TestCartService } from './services/test-cart.service';
 import { CookieService } from './services/cookie.service';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,8 @@ import { CookieService } from './services/cookie.service';
     BrowserModule,
     ProductModule,
     CartModule,
+    UserModule,
+    
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

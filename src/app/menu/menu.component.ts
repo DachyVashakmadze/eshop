@@ -124,4 +124,8 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   openShoppingCart() {
     this.router.navigate(['cart']);
   }
+
+  login() {
+    this.router.navigate(['login']);
+  }
 }
