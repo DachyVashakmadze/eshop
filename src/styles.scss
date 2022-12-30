@@ -1,11 +1,10 @@
 @use 'scss/index' as *;
 
 @include all-component-typographies();
+@include all-component-themes($light-theme);
 @include core();
 
 .light-theme {
-    @include all-component-themes($light-theme);
-
     a {
         color: get-color($light-theme, 'accent', 600);
     }

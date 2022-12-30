@@ -46,7 +46,10 @@ $light-theme: define-light-theme((
     primary: $light-primary,
     accent: $light-accent,
     warn: $light-warn,
-  )
+  ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: define-typography-config(),
+  density: 0,
 ));
 
 // Define a dark theme
