@@ -43,20 +43,25 @@ export class LoginComponent extends ThemeableComponent {
     this.hide = !this.hide;
   }
 
-  login(event: MouseEvent) {
+  login(event: any) {
     event.preventDefault();
     this.loginErrorText.nativeElement.innerText = '';
+    console.log('here');
 
-    // todo display error
+    if (this.email.pristine || this.password.pristine) {
+      this.email.markAsTouched();
+      this.password.markAsTouched();
+      return;
+    }
+
     if (this.email.invalid) {
       return;
     }
 
     if (this.password.invalid) {
       return;
-    }    
-
-    // Todo needs error checking
+    }
+    
     this.authService.login(this.email.value as string, this.password.value as string)
       .subscribe({
         next: response => {
