@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductModule } from './product/product.module';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Page404Component } from './page404/page404.component';
 import { BaseCategoryService } from './services/base-categoryservice';
 import { TestCategoryService } from './services/test-category.service';
@@ -33,6 +33,7 @@ import { BaseCartService } from './services/base-cart.service';
 import { TestCartService } from './services/test-cart.service';
 import { CookieService } from './services/cookie.service';
 import { UserModule } from './user/user.module';
+import { AuthInterceptor } from './common/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { UserModule } from './user/user.module';
     MatBadgeModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     {
       provide: BaseProductService,
       useClass: TestProductService

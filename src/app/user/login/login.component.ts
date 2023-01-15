@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { ThemingService } from 'src/app/services/theming.service';
+import { CookieService } from 'src/app/services/cookie.service'
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent extends ThemeableComponent {
 
   @ViewChild('errorText') loginErrorText!: ElementRef;
 
-  constructor(private authService: AuthService,
+  constructor(private authService: AuthService, private cookie: CookieService,
     protected override themingService: ThemingService
   ) {
     super(themingService);
@@ -53,19 +54,15 @@ export class LoginComponent extends ThemeableComponent {
       return;
     }
 
-    if (this.email.invalid) {
-      return;
-    }
+    if (this.email.invalid || this.password.invalid ) return;
 
-    if (this.password.invalid) {
-      return;
-    }
-    
+    // Todo needs error checking
     this.authService.login(this.email.value as string, this.password.value as string)
       .subscribe({
         next: response => {
           console.log("RESPONSE RECEIVED");
           console.log(response);
+          this.cookie.set("UserToken", response.token );
         },
         error: response => this.loginErrorText.nativeElement.innerText = response.error.message
       });
