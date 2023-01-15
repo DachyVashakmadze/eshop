@@ -10,8 +10,9 @@
             <mat-form-field appearance="outline" color="accent">
                 <mat-label>Password</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
-                <button type="button" mat-icon-button matSuffix (click)="toggleHide($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" tabindex="-1">
-                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <button type="button" mat-icon-button matSuffix (click)="toggleHide($event)"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" tabindex="-1">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
             </mat-form-field>
@@ -21,4 +22,5 @@
         </form>
         <h2 #errorText></h2>
     </div>
+    <a href="http://localhost:7200/api/login/google">LOG IN VIA GOOGLE</a>
 </div>

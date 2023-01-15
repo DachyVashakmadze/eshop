@@ -46,7 +46,6 @@ export class LoginComponent extends ThemeableComponent {
   login(event: any) {
     event.preventDefault();
     this.loginErrorText.nativeElement.innerText = '';
-    console.log('here');
 
     if (this.email.pristine || this.password.pristine) {
       this.email.markAsTouched();
