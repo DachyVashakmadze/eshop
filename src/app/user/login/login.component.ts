@@ -23,6 +23,24 @@ export class LoginComponent extends ThemeableComponent {
     super(themingService);
   }
 
+  ngOnInit() {
+    this.initGoogleAPI();
+  }
+
+  private initGoogleAPI() {
+    // @ts-ignore
+    google.accounts.id.initialize({
+      client_id: '848019162270-fevhe2hj70t6778jkd7avdguqh6n5i9o.apps.googleusercontent.com',
+      callback: this.handleCredentialResponse.bind(this),
+    });
+
+    // @ts-ignore
+    google.accounts.id.renderButton(
+      document.getElementById("google-button"),
+      { theme: "filled_blue", size: "large", width: "100%" }
+    );
+  };
+
   getErrorMessageEmail() {
     if (this.email.hasError('required')) {
       return 'You must enter an email';
@@ -54,7 +72,7 @@ export class LoginComponent extends ThemeableComponent {
       return;
     }
 
-    if (this.email.invalid || this.password.invalid ) return;
+    if (this.email.invalid || this.password.invalid) return;
 
     // Todo needs error checking
     this.authService.login(this.email.value as string, this.password.value as string)
@@ -62,9 +80,20 @@ export class LoginComponent extends ThemeableComponent {
         next: response => {
           console.log("RESPONSE RECEIVED");
           console.log(response);
-          this.cookie.set("UserToken", response.token );
+          this.cookie.set("UserToken", response.token);
         },
         error: response => this.loginErrorText.nativeElement.innerText = response.error.message
       });
+  }
+
+  async handleCredentialResponse(response: any) {
+    this.authService.loginViaGoogle(response.credential).subscribe({
+      next: response => {
+        console.log("GOOGLE RESPONSE RECEIVED");
+        console.log(response);
+        this.cookie.set("UserToken", response.token);
+      },
+      error: response => this.loginErrorText.nativeElement.innerText = response.error.message
+    })
   }
 }
