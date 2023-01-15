@@ -44,9 +44,16 @@ export class LoginComponent extends ThemeableComponent {
     this.hide = !this.hide;
   }
 
-  login(event: MouseEvent) {
+  login(event: any) {
     event.preventDefault();
     this.loginErrorText.nativeElement.innerText = '';
+    console.log('here');
+
+    if (this.email.pristine || this.password.pristine) {
+      this.email.markAsTouched();
+      this.password.markAsTouched();
+      return;
+    }
 
     if (this.email.invalid || this.password.invalid ) return;
 
