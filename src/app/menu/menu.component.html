@@ -28,20 +28,51 @@
         <mat-slide-toggle [checked]="isDarkMode" (change)="toggleMode()" aria-label="Theme">
         </mat-slide-toggle>
         <mat-icon>dark_mode</mat-icon>
+
         <button *ngIf="!isMobile" mat-fab color="accent" aria-label="Shopping Card button" (click)="openShoppingCart()">
             <mat-icon [matBadge]="cartItemCount ? cartItemCount : ''" matBadgeColor="warn">shopping_cart</mat-icon>
         </button>
-        <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button" (click)="openShoppingCart()">
+        <button *ngIf="isMobile" mat-mini-fab color="accent" aria-label="Shopping Card button"
+            (click)="openShoppingCart()">
             <mat-icon [matBadge]="cartItemCount ? cartItemCount : ''" matBadgeColor="warn">shopping_cart</mat-icon>
         </button>
-        <button *ngIf="!isMobile" mat-fab color="primary" aria-label="User button" (click)="login()">
-            <mat-icon>perm_identity</mat-icon>
-        </button>
-        <button *ngIf="isMobile" mat-mini-fab color="primary" aria-label="User button" (click)="login()">
-            <mat-icon>perm_identity</mat-icon>
-        </button>
+
+        <ng-container *ngIf="isMobile">
+            <ng-container *ngIf="user">
+                {{user.name}}
+            </ng-container>
+            <button *ngIf="!user" mat-mini-fab color="primary" aria-label="User button" (click)="login()">
+                <mat-icon>perm_identity</mat-icon>
+            </button>
+        </ng-container>
+        <ng-container *ngIf="!isMobile">
+            <ng-container *ngIf="user">
+                <div class="username_box" [matMenuTriggerFor]="userDropdown">
+                    <span class="username_text">{{user.name}}</span>
+                    <mat-icon>arrow_drop_down</mat-icon>
+                </div>
+            </ng-container>
+            <button *ngIf="!user" mat-fab color="primary" aria-label="User button" (click)="login()">
+                <mat-icon>perm_identity</mat-icon>
+            </button>
+        </ng-container>
         <button *ngIf="isMobile" mat-mini-fab color="warn" aria-label="Toggle hamburger menu" (click)="toggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>
+        <mat-menu #userDropdown="matMenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>assignment</mat-icon>
+                <span>Purchase History</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Log out</span>
+            </button>
+        </mat-menu>
     </div>
 </nav>

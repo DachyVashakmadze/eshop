@@ -9,6 +9,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { count, map, Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 import { BaseCartService } from '../services/base-cart.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -27,11 +28,15 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
   cartItemCount = 0;
 
+  // Todo create User interface
+  user: any = null;
+
   constructor(
     private router: Router,
     private breakpointObserver: BreakpointObserver,
     private categoryService: BaseCategoryService,
     private cartService: BaseCartService,
+    private authService: AuthService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     protected override themingService: ThemingService
@@ -45,14 +50,20 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     this.breakpointObserverDestroyed.complete();
   }
   ngOnInit(): void {
+    // Get cart item count
     this.cartService.getCartItems()
       .pipe(map(items => items.length))
       .subscribe(itemCount => this.cartItemCount = itemCount);
 
+    // Set categories in menu
     this.categoryService.getCategoriesNested().subscribe(cat => {
       this.categories = cat;
     });
 
+    // Get user info
+    this.user = this.authService.getUser();
+
+    // Properly hande window resize
     this.breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -127,5 +138,9 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
   login() {
     this.router.navigate(['login']);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

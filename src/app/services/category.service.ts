@@ -18,6 +18,6 @@ export class CategoryService extends BaseCategoryService {
     }
 
     getCategoriesNested(): Observable<Category[]> {
-        return this.http.get<Category[]>("http://localhost:7200/api/categories/tree");
+        return this.http.get<Category[]>("http://localhost:7200/api/categories");
     }
 }

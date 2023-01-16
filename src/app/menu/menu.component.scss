@@ -188,3 +188,16 @@ nav.menu {
         padding: .5em;
     }
 }
+.username_box {
+    display: flex;
+    align-items: center;
+    >* {
+        cursor: pointer;
+    }
+}
+
+.username_text {
+    border-bottom: 1px solid white;
+    padding-bottom: 2px;
+    
+}

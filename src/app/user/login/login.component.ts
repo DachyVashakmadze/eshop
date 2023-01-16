@@ -77,22 +77,14 @@ export class LoginComponent extends ThemeableComponent {
     // Todo needs error checking
     this.authService.login(this.email.value as string, this.password.value as string)
       .subscribe({
-        next: response => {
-          console.log("RESPONSE RECEIVED");
-          console.log(response);
-          this.cookie.set("UserToken", response.token);
-        },
+        next: response => this.authService.submitLogin(response),
         error: response => this.loginErrorText.nativeElement.innerText = response.error.message
       });
   }
 
   async handleCredentialResponse(response: any) {
     this.authService.loginViaGoogle(response.credential).subscribe({
-      next: response => {
-        console.log("GOOGLE RESPONSE RECEIVED");
-        console.log(response);
-        this.cookie.set("UserToken", response.token);
-      },
+      next: response => this.authService.submitLogin(response),
       error: response => this.loginErrorText.nativeElement.innerText = response.error.message
     })
   }

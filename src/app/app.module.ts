@@ -34,6 +34,8 @@ import { TestCartService } from './services/test-cart.service';
 import { CookieService } from './services/cookie.service';
 import { UserModule } from './user/user.module';
 import { AuthInterceptor } from './common/auth-interceptor';
+import { CategoryService } from './services/category.service';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { AuthInterceptor } from './common/auth-interceptor';
     MatSlideToggleModule,
     MatButtonToggleModule,
     MatSidenavModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDividerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
@@ -75,7 +78,7 @@ import { AuthInterceptor } from './common/auth-interceptor';
     },
     {
       provide: BaseCategoryService,
-      useClass: TestCategoryService
+      useClass: CategoryService
     },
     {
       provide: BaseCartService,
