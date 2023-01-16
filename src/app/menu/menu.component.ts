@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
@@ -6,10 +6,11 @@ import { ThemingService } from '../services/theming.service';
 import { Category } from '../category/category.model';
 import { BaseCategoryService } from '../services/base-categoryservice';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { count, map, Subject, takeUntil } from 'rxjs';
+import { count, map, Subject, Subscription, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 import { BaseCartService } from '../services/base-cart.service';
 import { AuthService } from '../services/auth.service';
+import { User } from '../user/user-login.model';
 
 
 @Component({
@@ -28,8 +29,11 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
 
   cartItemCount = 0;
 
-  // Todo create User interface
-  user: any = null;
+  // Represents currently logged user, null if user is not logged
+  user: User|any = null;
+
+  // represents rxjs subscription, clear subscription when onDestroy() is called
+  private userSubscription!: Subscription;
 
   constructor(
     private router: Router,
@@ -37,6 +41,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     private categoryService: BaseCategoryService,
     private cartService: BaseCartService,
     private authService: AuthService,
+    private changeDetectionRef: ChangeDetectorRef,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     protected override themingService: ThemingService
@@ -48,7 +53,9 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   ngOnDestroy(): void {
     this.breakpointObserverDestroyed.next();
     this.breakpointObserverDestroyed.complete();
+    this.userSubscription.unsubscribe();
   }
+
   ngOnInit(): void {
     // Get cart item count
     this.cartService.getCartItems()
@@ -60,8 +67,13 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
       this.categories = cat;
     });
 
-    // Get user info
-    this.user = this.authService.getUser();
+    // get notification from auth service when user is logged in, or logged out
+    this.userSubscription = this.authService.user.subscribe(user => {
+      console.log('Login state changed...');
+      console.log(user);
+      this.user = user;
+      this.changeDetectionRef.detectChanges();
+    });
 
     // Properly hande window resize
     this.breakpointObserver
