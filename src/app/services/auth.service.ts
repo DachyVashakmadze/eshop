@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User, UserLogin } from '../user/user-login.model';
 import { CookieService } from './cookie.service';
@@ -12,8 +13,11 @@ export class AuthService {
 
   user = new BehaviorSubject<User | null>(null);
 
-  constructor(private http: HttpClient, private cookie: CookieService) {
-    this.user.next(this.getUserFromCookie());
+  constructor(
+    private http: HttpClient, 
+    private cookie: CookieService,
+    private router: Router) {
+      this.user.next(this.getUserFromCookie());
   }
 
   login(email: string, password: string) {
@@ -30,6 +34,7 @@ export class AuthService {
   submitLogin(userLogin: UserLogin) {
     this.cookie.set(this.tokenCookieName, userLogin);
     this.user.next(userLogin.user);
+    this.router.navigate(['/']);
   }
 
   getToken() {
