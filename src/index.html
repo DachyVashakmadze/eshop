@@ -6,6 +6,12 @@
   <title>Eshop</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="
+      img-src * data:;
+      script-src 'self' https://accounts.google.com/gsi/client;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com/gsi/style;
+      font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
+      frame-srf 'self' https://accounts.google.com/gsi/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
