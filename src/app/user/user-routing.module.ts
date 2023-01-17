@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { CanActivateGuest } from '../common/can-activate-guest';
+import { AuthService } from '../services/auth.service';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  {path: "login", component: LoginComponent},
-  {path: "login/google/callback", component: LoginComponent}
+  {
+    path: "login",
+    component: LoginComponent,
+    canActivate: [CanActivateGuest]
+  }
 ];
 
 @NgModule({

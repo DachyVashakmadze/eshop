@@ -36,6 +36,8 @@ import { UserModule } from './user/user.module';
 import { AuthInterceptor } from './common/auth-interceptor';
 import { CategoryService } from './services/category.service';
 import { MatDividerModule } from '@angular/material/divider';
+import { CanActivateAuth } from './common/can-activate-auth';
+import { CanActivateGuest } from './common/can-activate-guest';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,7 @@ import { MatDividerModule } from '@angular/material/divider';
     ProductModule,
     CartModule,
     UserModule,
-    
+
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -72,6 +74,8 @@ import { MatDividerModule } from '@angular/material/divider';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    CanActivateAuth,
+    CanActivateGuest,
     {
       provide: BaseProductService,
       useClass: TestProductService

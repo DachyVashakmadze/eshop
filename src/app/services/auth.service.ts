@@ -14,10 +14,10 @@ export class AuthService {
   user = new BehaviorSubject<User | null>(null);
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     private cookie: CookieService,
     private router: Router) {
-      this.user.next(this.getUserFromCookie());
+    this.user.next(this.getUserFromCookie());
   }
 
   login(email: string, password: string) {
@@ -54,7 +54,10 @@ export class AuthService {
         this.user.next(null);
       }
     })
-    
+  }
+
+  isLoggedIn() {
+    return (this.getToken() !== null);
   }
 
 
