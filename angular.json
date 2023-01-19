@@ -56,18 +56,30 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "ka": {
+              "localize": ["ka"]
+            },
+            "en": {
+              "localize": ["en"]
+            },
+            "all_lang": {
+              "localize": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production,ka"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "eshop:build:production"
+              "browserTarget": "eshop:build:production,all_lang"
             },
             "development": {
-              "browserTarget": "eshop:build:development"
+              "browserTarget": "eshop:build:development,ka"
+            },
+            "en": {
+              "browserTarget": "eshop:build:development,en"
             }
           },
           "defaultConfiguration": "development"
@@ -93,6 +105,14 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "ka",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf"
           }
         }
       }

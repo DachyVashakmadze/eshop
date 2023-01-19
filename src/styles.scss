@@ -64,18 +64,24 @@ a:focus {
     --mdc-switch-unselected-icon-size: 0px;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48
+// ამ ადგილას გვაქვს სტილები, რადგან dropdown მენიუ პირდაპირ body-ზე იხსნება და კონკრეტული კომპონენტის შიგნიდან არ ისტილება
+body.light-theme {
+    // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
+    .mdc-menu-surface {
+        @include background-color($light-theme, 'primary', 50);
+    }
+}
+
+body.dark-theme {
+    // ენის გადასართავი მენიუს სტილები, მუქი ფერის თემა 
+    .mdc-menu-surface {
+        @include background-color($dark-theme, 'primary', 700);
+    }
 }
 
 .no-scroll {
     overflow: hidden;
 }
-
 
 @media((max-width: 599.98px)) {
     .container {

@@ -24,6 +24,9 @@
     ],
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "@angular/localize"
+    ],
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {

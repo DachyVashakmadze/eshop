@@ -3,8 +3,6 @@ import { Observable, of } from "rxjs";
 import { Category } from "../category/category.model";
 import { BaseCategoryService } from "./base-categoryservice";
 
-// Load categories.json file
-import categories from '../data/categories.json';
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
