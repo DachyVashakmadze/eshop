@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
-import { BaseCartService } from 'src/app/services/base-cart.service';
+import { CartService } from 'src/app/services/cart.service';
 import { ThemingService } from 'src/app/services/theming.service';
 import { CartItem } from '../cart-item.model';
 
@@ -13,7 +13,7 @@ export class CartListItemComponent extends ThemeableComponent {
   @Input() cartItem!: CartItem;
 
   constructor(
-    private cartService: BaseCartService,
+    private cartService: CartService,
     protected override themingService: ThemingService
   ) {
     super(themingService);

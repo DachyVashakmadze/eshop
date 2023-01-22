@@ -3,7 +3,7 @@ import { Product } from '../products.model';
 import { Router } from '@angular/router';
 import { ThemingService } from 'src/app/services/theming.service';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
-import { BaseCartService } from 'src/app/services/base-cart.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-list-item',
@@ -15,7 +15,7 @@ export class ProductListItemComponent extends ThemeableComponent implements OnIn
 
   constructor(
     private router: Router,
-    private cartService: BaseCartService,
+    private cartService: CartService,
     protected override themingService: ThemingService
   ) {
     super(themingService);

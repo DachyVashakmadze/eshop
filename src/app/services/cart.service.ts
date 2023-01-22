@@ -2,11 +2,10 @@ import { asyncScheduler, BehaviorSubject, Observable, scheduled } from 'rxjs';
 import { CartCookieItem } from '../cart/cart-cookie-item';
 import { CartItem } from '../cart/cart-item.model';
 import { Product } from '../product/products.model';
-import { BaseCartService } from './base-cart.service';
 import { BaseProductService } from './base-product.service';
 import { CookieService } from './cookie.service';
 
-export class TestCartService extends BaseCartService {
+export class CartService {
   // Todo simply return dummy data, need to create cookie and read from it
   private cartItems = new BehaviorSubject<CartItem[]>([]);
   private cookieName = 'cart';
@@ -14,8 +13,7 @@ export class TestCartService extends BaseCartService {
   constructor(
     private cookieService: CookieService,
     private productService: BaseProductService
-  ) {
-    super();
+  ) {;
     this.getItemsFromCookie();
   }
 

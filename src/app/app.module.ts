@@ -27,8 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CartModule } from './cart/cart.module';
-import { BaseCartService } from './services/base-cart.service';
-import { TestCartService } from './services/test-cart.service';
+import { CartService } from './services/cart.service';
 import { CookieService } from './services/cookie.service';
 import { UserModule } from './user/user.module';
 import { AuthInterceptor } from './common/auth-interceptor';
@@ -79,13 +78,8 @@ import { CanActivateGuest } from './common/can-activate-guest';
       useClass: TestProductService
     },
     CategoryService,
-    // {
-    //   provide: BaseCategoryService,
-    //   useClass: CategoryService
-    // },
     {
-      provide: BaseCartService,
-      useClass: TestCartService,
+      provide: CartService,
       deps: [CookieService, BaseProductService]
     }
   ],

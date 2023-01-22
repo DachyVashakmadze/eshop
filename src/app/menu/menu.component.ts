@@ -7,7 +7,7 @@ import { Category } from '../category/category.model';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { count, map, Subject, Subscription, takeUntil, startWith } from 'rxjs';
 import { Router } from '@angular/router';
-import { BaseCartService } from '../services/base-cart.service';
+import { CartService } from '../services/cart.service';
 import { AuthService } from '../services/auth.service';
 import { User } from '../user/user-login.model';
 import { CategoryService } from '../services/category.service';
@@ -43,7 +43,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
     private router: Router,
     private breakpointObserver: BreakpointObserver,
     private categoryService: CategoryService,
-    private cartService: BaseCartService,
+    private cartService: CartService,
     private authService: AuthService,
     private changeDetectionRef: ChangeDetectorRef,
     private iconRegistry: MatIconRegistry,
