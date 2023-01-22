@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User, UserLogin } from '../user/user-login.model';
 import { CookieService } from './cookie.service';
 
@@ -21,14 +22,14 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<UserLogin>('http://localhost:7200/api/login', {
+    return this.http.post<UserLogin>(`${environment.api_host}/api/login`, {
       email: email,
       password: password
     });
   }
 
   loginViaGoogle(credential: string) {
-    return this.http.post<UserLogin>('http://localhost:7200/api/login/google/submit', { credential });
+    return this.http.post<UserLogin>(`${environment.api_host}/api/login/google/submit`, { credential });
   }
 
   submitLogin(userLogin: UserLogin) {
@@ -47,7 +48,7 @@ export class AuthService {
 
   // Todo read host from env, also handle potential errors
   logout() {
-    this.http.post('http://localhost:7200/api/logout', {}).subscribe({
+    this.http.post(`${environment.api_host}/api/logout`, {}).subscribe({
       next: () => {
         // Delete cookie after successful logout
         this.cookie.delete(this.tokenCookieName);

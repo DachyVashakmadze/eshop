@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 
 import categories_ka from '../data/categories_ka.json';
 import { Breadcrumb } from "../breadcrumb/breadcrumb.model";
+import { environment } from "src/environments/environment";
 
 @Injectable()
 export class CategoryService {
@@ -18,13 +19,13 @@ export class CategoryService {
             this.catMap.next(this.buildCatMapRecursive(this.categories.value));
         });
     }
-    
+
     getBreadcrumbItemsForCategory(categoryId: number): Observable<Breadcrumb[]> {
         return this.catMap.pipe(map(mapItems => mapItems[categoryId] ? mapItems[categoryId].breadcrumb : []));
     }
 
     private getCategoriesFromSource(): Observable<Category[]> {
-        return this.http.get<Category[]>("http://localhost:7200/api/categories");
+        return this.http.get<Category[]>(`${environment.api_host}/api/categories`);
     }
 
     private buildCatMapRecursive(cats: Category[] = [], breadcrumbItems: Breadcrumb[] = [], result: any = {}): {} {
