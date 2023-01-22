@@ -5,7 +5,7 @@ import { BaseProductService } from '../../services/base-product.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcumbService } from 'src/app/services/breadcumb.service';
-import { BaseCategoryService } from 'src/app/services/base-categoryservice';
+import { CategoryService } from 'src/app/services/category.service';
 import { Breadcrumb } from 'src/app/breadcrumb/breadcrumb.model';
 import { ThemeableComponent } from 'src/app/common/theamable.component';
 import { ThemingService } from 'src/app/services/theming.service';
@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(
     private service: BaseProductService,
-    private categoryService: BaseCategoryService,
+    private categoryService: CategoryService,
     private responseive: BreakpointObserver,
     private route: ActivatedRoute,
     private breadcrumbService: BreadcumbService,
@@ -35,15 +35,16 @@ export class ProductListComponent implements OnInit, OnDestroy {
       let breadcrumbItems: Breadcrumb[] = [];
       if (categoryId) {
         this.productSubscription = this.service.getProductsByCategory(categoryId).subscribe(products => this.products = products);
-        breadcrumbItems = this.categoryService.getBreadcrumbItemsForCategory(categoryId);
+        this.categoryService.getBreadcrumbItemsForCategory(categoryId).subscribe(items => this.breadcrumbService.setItems(items));
       } else {
         this.productSubscription = this.service.getProductList().subscribe(products => this.products = products);
         breadcrumbItems = [ {
           'title': $localize `:@@all_products_static_text:ყველა პროდუქტი`,
           'url': '/'
         }];
+        this.breadcrumbService.setItems(breadcrumbItems);
       }
-      this.breadcrumbService.setItems(breadcrumbItems);
+      
     });
 
     if (this.responseive.isMatched([Breakpoints.Large, Breakpoints.XLarge])) {

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category } from '../category/category.model';
 import { ThemeableComponent } from '../common/theamable.component';
-import { BaseCategoryService } from '../services/base-categoryservice';
+import { CategoryService } from '../services/category.service';
 import { ThemingService } from '../services/theming.service';
 
 @Component({
@@ -14,14 +14,14 @@ export class SideMenuComponent extends ThemeableComponent implements OnInit {
   categories!: Category[];
 
   constructor(
-    private categoryService: BaseCategoryService,
+    private categoryService: CategoryService,
     protected override themingService: ThemingService
   ) {
     super(themingService);
   }
 
   ngOnInit(): void {
-    this.categoryService.getCategoriesNested().subscribe(cats => this.categories = cats);
+    this.categoryService.categories.subscribe(cats => this.categories = cats);
   }
 
   getCategoryURL(id: number) {

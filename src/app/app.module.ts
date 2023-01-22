@@ -11,8 +11,6 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Page404Component } from './page404/page404.component';
-import { BaseCategoryService } from './services/base-categoryservice';
-import { TestCategoryService } from './services/test-category.service';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
@@ -80,10 +78,11 @@ import { CanActivateGuest } from './common/can-activate-guest';
       provide: BaseProductService,
       useClass: TestProductService
     },
-    {
-      provide: BaseCategoryService,
-      useClass: CategoryService
-    },
+    CategoryService,
+    // {
+    //   provide: BaseCategoryService,
+    //   useClass: CategoryService
+    // },
     {
       provide: BaseCartService,
       useClass: TestCartService,

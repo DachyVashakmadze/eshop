@@ -4,13 +4,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ThemeableComponent } from '../common/theamable.component';
 import { ThemingService } from '../services/theming.service';
 import { Category } from '../category/category.model';
-import { BaseCategoryService } from '../services/base-categoryservice';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { count, map, Subject, Subscription, takeUntil, startWith } from 'rxjs';
 import { Router } from '@angular/router';
 import { BaseCartService } from '../services/base-cart.service';
 import { AuthService } from '../services/auth.service';
 import { User } from '../user/user-login.model';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-menu',
@@ -42,7 +42,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
   constructor(
     private router: Router,
     private breakpointObserver: BreakpointObserver,
-    private categoryService: BaseCategoryService,
+    private categoryService: CategoryService,
     private cartService: BaseCartService,
     private authService: AuthService,
     private changeDetectionRef: ChangeDetectorRef,
@@ -68,9 +68,7 @@ export class MenuComponent extends ThemeableComponent implements OnInit, OnDestr
       .subscribe(itemCount => this.cartItemCount = itemCount);
 
     // Set categories in menu
-    this.categoryService.getCategoriesNested().subscribe((cat: Category[]) => {
-      this.categories = cat;
-    });
+    this.categoryService.categories.subscribe(cats => this.categories = cats);
 
     // get notification from auth service when user is logged in, or logged out
     this.userSubscription = this.authService.user.subscribe(user => {
